@@ -9,5 +9,9 @@
     "postcss-nested": "^4.2.1",
     "purgecss": "^1.1.0",
     "tailwindcss": "^1.0.0"
+  },
+  "scripts": {
+    "build": "bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve"
   }
 }

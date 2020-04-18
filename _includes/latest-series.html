@@ -1,4 +1,4 @@
-{% assign latest_series = site.series | sort: "date_published" | where: "published", true | first %}
+{% assign latest_series = site.series | sort: "date_published" | reverse | where: "published", true | first %}
 
 <div class="hidden lg:block my-64 mx-auto text-center">
     <h2 class="uppercase tracking-wider font-thin text-theme-pink text-6xl font-serif mb-5">{{ latest_series.title }}</h2>

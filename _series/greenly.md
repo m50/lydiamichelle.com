@@ -1,7 +1,12 @@
 ---
 layout: series
 title: Greenly
-year_published: 2020
+date_published: 2020-04-18
+published: true
+excerpt: A collection of natural curiosities.
+cover-image:
+    url: /assets/images/hanging-off-the-bed-2020-wip-pen-and-ink.webp
+    alt: Hanging off the bed 2020 - In Progress - Pen and Ink
 ---
 
 # This is a test page

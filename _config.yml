@@ -35,4 +35,4 @@ collections:
   series:
     output: true
     permalink: /portfolio/:title
-    sort_by: year_published
+    sort_by: date_published

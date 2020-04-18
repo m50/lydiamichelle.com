@@ -3,3 +3,10 @@ layout: default
 title: Portfolio
 permalink: /portfolio
 ---
+<div class="h-64 w-full px-64 py-16">
+    {% for series in site.series %}
+        <a class="text-5xl tracking-wider italic font-serif hover:text-theme-pink hover:underline" href="{{ series.url }}">
+            {{ series.title }} - {{ series.year_published }}
+        </a>
+    {% endfor %}
+</div>

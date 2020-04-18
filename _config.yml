@@ -24,3 +24,15 @@ plugins:
   - jekyll-seo-tag
   - jekyll-postcss
   - jekyll-purgecss
+
+defaults:
+  - scope:
+      path: "assets/images/series"
+    values:
+      series: true
+
+collections:
+  series:
+    output: true
+    permalink: /portfolio/:title
+    sort_by: year_published

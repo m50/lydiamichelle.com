@@ -21,8 +21,12 @@ module.exports = {
       },
       colors: {
         theme: {
-          pink: '#f2c2cb',
-          gray: '#191919',
+          'gray': '#191919',
+          'pink': '#f2c2cb',
+          'pink-dark': '#F28888',
+          'green-dark': '#02403A',
+          'green': '#03734A',
+          'green-light': '#7ABFAC',
         }
       }
     },

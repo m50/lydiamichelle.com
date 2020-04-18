@@ -1,0 +1,21 @@
+{% assign latest_series = site.series | sort: "date_published" | where: "published", true | first %}
+
+<div class="hidden lg:block my-64 mx-auto text-center">
+    <h2 class="uppercase tracking-wider font-thin text-theme-pink text-6xl font-serif mb-5">{{ latest_series.title }}</h2>
+    <p class="text-white mb-16 font-thin">{{ latest_series.excerpt }}</p>
+    <a class="text-theme-pink hover:underline" href="{{ latest_series.url }}">{{ latest_series.title }} Series</a>
+</div>
+<div class="hidden lg:block w-1/2 bg-center bg-no-repeat bg-cover" style="background-image: url({{ latest_series.cover-image.url }})">
+    <p class="sr-only">Background image alt-text: {{ latest_series.cover-image.alt }}</p>
+</div>
+
+<div class="lg:hidden block bg-center bg-no-repeat bg-cover"
+    style="background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url({{ latest_series.cover-image.url }})"
+>
+    <div class="my-32 mx-auto text-center">
+        <h2 class="uppercase tracking-wider font-thin text-theme-pink text-6xl font-serif mb-5">{{ latest_series.title }}</h2>
+        <p class="text-white mb-16 font-thin">{{ latest_series.excerpt }}</p>
+        <a class="text-theme-pink hover:underline" href="{{ latest_series.url }}">{{ latest_series.title }} Series</a>
+    </div>
+    <p class="sr-only">Background image alt-text: {{ latest_series.cover-image.alt }}</p>
+</div>

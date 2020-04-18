@@ -1,17 +1,20 @@
-{% assign name = image_file.basename | split: '_' | first | capitalize | split: '-' | join: ' '%}
-{% assign medium =  image_file.basename | split: '_' | last | capitalize | split: '-' | join: ' ' %}
+{% assign name = image_file.basename | split: '_' | first | split: '-' | join: ' '%}
+{% assign medium =  image_file.basename | split: '_' | last | split: '-' | join: ' ' %}
 
 
-<a href="{{ image_file.path }}">
-<figure class="relative w-full h-88 md:h-64 2xl:h-88 rounded-xl overflow-hidden">
-    <img class="h-full w-full object-cover object-center rounded-xl" src="{{ image_file.path }}" alt="{{ name }}">
-    <figcaption class="top-0 left-0 h-16 xl:h-full w-full xl:absolute transform transition-opacity rounded-xl
-            duration-300 ease-in-out text-center xl:opacity-0 hover:opacity-100 text-white
-            flex flex-col justify-center -mt-16 xl:mt-0"
-        style="background-color: rgba(0,0,0,0.75);"
-    >
-        <cite class="text-lg xl:text-3xl font-serif"><span class="sr-only">Piece: </span>{{ name }}</cite>
-        <small class="text-sm xl:text-lg"><span class="sr-only">Medium: </span>{{ medium }}</small>
-    </figcaption>
-</figure>
-</a>
+<div x-data="{ open: false}">
+	<a @click="open = true" href="#{{ name }}">
+		<figure class="relative w-full h-88 md:h-64 2xl:h-88 rounded-xl overflow-hidden">
+			<img class="h-full w-full object-cover object-center rounded-xl" src="{{ image_file.path }}" alt="{{ name }}">
+			<figcaption class="top-0 left-0 h-16 xl:h-full w-full xl:absolute transform transition-opacity rounded-xl
+					duration-300 ease-in-out text-center xl:opacity-0 hover:opacity-100 text-white
+					flex flex-col justify-center -mt-16 xl:mt-0"
+				style="background-color: rgba(0,0,0,0.75);"
+			>
+				<cite class="text-lg xl:text-3xl font-serif capitalize"><span class="sr-only">Piece: </span>{{ name }}</cite>
+				<small class="text-sm xl:text-lg capitalize"><span class="sr-only">Medium: </span>{{ medium }}</small>
+			</figcaption>
+		</figure>
+	</a>
+	{% include view-image.html name=name medium=medium path=image_file.path %}
+</div>

@@ -1,10 +1,10 @@
-<header data-turbolinks-permanent class="z-10 py-3 h-20 md:h-32 print:hidden flex flex-col md:flex-row items-center content-center justify-between bg-black text-white w-full">
+<header data-turbolinks-permanent class="z-10 py-3 h-20 md:h-32 print:hidden flex flex-col md:flex-row items-center content-center justify-between bg-black text-gray-100 w-full">
 	{%- assign default_paths = site.pages | map: "path" -%}
 	{%- assign page_paths = site.header_pages | default: default_paths -%}
 	{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
 	<a class="ml-0 md:ml-20 flex flex-col md:flex-row" rel="author" href="{{ "/" | relative_url }}">
 		<!-- <img src="/assets/images/logo.svg" alt="Lydia Michelle Logo" class="w-12 h-12 inline" /> -->
-		<h1 class="font-serif font-light uppercase text-xl tracking-wider">{{ site.title | escape }}</h1>
+		<h1 class="font-serif uppercase text-xl tracking-wider">{{ site.title | escape }}</h1>
 	</a>
 
 	{%- if titles_size > 0 -%}

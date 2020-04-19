@@ -4,6 +4,19 @@ module.exports = {
       borderRadius: {
         xl: '1rem',
       },
+      fontFamily: {
+        sans: [
+          'Alegreya Sans SC', 'Roboto', "Helvetica Neue", "Segoe UI",
+          'Arial', "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", 'sans-serif'
+        ],
+        serif: [
+          'Cormorant', 'Georgia', 'Cambria', "Times New Roman", 'Times', 'serif'
+        ],
+        decorative: [
+          'Reenie Beanie', 'Cormorant', 'Georgia', 'Cambria', "Times New Roman", 'Times', 'serif'
+        ]
+      },
       height: {
         "1/4": "25%",
         "1/2": "50%",

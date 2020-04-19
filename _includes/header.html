@@ -4,11 +4,11 @@
 	{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
 	<a class="ml-0 md:ml-20 flex flex-col md:flex-row" rel="author" href="{{ "/" | relative_url }}">
 		<!-- <img src="/assets/images/logo.svg" alt="Lydia Michelle Logo" class="w-12 h-12 inline" /> -->
-		<h1 class="font-serif font-hairline uppercase text-xl tracking-wider">{{ site.title | escape }}</h1>
+		<h1 class="font-serif font-light uppercase text-xl tracking-wider">{{ site.title | escape }}</h1>
 	</a>
 
 	{%- if titles_size > 0 -%}
-	<nav class="mr-0 md:mr-20 text-sm font-thin">
+	<nav class="mr-0 md:mr-20 text-sm font-light">
 		{%- for path in page_paths -%}
 			{%- assign my_page = site.pages | where: "path", path | first -%}
 			{%- if my_page.title -%}

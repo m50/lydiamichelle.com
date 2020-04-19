@@ -8,13 +8,13 @@ permalink: /
 	{%- include latest-series.html -%}
 </section>
 
-<section class="bg-theme-pink px-5 py-16 md:py-32 relative" aria-label="About section">
-	<img class="absolute opacity-25 top-0 left-0 w-full h-full object-cover object-center"
-		src="/assets/images/paper-texture.jpeg" alt="Section paper texture" />
-	<div class="md:mx-auto w-full md:w-2/3 lg:w-1/2">
+<section class="bg-theme-pink px-5 py-16 md:py-32 relative select-text" aria-label="About section">
+	<img class="absolute opacity-25 top-0 left-0 w-full h-full object-cover object-center select-none"
+		src="/assets/images/paper-texture.jpeg" alt="Section paper texture" unselectable="on" />
+	<div class="md:mx-auto w-full md:w-2/3 lg:w-1/2 relative">
 		<h2 class="uppercase text-4xl font-serif font-thin tracking-wider">All about me</h2>
-		<p class="font-serif font-thin italic my-10">Let's move forward</p>
-		<p class="font-light leading-loose">{{ site.description }}</p>
+		<p class="font-serif text-2xl italic my-10">Let's move forward</p>
+		<p class="font-light text-xl leading-loose">{{ site.description }}</p>
 	</div>
 </section>
 

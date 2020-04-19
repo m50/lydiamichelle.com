@@ -11,7 +11,7 @@ layout: default
 		{{ content }}
 	</summary>
 </section>
-<section class="w-full bg-white">
+<section class="w-full bg-white" data-turbolinks="false">
 	<div class="w-full md:w-2/3 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 p-5">
 		{% assign image_files = site.static_files | where: "series", true %}
 		{% for image_file in image_files %}

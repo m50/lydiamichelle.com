@@ -1,4 +1,4 @@
-<header class="py-3 h-20 md:h-32 print:hidden flex flex-col md:flex-row items-center content-center justify-between bg-black text-white w-full">
+<header data-turbolinks-permanent class="py-3 h-20 md:h-32 print:hidden flex flex-col md:flex-row items-center content-center justify-between bg-black text-white w-full">
 	{%- assign default_paths = site.pages | map: "path" -%}
 	{%- assign page_paths = site.header_pages | default: default_paths -%}
 	{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}

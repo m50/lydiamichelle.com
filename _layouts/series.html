@@ -2,22 +2,22 @@
 layout: default
 ---
 <section class="bg-theme-gray text-theme-pink grid justify-center px-5 py-20 text-center font-serif font-thin">
-    <h2 class="text-6xl uppercase">{{ page.title }}</h2>
-    <p class="text-white my-12 font-sans">{{ page.excerpt }}</p>
-    <p class="ml-5 opacity-75 italic">{{ page.date_published | date_to_long_string: "ordinal" }}</p>
+	<h2 class="text-6xl uppercase">{{ page.title }}</h2>
+	<p class="text-white my-12 font-sans">{{ page.excerpt }}</p>
+	<p class="ml-5 opacity-75 italic">{{ page.date_published | date_to_long_string: "ordinal" }}</p>
 </section>
 <section class="mx-auto bg-theme-pink p-5">
-    <div class="mx-auto w-full md:w-2/3 lg:w-1/2 xl:w-1/3 markdown">
-        {{ content }}
-    </div>
+	<summary class="mx-auto w-full md:w-2/3 lg:w-1/2 xl:w-1/3 markdown">
+		{{ content }}
+	</summary>
 </section>
-<section class="w-full bg-white">
-    <div class="w-full md:w-2/3 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 p-5">
-        {% assign image_files = site.static_files | where: "series", true %}
-        {% for image_file in image_files %}
-            {% if image_file.path contains page.slug %}
-                {% include image-figure.html image_file=image_file%}
-            {% endif %}
-        {% endfor %}
-    </div>
+<section class="w-full bg-white" data-turbolinks="false">
+	<div class="w-full md:w-2/3 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 p-5">
+		{% assign image_files = site.static_files | where: "series", true %}
+		{% for image_file in image_files %}
+			{% if image_file.path contains page.slug %}
+				{% include image-figure.html image_file=image_file%}
+			{% endif %}
+		{% endfor %}
+	</div>
 </section>

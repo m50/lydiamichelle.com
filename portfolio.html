@@ -4,23 +4,23 @@ title: Portfolio
 permalink: /portfolio
 ---
 <div class="w-full py-16 flex justify-center">
-    <section class="w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
-        {% assign published = site.series | where: "published", true | reverse %}
-        {% for series in published %}
-            <a class="group text-theme-gray flex flex-col md:flex-row justify-start items-center content-center relative py-2 px-5 my-10
-                transform transition-transform ease-in-out duration-300
-                hover:translate-x-10 hover:translate-y-1 focus:translate-x-10 focus:translate-y-1"
-                href="{{ series.url }}"
-            >
-                <div class="hidden lg:block absolute top-0 left-0 w-full h-full bg-theme-pink skew-x-12
-                    transform transition-transform ease-in-out duration-300 origin-left scale-x-0
-                    group-hover:scale-x-100">&nbsp;</div>
-                <h2 class="relative inline-block text-4xl lg:text-5xl tracking-wider font-serif">{{ series.title }}</h2>
-                <div class="relative md:ml-10 text-center md:text-left">
-                    <p class="text-xs md:text-sm">{{ series.excerpt }}</p>
-                    <cite class="text-xs md:text-sm opacity-75">{{ series.date_published | date_to_long_string: "ordinal" }}</cite>
-                </div>
-            </a>
-        {% endfor %}
-    </section>
+	<section class="w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
+		{% assign published = site.series | where: "published", true | reverse %}
+		{% for series in published %}
+			<a class="group text-theme-gray flex flex-col md:flex-row justify-start items-center content-center relative py-2 px-5 my-10
+				transform transition-transform ease-in-out duration-300
+				hover:translate-x-10 hover:translate-y-1 focus:translate-x-10 focus:translate-y-1"
+				href="{{ series.url }}"
+			>
+				<div class="hidden lg:block absolute top-0 left-0 w-full h-full bg-theme-pink skew-x-12
+					transform transition-transform ease-in-out duration-300 origin-left scale-x-0
+					group-hover:scale-x-100">&nbsp;</div>
+				<h2 class="relative inline-block text-4xl lg:text-5xl tracking-wider font-serif">{{ series.title }}</h2>
+				<div class="relative md:ml-10 text-center md:text-left">
+					<p class="text-xs md:text-sm">{{ series.excerpt }}</p>
+					<cite class="text-xs md:text-sm opacity-75">{{ series.date_published | date_to_long_string: "ordinal" }}</cite>
+				</div>
+			</a>
+		{% endfor %}
+	</section>
 </div>

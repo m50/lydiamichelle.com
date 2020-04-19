@@ -1,0 +1,12 @@
+<figure x-show.transition.opacity.duration.300ms="open" class="fixed top-0 left-0 w-full h-full z-30">
+	<div class="flex justify-center content-center items-center h-full px-2">
+		<div class="h-auto sm:h-3/4 lg:h-auto static flex flex-col sm:flex-row md:flex-col lg:flex-row w-auto z-50 bg-theme-gray rounded-xl justify-between">
+			<img class="h-auto max-h-screen sm:h-full lg:h-auto rounded-xl" src="{{ include.path }}" />
+			<figcaption class="flex flex-col justify-center content-center items-center p-5">
+				<cite class="capitalize text-white text-lg xl:text-3xl font-serif"><span class="sr-only">Piece: </span>{{ include.name }}</cite>
+				<small class="capitalize text-white text-sm xl:text-lg"><span class="sr-only">Medium: </span>{{ include.medium }}</small>
+			</figcaption>
+		</div>
+		<div class="absolute top-0 left-0 w-full h-full opacity-75 bg-black z-30" @click="open = false"></div>
+	</div>
+</figure>

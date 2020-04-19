@@ -4,30 +4,32 @@ title: Home
 permalink: /
 ---
 
-<section class="bg-theme-gray flex flex-col-reverse lg:flex-row">
-    {%- include latest-series.html -%}
+<section class="bg-theme-gray flex flex-col-reverse lg:flex-row" aria-label="Latest Series section">
+	{%- include latest-series.html -%}
 </section>
 
-<section class="bg-theme-pink px-5 py-16 md:py-32">
-    <div class="md:mx-auto w-full md:w-2/3 lg:w-1/2">
-        <h2 class="uppercase text-4xl font-serif font-thin tracking-wider">All about me</h2>
-        <p class="font-serif font-thin italic my-10">Let's move forward</p>
-        <p class="font-thin leading-loose">{{ site.description }}</p>
-    </div>
+<section class="bg-theme-pink px-5 py-16 md:py-32 relative" aria-label="About section">
+	<img class="absolute opacity-25 top-0 left-0 w-full h-full object-cover object-center"
+		src="/assets/images/paper-texture.jpeg" alt="Section paper texture" />
+	<div class="md:mx-auto w-full md:w-2/3 lg:w-1/2">
+		<h2 class="uppercase text-4xl font-serif font-thin tracking-wider">All about me</h2>
+		<p class="font-serif font-thin italic my-10">Let's move forward</p>
+		<p class="font-thin leading-loose">{{ site.description }}</p>
+	</div>
 </section>
 
-<section class="bg-white sm:pt-40 lg:py-40">
-    <div class="w-full xl:w-1/2 mx-auto flex items-center content-center flex-col-reverse lg:flex-row md:px-6">
-        <blockquote class="lg:mr-24 my-24 lg:my-auto text-center lg:text-left px-5 sm:px-0">
-            <p class="mb-12 text-2xl font-serif">
-                "I think it would be well, and proper, and obedient, and pure,
-                to grasp your one necessity and not let it go, to dangle from it
-                limp wherever it takes you."
-            </p>
-            <cite class="italic font-hairline font-serif">Annie Dillard</cite>
-        </blockquote>
-        <img class="h-88 sm:h-auto lg:h-88 sm:w-1/2 lg:w-auto shadow-xl"
-            src="/assets/images/eli-2020-graphite-and-ink.webp"
-            alt="Eli 2020 - Graphite and ink" />
-    </div>
+<section class="bg-white sm:pt-40 lg:py-40" aria-label="A favourite quote section">
+	<div class="w-full xl:w-1/2 mx-auto flex items-center content-center flex-col-reverse lg:flex-row md:px-6">
+		<blockquote class="lg:mr-24 my-24 lg:my-auto text-center lg:text-left px-5 sm:px-0">
+			<p class="mb-12 text-2xl font-serif">
+				"I think it would be well, and proper, and obedient, and pure,
+				to grasp your one necessity and not let it go, to dangle from it
+				limp wherever it takes you."
+			</p>
+			<cite class="italic font-hairline font-serif">Annie Dillard</cite>
+		</blockquote>
+		<img class="h-88 sm:h-auto lg:h-88 sm:w-1/2 lg:w-auto shadow-xl"
+			src="/assets/images/eli-2020-graphite-and-ink.webp"
+			alt="Eli 2020 - Graphite and ink" />
+	</div>
 </section>

@@ -4,9 +4,6 @@ title: Landscapes
 date_published: 2020-01-12
 published: true
 excerpt: A collection of natural curiosities.
-cover_image:
-    url: /assets/images/paper-texture.jpeg
-    alt: paper texture
 ---
 
 # This is a test page

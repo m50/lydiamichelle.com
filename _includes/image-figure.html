@@ -1,4 +1,4 @@
-{% assign name = image_file.basename | split: '_' | first | split: '-' | join: ' '%}
+{% assign name = image_file.basename | split: '_' | first | split: '+' | last | split: '-' | join: ' '%}
 {% assign medium =  image_file.basename | split: '_' | last | split: '-' | join: ' ' %}
 
 

@@ -6,7 +6,8 @@ published: true
 excerpt: A collection of natural curiosities.
 ---
 
-# This is a test page
+# Greenly
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac placerat vestibulum lectus mauris ultrices eros in cursus turpis. Purus gravida quis blandit turpis cursus in hac habitasse. At varius vel pharetra vel turpis nunc. Pretium aenean pharetra magna ac placerat vestibulum. Odio ut sem nulla pharetra diam. Eu non diam phasellus vestibulum lorem. Dictum sit amet justo donec enim diam. Arcu cursus vitae congue mauris rhoncus aenean vel elit. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Scelerisque eu ultrices vitae auctor eu. Quis blandit turpis cursus in hac habitasse platea. Dignissim enim sit amet venenatis urna. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Est ullamcorper eget nulla facilisi. Mi sit amet mauris commodo quis imperdiet massa tincidunt nunc. Scelerisque eu ultrices vitae auctor eu. Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique.
-bro what am i doing
+Greenly is here to dissect the strange and intrusive thoughts that accompany a person suffering from Post Traumatic Stress Disorder and Obsessive Compulsive Disorder. These commonly comorbid conditions are stereotyically thought of as a physical manifestation of worry, anxiety, depression, and uncontrolled thoughts and behavior. These challenging conditions come with an unique side effect; intrusive thoughts overwhelm, attack and drain the mind of reason in episodes, many times visually. The real sensations that come with powerful manifestations of fear is the main focus of this series, where I show just a view of some challenges that have invaded daily living. 
+
+From the obvious "*To Touch a Table*" portraying the fixation on the physical worry that comes with touching surfaces, to "*Diodon Hysterix*" that showcase the complex 'pricks and pringles' from intrusive sensations, Greenly silently matches compulsion to canvas (even the title, Greenly, is a tribute to my personal tic with words of specific pronunciation).

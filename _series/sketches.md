@@ -1,6 +1,6 @@
 ---
 layout: series
-title: Greenly
+title: Sketches 
 date_published: 2020-04-17
 published: true
 excerpt: Sketches, you know.

@@ -17,8 +17,9 @@ baseurl: ""
 url: "https://lydiamichelle.com"
 
 social:
-  github:  lydiamichelleb
+  github:    lydiamichelleb
   instagram: squid.lyds
+  redbubble: LydiaBullock
 
 plugins:
   - jekyll-seo-tag

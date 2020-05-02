@@ -1,7 +1,7 @@
 ---
-layout: page
-title: Resumé
-permalink: /resume
+# layout: page
+# title: Resumé
+# permalink: /resume
 ---
 
 # Resumé

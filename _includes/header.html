@@ -2,7 +2,7 @@
 	{%- assign default_paths = site.pages | map: "path" -%}
 	{%- assign page_paths = site.header_pages | default: default_paths -%}
 	{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-	<img src="/assets/images/logo.svg" alt="Lydia Michelle Logo" class="h-12 mb-4 md:hidden" />
+	<img src="/assets/images/logo.png" alt="Lydia Michelle Logo" class="h-12 mb-4 md:hidden" />
 	<a class="ml-0 md:ml-20 flex flex-col md:flex-row mb-4" rel="author" href="{{ "/" | relative_url }}">
 		<h1 class="font-serif uppercase text-xl tracking-wider">{{ site.title | escape }}</h1>
 	</a>

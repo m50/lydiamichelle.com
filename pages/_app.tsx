@@ -1,0 +1,30 @@
+import * as React from 'react';
+import '../styles/tailwind.css'
+import '../styles/colorful.css'
+import { AppProps } from 'next/dist/next-server/lib/router/router'
+import DefaultTemplate from '../components/templates/Default';
+import Head from 'next/head';
+import CMS from 'netlify-cms-app';
+
+CMS.init();
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <DefaultTemplate>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/ico" href="/assets/images/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Reenie+Beanie&display=swap" rel="stylesheet" />
+      </Head>
+      <Component {...pageProps} />
+    </DefaultTemplate>
+  );
+}
+
+export default MyApp

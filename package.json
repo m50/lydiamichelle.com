@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@svgr/webpack": "^5.5.0",
     "gray-matter": "^4.0.2",
     "netlify-cms-app": "^2.14.26",
     "next": "10.0.7",

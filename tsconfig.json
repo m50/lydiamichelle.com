@@ -3,12 +3,34 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
-    "jsx": "react",
-    "lib": ["dom", "esnext", "es2015", "es2016", "es2017"],
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "esnext",
+      "es2015",
+      "es2016",
+      "es2017"
+    ],
     "moduleResolution": "node",
     "plugins": [],
-    "target": "es2015"
+    "target": "es2015",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.jsx"],
-  "exclude": ["node_modules/*", "public/*", "_site/*"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx"
+  ],
+  "exclude": [
+    "node_modules/*",
+    "public/*",
+    "_site/*"
+  ]
 }

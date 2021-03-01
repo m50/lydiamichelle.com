@@ -4,9 +4,6 @@ import '../styles/colorful.css'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import DefaultTemplate from '../components/templates/Default';
 import Head from 'next/head';
-import CMS from 'netlify-cms-app';
-
-CMS.init();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

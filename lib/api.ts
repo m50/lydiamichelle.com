@@ -1,7 +1,7 @@
 
-import * as fs from 'fs';
+import fs from 'fs';
 import { join } from 'path';
-import * as matter from 'gray-matter';
+import matter from 'gray-matter';
 import { isSeries, Series } from '../types/Series';
 
 const seriesDirectory = join(process.cwd(), 'static', 'series');
@@ -16,6 +16,7 @@ export function getSeriesBySlug(slug: string): Series {
 
   data.body = content;
   data.slug = realSlug;
+  data.date_published = data.date_published.toDateString();
 
   if (!isSeries(data)) {
     throw new Error('series undetermined . ' + JSON.stringify(data));

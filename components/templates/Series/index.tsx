@@ -9,7 +9,7 @@ export const SeriesTemplate: React.FC<Series> = (series) => (
   <article>
     <Head>
       <title>{series.title} | Lydia Michelle Art</title>
-      <meta property="og:image" content={series.images[0].image} />
+      <meta property="og:image" content={series.images[0]?.image} />
     </Head>
     <Header {...series} />
     <Body content={series.body} />

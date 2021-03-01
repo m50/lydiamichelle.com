@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import * as React from 'react';
 import { getAllseries as getAllSeries, getSeriesBySlug } from '../../lib/api';
-import { Series } from '../../types/Series';
+import { Series as SeriesType } from '../../types/Series';
 import SeriesTemplate from '../../components/templates/Series';
 
 interface Props {
-  series: Series;
+  series: SeriesType;
 }
 
 const Series: React.FC<Props> = ({ series }) => {
@@ -15,7 +15,7 @@ const Series: React.FC<Props> = ({ series }) => {
   if (!router.isFallback && !series?.slug) {
     return <ErrorPage statusCode={404} />
   }
-  
+
   return <SeriesTemplate {...series} />;
 }
 

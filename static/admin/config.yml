@@ -3,7 +3,7 @@ backend:
   branch: trunk
 publish_mode: editorial_workflow
 media_folder: "static/images"
-public_folder: "public/images"
+public_folder: "static/images"
 site_url: https://lydiamichelle.art
 collections:
   - name: series

@@ -5,10 +5,6 @@ module.exports = {
 			loader: 'frontmatter-markdown-loader',
 			options: { mode: ['react-component'] },
 		});
-		config.module.rules.push({
-			test: /\.svg$/,
-			use: ["@svgr/webpack"],
-		});
 
 		return config;
 	}

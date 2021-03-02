@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import * as React from 'react';
-import { getAllseries as getAllSeries, getSeriesBySlug } from '../../lib/api';
+import { getAllSeries, getSeriesBySlug } from '../../lib/api';
 import { Series as SeriesType } from '../../types/Series';
 import SeriesTemplate from '../../components/templates/Series';
 

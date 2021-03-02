@@ -1,4 +1,3 @@
-
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
@@ -16,7 +15,9 @@ export function getSeriesBySlug(slug: string): Series {
 
   data.body = content;
   data.slug = realSlug;
-  data.date_published = data.date_published.toDateString();
+  if (typeof data.date_published !== 'string') {
+    data.date_published = data.date_published.toDateString();
+  }
 
   if (!isSeries(data)) {
     throw new Error('series undetermined . ' + JSON.stringify(data));
@@ -25,12 +26,12 @@ export function getSeriesBySlug(slug: string): Series {
   return data;
 }
 
-export function getAllseries() {
+export function getAllSeries() {
   const slugs = getSeriesSlugs();
   const series = slugs
     .map((slug) => getSeriesBySlug(slug))
-    // sort series by date in descending order
-    .sort((post1, post2) => (post1.date_published > post2.date_published ? -1 : 1));
+    // sort series by date in ascending order
+    .sort((post1, post2) => (post1.date_published < post2.date_published ? -1 : 1));
 
   return series;
 }

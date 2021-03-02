@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: trunk
+publish_mode: editorial_workflow
+media_folder: "static/images"
+public_folder: "static/images"
+site_url: https://lydiamichelle.art
+collections:
+  - name: series
+    label: Series
+    folder: "static/series"
+    extension: md
+    create: true
+    preview_path: "portfolio/{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "string" }
+      - { label: "Date Published", name: "date_published", widget: "datetime" }
+      - { label: "Is Published", name: "published", widget: "boolean" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: Gallery
+        name: images
+        widget: list
+        min: 1
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Medium, name: medium, widget: string, default: "Pen and Ink" }
+          - { label: Blurb, name: blurb, widget: text, required: false }
+          - { label: "Work in Progress?", name: "wip", widget: boolean, default: false }
+          - { label: Image, name: image, widget: image }

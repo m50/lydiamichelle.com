@@ -6,7 +6,7 @@ import { ReactComponent as EtsyIcon } from './SVG/Etsy.svg';
 import { ReactComponent as InstaIcon } from './SVG/Instagram.svg';
 
 export const Nav: React.FC = () => (
-  <nav className="mr-0 md:mr-20 text-sm font-light mb-4">
+  <nav className="mr-0 md:mr-20 text-md font-light mb-4">
     <IntLinkWhite href="/">Home</IntLinkWhite>
     <IntLinkWhite href="/portfolio">Portfolio</IntLinkWhite>
     <ExtLinkWhite href={redBubble}>

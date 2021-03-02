@@ -4,10 +4,7 @@ date_published: 2020-04-18
 published: true
 excerpt: A collection of natural curiosities.
 images:
-  - wip: true
-    title: Hanging off the bed
-    medium: Pen and Ink
-    image: static/images/1-hanging-off-the-bed.webp
+  - { wip: true, title: Hanging off the bed, medium: Pen and Ink, image: static/images/1-hanging-off-the-bed.webp }
 ---
 
 # Greenly

@@ -4,7 +4,16 @@ date_published: 2020-04-18
 published: true
 excerpt: A collection of natural curiosities.
 images:
-  - { wip: true, title: Hanging off the bed, medium: Pen and Ink, image: "/static/images/1-hanging-off-the-bed.webp" }
+  - { wip: true, title: Hanging Off the Bed, medium: Pen and Ink, image: "/static/images/1-hanging-off-the-bed.webp" }
+  - { wip: false, title: Levi, medium: Graphite and Ink, image: "/static/images/2+levi_graphite-and-ink.webp" }
+  - { wip: false, title: Diodon Hystrix, medium: Pen and Ink, image: "/static/images/4+Diodon-Hystrix_Pen-and-Ink.jpg" }
+  - { wip: false, title: Diodon Hystrix, medium: Pen and Ink, image: "/static/images/5+Diodon-Hystrix_Pen-and-Ink.jpg" }
+  - { wip: false, title: Diodon Hystrix, medium: Pen and Ink, image: "/static/images/6+Diodon-Hystrix_Pen-and-Ink.jpg" }
+  - { wip: false, title: Diodon Hystrix, medium: Pen and Ink, image: "/static/images/7+Diodon-Hystrix_Pen-and-Ink.jpg" }
+  - { wip: false, title: Hanging Off the Bed, medium: Pen and Ink, image: "/static/images/Hanging Off the Bed_Pen and Ink.jpg" }
+  - { wip: false, title: Fawning Love, medium: Digital, image: "/static/images/Fawning Love.png" }
+  - { wip: false, title: To Touch A Table, medium: Pen and Ink, image: "/static/images/To Touch A Table_Pen and Ink.JPG" }
+  - { wip: false, title: What's in my Mind, medium: Oil, image: "/static/images/What's in my Mind_Oil.jpg" }
 ---
 
 # Greenly

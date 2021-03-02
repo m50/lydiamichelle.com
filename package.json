@@ -14,7 +14,8 @@
     "react-dom": "17.0.1",
     "react-remark": "^2.0.3",
     "remark": "^13.0.0",
-    "remark-gemoji": "^6.0.0"
+    "remark-gemoji": "^6.0.0",
+    "slugify": "^1.4.7"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",

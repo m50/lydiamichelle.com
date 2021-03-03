@@ -30,7 +30,7 @@ export const SeriesTemplate: React.FC<Series> = (series) => {
       window.location.pathname + window.location.search);
   }
   return (
-    <article>
+    <article className="h-full">
       <Head>
         <title>{series.title} | Lydia Michelle Art</title>
         <meta property="og:image" content={series.images[0]?.image} />

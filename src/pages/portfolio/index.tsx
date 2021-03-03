@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { getAllSeries } from '../../lib/api';
 import { Series } from '../../types/Series';
@@ -51,18 +52,20 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
             }
           }
           return (
-            <a className={anchorStyles} href={`portfolio/${series.slug}`} key={series.slug}
-              onMouseEnter={onMouseEnter} onMouseLeave={() => setBgActive(false)}
-            >
-              <div className={nbspDivStyles}>&nbsp;</div>
-              <h2 className="relative tracking-widest uppercase inline-block text-4xl lg:text-5xl font-serif">
-                {series.title}
-              </h2>
-              <div className="relative md:ml-10 text-center md:text-left">
-                <p className="text-xs md:text-sm">{series.excerpt}</p>
-                <cite className="text-xs md:text-sm opacity-75">{series.date_published}</cite>
-              </div>
-            </a>
+            <Link href={`portfolio/${series.slug}`}>
+              <a className={anchorStyles} key={series.slug}
+                onMouseEnter={onMouseEnter} onMouseLeave={() => setBgActive(false)}
+              >
+                <div className={nbspDivStyles}>&nbsp;</div>
+                <h2 className="relative tracking-widest uppercase inline-block text-4xl lg:text-5xl font-serif">
+                  {series.title}
+                </h2>
+                <div className="relative md:ml-10 text-center md:text-left">
+                  <p className="text-xs md:text-sm">{series.excerpt}</p>
+                  <cite className="text-xs md:text-sm opacity-75">{series.date_published}</cite>
+                </div>
+              </a>
+            </Link>
           );
         })}
       </section>

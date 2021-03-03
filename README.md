@@ -1,6 +1,6 @@
 # lydiamichelle.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b7ac93c7-000b-4873-beaa-ed9150caffec/deploy-status)](https://app.netlify.com/sites/elastic-shaw-eddd1b/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b7ac93c7-000b-4873-beaa-ed9150caffec/deploy-status)](https://app.netlify.com/sites/lydia-michelle-art/deploys)
 
 https://lydiamichelle.com - The website for my girlfriend.
 

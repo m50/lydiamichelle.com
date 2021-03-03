@@ -8,7 +8,7 @@ site_url: https://lydiamichelle.art
 collections:
   - name: series
     label: Series
-    folder: "public/series"
+    folder: "src/series"
     extension: md
     create: true
     preview_path: "portfolio/{{slug}}"

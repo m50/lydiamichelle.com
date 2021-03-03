@@ -11,7 +11,7 @@ const headerClasses = `
 export const Header: React.FC = () => (
   <header className={headerClasses}>
     <img className="h-12 mb-4 md:hidden"
-      src="/static/imgs/logo.png" alt="Lydia Michelle Logo"
+      src="/imgs/logo.png" alt="Lydia Michelle Logo"
     />
     <a className="ml-0 md:ml-20 flex flex-col md:flex-row mb-4" rel="author" href="/">
       <h1 className="font-serif uppercase text-xl tracking-wider">Lydia Michelle</h1>

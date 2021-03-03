@@ -39,7 +39,7 @@ export const Home: React.FC<Props> = (props) => {
 
       <section className="bg-white sm:pt-40 lg:py-40 relative select-text" aria-label="A favourite quote section">
         <img className="absolute opacity-25 top-0 left-0 w-full h-full object-cover object-center select-none"
-          src="/static/imgs/grunge-paper-texture.jpg" alt="Section paper texture" unselectable="on" />
+          src="/imgs/grunge-paper-texture.jpg" alt="Section paper texture" unselectable="on" />
         <div className="w-full md:w-2/3 2xl:w-1/2 mx-auto flex items-center content-center flex-col-reverse lg:flex-row md:px-6 relative z-10">
           <blockquote className="lg:mr-24 my-24 lg:my-auto text-center lg:text-left px-5 sm:px-0">
             <p className="mb-12 text-2xl font-serif">
@@ -50,7 +50,7 @@ export const Home: React.FC<Props> = (props) => {
             <cite className="italic font-hairline font-serif">Annie Dillard</cite>
           </blockquote>
           <img className="h-88 sm:h-auto lg:h-88 sm:w-1/2 lg:w-auto shadow-xl"
-            src="/static/imgs/levi_graphite-and-ink.webp"
+            src="/imgs/levi_graphite-and-ink.webp"
             alt="Levi - Graphite and ink" />
         </div>
       </section>

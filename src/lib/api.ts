@@ -3,7 +3,7 @@ import { join } from 'path';
 import matter from 'gray-matter';
 import { isSeries, Series } from '../types/Series';
 
-const seriesDirectory = join(process.cwd(), 'static', 'series');
+const seriesDirectory = join(process.cwd(), 'public', 'series');
 
 export const getSeriesSlugs = () => fs.readdirSync(seriesDirectory);
 

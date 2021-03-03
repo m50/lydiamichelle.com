@@ -7,7 +7,7 @@ import build from 'next/dist/build';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const imagePath = req.query.image as string;
-  console.log(fs.readdirSync(process.cwd()));
+  console.log(fs.readdirSync(process.cwd() + '/src'));
   const fullPath = join(process.cwd(), 'public', imagePath);
   const buildPath = join(process.cwd(), 'public', 'build');
   let outputFile: Buffer;

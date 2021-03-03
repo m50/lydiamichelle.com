@@ -25,7 +25,7 @@ export const ImageGrid: React.FC<Props> = ({ images, onImageClick }) => {
                 <figure className="relative w-full h-88 md:h-64 2xl:h-88 rounded-xl overflow-hidden">
                   <img className="h-full w-full object-cover object-center rounded-xl"
                     src={image.image} alt={image.title} />
-                  <figcaption className={captionClasses} style={{ backgroundColor: "rgba(0,0,0,0.75);" }}>
+                  <figcaption className={captionClasses} style={{ backgroundColor: "rgba(0,0,0,0.75)" }}>
                     <cite className="text-lg xl:text-3xl font-serif capitalize">
                       <span className="sr-only">Piece: </span>{image.title}
                     </cite>

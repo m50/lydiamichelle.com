@@ -17,14 +17,14 @@ export const ImageGrid: React.FC<Props> = ({ images, onImageClick }) => {
   return (
     <section className="w-full bg-white" data-turbolinks="false">
       <div className="w-full md:w-2/3 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 p-5">
-        {images.map((image) => {
+        {images.map((image, idx) => {
           const slug = slugify(image.title, { lower: true, strict: true, locale: 'en' });
           return (
-            <div key={slug}>
+            <div key={slug + idx}>
               <a onClick={() => onImageClick(image)} href={`#${slug}`}>
                 <figure className="relative w-full h-88 md:h-64 2xl:h-88 rounded-xl overflow-hidden">
                   <img className="h-full w-full object-cover object-center rounded-xl"
-                    src={image.image} alt={image.title} />
+                    src={image.image} alt={image.title} loading="lazy" />
                   <figcaption className={captionClasses} style={{ backgroundColor: "rgba(0,0,0,0.75)" }}>
                     <cite className="text-lg xl:text-3xl font-serif capitalize">
                       <span className="sr-only">Piece: </span>{image.title}

@@ -15,7 +15,8 @@
     "react-remark": "^2.0.3",
     "remark": "^13.0.0",
     "remark-gemoji": "^6.0.0",
-    "slugify": "^1.4.7"
+    "slugify": "^1.4.7",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",

@@ -25,7 +25,7 @@ export const LatestSeries: React.FC<Props> = ({latestSeries, image}) => {
       </div>
 
       <div className="lg:hidden block bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: `linear-gradient( ${blk}, ${blk} ), url('${image.image}')` }}
+        style={{ backgroundImage: `linear-gradient( ${blk}, ${blk} ), url('/api/optimize?image=${encodeURIComponent(image.image)}')` }}
       >
         <div className="my-32 mx-auto text-center">
           <h2 className="uppercase tracking-wider font-thin text-theme-pink text-6xl font-serif mb-5">{latestSeries.title}</h2>

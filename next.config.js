@@ -6,14 +6,6 @@ module.exports = {
 			options: { mode: ['react-component'] },
 		});
 
-		config.module.rules.push({
-			test: /\.(jpe?g|png|webp)$/i,
-			loaders: [
-				'file-loader',
-				'webp-loader',
-			],
-		});
-
 		return config;
 	}
 }

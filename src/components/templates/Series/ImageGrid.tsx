@@ -1,6 +1,7 @@
 import React from 'react';
 import { ImageInfo } from '../../../types/Series';
 import slugify from 'slugify';
+import { Image } from 'components/Image';
 
 interface Props {
   images: ImageInfo[];
@@ -23,7 +24,7 @@ export const ImageGrid: React.FC<Props> = ({ images, onImageClick }) => {
             <div key={slug + idx}>
               <a onClick={() => onImageClick(image)} href={`#${slug}`}>
                 <figure className="relative w-full h-88 md:h-64 2xl:h-88 rounded-xl overflow-hidden">
-                  <img className="h-full w-full object-cover object-center rounded-xl"
+                  <Image className="h-full w-full object-cover object-center rounded-xl"
                     src={image.image} alt={image.title} loading="lazy" />
                   <figcaption className={captionClasses} style={{ backgroundColor: "rgba(0,0,0,0.75)" }}>
                     <cite className="text-lg xl:text-3xl font-serif capitalize">

@@ -1,3 +1,4 @@
+import { Image } from 'components/Image';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -40,20 +41,20 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
       <div className={
         `z-0 absolute inset-0 transition-opacity ease-in-out duration-150 ${bgActive ? 'opacity-25' : 'opacity-0'}`
       }>
-        <img className="w-full h-full object-cover object-center" ref={bgImg} src="" alt="" />
+        <Image className="w-full h-full object-cover object-center" ref={bgImg} src="" alt="" />
       </div>
       <section className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
         {published.map((series) => {
           const image = series.images[0];
           const onMouseEnter = () => {
-            if (image) {
+            if (image && image.image) {
               setBgActive(true);
-              setBg(image?.image);
+              setBg(image.image);
             }
           }
           return (
-            <Link href={`portfolio/${series.slug}`}>
-              <a className={anchorStyles} key={series.slug}
+            <Link href={`portfolio/${series.slug}`} key={series.slug}>
+              <a className={anchorStyles}
                 onMouseEnter={onMouseEnter} onMouseLeave={() => setBgActive(false)}
               >
                 <div className={nbspDivStyles}>&nbsp;</div>

@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
+    "imagemin": "^7.0.1",
+    "imagemin-webp": "^6.0.0",
     "netlify-cms-app": "^2.14.26",
     "next": "10.0.7",
     "react": "17.0.1",
@@ -15,10 +17,11 @@
     "react-remark": "^2.0.3",
     "remark": "^13.0.0",
     "remark-gemoji": "^6.0.0",
-    "slugify": "^1.4.7",
-    "webp-loader": "^0.6.0"
+    "slugify": "^1.4.7"
   },
   "devDependencies": {
+    "@types/imagemin": "^7.0.0",
+    "@types/imagemin-webp": "^5.1.1",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "autoprefixer": "^10.2.4",

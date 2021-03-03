@@ -31,7 +31,7 @@ export function getAllSeries() {
   const series = slugs
     .map((slug) => getSeriesBySlug(slug))
     // sort series by date in ascending order
-    .sort((post1, post2) => (post1.date_published < post2.date_published ? -1 : 1));
+    .sort((post1, post2) => (new Date(post1.date_published) < new Date(post2.date_published) ? -1 : 1));
 
   return series;
 }

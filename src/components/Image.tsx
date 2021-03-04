@@ -14,9 +14,9 @@ export const Image = React.forwardRef<HTMLImageElement, ImgProps>(({ src, height
 
   return (
     <picture className={props.className}>
-      <source media="(max-width: 799px)" srcSet={halfQuery} />
-      <source media="(min-width: 800px)" srcSet={query}/>
-      <img ref={ref} src={query} {...props} />
+      <source media="(max-width: 799px)" srcSet={halfQuery} type="image/webp" />
+      <source media="(min-width: 800px)" srcSet={query} type="image/webp" />
+      <img loading="lazy" ref={ref} src={src} {...props} />
     </picture>
   );
 });

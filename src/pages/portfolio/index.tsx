@@ -25,13 +25,6 @@ const nbspDivStyles = `
 export const Portfolio: React.FC<Props> = ({ published }) => {
   const [bg, setBg] = useState('');
   const [bgActive, setBgActive] = useState(false);
-  const bgImg = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (bgImg && bgImg.current) {
-      bgImg.current.src = bg;
-    }
-  }, [bg, bgImg]);
 
   return (
     <div className="w-full py-16 flex justify-center bg-no-repeat bg-cover bg-center">
@@ -41,7 +34,7 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
       <div className={
         `z-0 absolute inset-0 transition-opacity ease-in-out duration-150 ${bgActive ? 'opacity-25' : 'opacity-0'}`
       }>
-        <Image className="w-full h-full object-cover object-center" ref={bgImg} src="" alt="" />
+        <Image className="w-full h-full object-cover object-center" src={bg} alt="" height={1080} />
       </div>
       <section className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
         {published.map((series) => {

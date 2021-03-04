@@ -5,34 +5,28 @@ import imageminWebp from 'imagemin-webp';
 import fetch from 'node-fetch';
 import sizeOf from 'image-size';
 
-const nextPath = join(process.cwd(), '.next');
-const cachePath = join(nextPath, 'cache');
-const buildPath = join(cachePath, 'image-optimize-api');
+const cache = new Map<string, Buffer>();
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const height = parseInt(req.query.height as string) || 800;
   const imagePath = req.query.image as string;
-  const imageName = `${height}-${basename(imagePath)}`;
-  let outputBuffer: Buffer;
+  const imageName = `${height}-${basename(imagePath).replace(/\.(?:png|jpe?g)/i, '.webp')}`;
 
   if (!imagePath) {
     return res.status(404).end('');
   }
 
-  if (fs.existsSync(join(buildPath, imageName))) {
-    outputBuffer = fs.readFileSync(join(buildPath, imageName.replace(/\.(?:png|jpe?g)/i, '.webp')));
-    return write(res, outputBuffer);
+  if (cache.has(imageName)) {
+    return write(res, cache.get(imageName) as Buffer);
   }
 
-  mkDir();
-
   try {
-    outputBuffer = await convert(getHost(req) + imagePath, imageName, height);
+    const outputBuffer = await convert(getHost(req) + imagePath, imageName, height);
+    return write(res, outputBuffer);
   } catch (error) {
     console.log(error);
     return res.status(404).end('');
   }
-  return write(res, outputBuffer);
 }
 
 const pullFile = async (path: string): Promise<Buffer> => {
@@ -53,7 +47,7 @@ const convert = async (path: string, imageName: string, adjustHeight: number): P
     }
   });
   const outputBuffer = await converter(inputBuffer);
-  fs.writeFileSync(join(buildPath, imageName.replace(/\.(?:png|jpe?g)/i, '.webp')), outputBuffer);
+  cache.set(imageName, outputBuffer);
   return outputBuffer;
 }
 
@@ -75,16 +69,4 @@ const getHost = (req: NextApiRequest) => {
   host = `${protocol}://${host}`;
 
   return host;
-}
-
-const mkDir = () => {
-  if (!fs.existsSync(nextPath)) {
-    fs.mkdirSync(nextPath);
-  }
-  if (!fs.existsSync(cachePath)) {
-    fs.mkdirSync(cachePath);
-  }
-  if (!fs.existsSync(buildPath)) {
-    fs.mkdirSync(buildPath);
-  }
 }

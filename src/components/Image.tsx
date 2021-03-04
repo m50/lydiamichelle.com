@@ -12,11 +12,13 @@ export const Image = React.forwardRef<HTMLImageElement, ImgProps>(({ src, height
   const halfHeight = height / 2;
   const halfQuery = `${baseQuery}&height=${halfHeight}`;
 
-  return (
-    <picture className={props.className}>
-      <source media="(max-width: 799px)" srcSet={halfQuery} type="image/webp" />
-      <source media="(min-width: 800px)" srcSet={query} type="image/webp" />
-      <img loading="lazy" ref={ref} src={src} {...props} />
-    </picture>
-  );
+  return <img loading="lazy" ref={ref} src={src} {...props} />;
+
+  // return (
+  //   <picture className={props.className}>
+  //     <source media="(max-width: 799px)" srcSet={halfQuery} type="image/webp" />
+  //     <source media="(min-width: 800px)" srcSet={query} type="image/webp" />
+  //     <img loading="lazy" ref={ref} src={src} {...props} />
+  //   </picture>
+  // );
 });

@@ -5,7 +5,9 @@ import imageminWebp from 'imagemin-webp';
 import fetch from 'node-fetch';
 import sizeOf from 'image-size';
 
-const buildPath = join(process.cwd(), '.next', 'cache', 'image-optimize-api');
+const nextPath = join(process.cwd(), '.next');
+const cachePath = join(nextPath, 'cache');
+const buildPath = join(cachePath, 'image-optimize-api');
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const height = parseInt(req.query.height as string) || 800;
@@ -76,6 +78,12 @@ const getHost = (req: NextApiRequest) => {
 }
 
 const mkDir = () => {
+  if (!fs.existsSync(nextPath)) {
+    fs.mkdirSync(nextPath);
+  }
+  if (!fs.existsSync(cachePath)) {
+    fs.mkdirSync(cachePath);
+  }
   if (!fs.existsSync(buildPath)) {
     fs.mkdirSync(buildPath);
   }

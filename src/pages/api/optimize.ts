@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import imageminWebp from 'imagemin-webp';
 import fetch from 'node-fetch';
 import sizeOf from 'image-size';
+// TODO: Move optimization logic to run when building, rather than through an API.
 
 const cache = new Map<string, Buffer>();
 

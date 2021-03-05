@@ -12,6 +12,8 @@ export const Image = React.forwardRef<HTMLImageElement, ImgProps>(({ src, height
   const halfHeight = height / 2;
   const halfQuery = `${baseQuery}&height=${halfHeight}`;
 
+  // TODO: Move optimization logic to run when building, rather than through an API.
+
   return <img loading="lazy" ref={ref} src={src} {...props} />;
 
   // return (

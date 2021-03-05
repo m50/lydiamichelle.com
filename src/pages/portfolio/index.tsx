@@ -2,7 +2,7 @@ import { Image } from 'components/Image';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { getAllSeries } from '../../lib/api';
 import { Series } from '../../types/Series';
 

@@ -19,13 +19,13 @@ export const LatestSeries: React.FC<Props> = ({latestSeries, image}) => {
         </a>
       </div>
       <div className="hidden lg:block w-1/2 bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url('/api/optimize?image=${encodeURIComponent(image.image)}&height=500')` }}
+        style={{ backgroundImage: `url('${image.image}')` }}
       >
         <p className="sr-only">Background image alt-text: {image.title} in {image.medium}</p>
       </div>
 
       <div className="lg:hidden block bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: `linear-gradient( ${blk}, ${blk} ), url('/api/optimize?image=${encodeURIComponent(image.image)}&height=500')` }}
+        style={{ backgroundImage: `linear-gradient( ${blk}, ${blk} ), url('${image.image}')` }}
       >
         <div className="my-32 mx-auto text-center">
           <h2 className="uppercase tracking-wider font-thin text-theme-pink text-6xl font-serif mb-5">{latestSeries.title}</h2>

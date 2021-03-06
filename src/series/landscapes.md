@@ -6,11 +6,11 @@ published: true
 images:
   - wip: false
     title: Landscape No. 1
-    medium: Acrylics
+    medium: Oils
     image: /images/landscape1.jpg
   - wip: false
     title: Landscape No. 2
-    medium: Acrylics
+    medium: Oils
     image: /images/landscape2.jpg
   - medium: "Oils "
     wip: false

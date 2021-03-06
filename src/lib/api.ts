@@ -1,16 +1,27 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { isSeries, Series } from '../types/Series';
+import { ImageInfo, isSeries, Series } from '../types/Series';
+import { seriesDirectory } from './constants';
+import { optimizeImage } from './optimize';
+import { promisify } from 'util';
 
-const seriesDirectory = join(process.cwd(), 'src', 'series');
-
+const readFile = promisify(fs.readFile);
 export const getSeriesSlugs = () => fs.readdirSync(seriesDirectory);
 
-export function getSeriesBySlug(slug: string): Series {
+let cache: Series[] = []
+
+interface UnsettledImageInfo {
+  wip: boolean;
+  title: string;
+  medium: string;
+  image: string;
+}
+
+export async function getSeriesBySlug(slug: string): Promise<Series> {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(seriesDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = await readFile(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   data.body = content;
@@ -19,6 +30,21 @@ export function getSeriesBySlug(slug: string): Series {
     data.date_published = data.date_published.toDateString();
   }
 
+  data.images = await Promise.all(data.images.map(async (i: UnsettledImageInfo|ImageInfo): Promise<ImageInfo> => {
+    if (typeof i.image !== 'string') {
+      return i as ImageInfo;
+    }
+    return {
+      ...i,
+      image: {
+        original: i.image,
+        full: await optimizeImage(i.image, 800),
+        half: await optimizeImage(i.image, 400),
+      },
+    };
+  }));
+
+
   if (!isSeries(data)) {
     throw new Error('series undetermined . ' + JSON.stringify(data));
   }
@@ -26,11 +52,18 @@ export function getSeriesBySlug(slug: string): Series {
   return data;
 }
 
-export function getAllSeries() {
-  const slugs = getSeriesSlugs();
-  const series = slugs
-    .map((slug) => getSeriesBySlug(slug))
-    .sort((post1, post2) => (new Date(post1.date_published) > new Date(post2.date_published) ? -1 : 1));
+export async function getAllSeries() {
+  if (cache.length > 0) {
+    return cache;
+  }
+  const slugs = await getSeriesSlugs();
+  const seriesPromises = slugs
+    .map(async (slug) => await getSeriesBySlug(slug));
+
+  const series = (await Promise.all(seriesPromises))
+    .sort((series1, series2) => (new Date(series1.date_published) > new Date(series2.date_published) ? -1 : 1));
+
+  cache = series;
 
   return series;
 }

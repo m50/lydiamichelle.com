@@ -20,13 +20,13 @@ const Series: React.FC<Props> = ({ series }) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }): Promise<{ props: Props }> => {
-  const series = getSeriesBySlug(params?.slug as string);
+  const series = await getSeriesBySlug(params?.slug as string);
 
   return { props: { series } };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allSeries = getAllSeries();
+  const allSeries = await getAllSeries();
 
   return {
     paths: allSeries.map(({ slug }) => ({ params: { slug } })),

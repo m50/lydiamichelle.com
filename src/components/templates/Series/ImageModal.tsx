@@ -14,12 +14,12 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => {
     <figure className="fixed top-0 left-0 w-full h-full z-30">
       <Head>
         <title>{image.title} | Lydia Michelle Art</title>
-        <meta property="og:image" content={image.image} />
+        <meta property="og:image" content={image.image.full} />
       </Head>
       <div className="flex justify-center content-center items-center h-full px-2">
         <div className="h-auto sm:h-3/4 lg:h-auto static flex flex-col sm:flex-row md:flex-col lg:flex-row w-auto z-50 bg-theme-gray rounded-xl justify-between">
           <Image className="h-auto max-h-screen sm:h-full md:h-2/3 xl:h-auto rounded-xl"
-            src={image.image} onContextMenu={() => false} />
+            paths={image.image} onContextMenu={() => false} />
           <figcaption className="flex flex-col justify-center content-center items-center p-5">
             <cite className="capitalize text-white text-lg xl:text-3xl font-serif">
               <span className="sr-only">Piece: </span>{image.title}

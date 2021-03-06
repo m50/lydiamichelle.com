@@ -1,19 +1,25 @@
+export interface Paths {
+  original: string;
+  full: string;
+  half: string;
+}
+
 export interface ImageInfo {
-  title: string,
-  medium: string,
-  blurb?: string,
-  wip: boolean,
-  image: string,
+  title: string;
+  medium: string;
+  blurb?: string;
+  wip: boolean;
+  image: Paths;
 }
 
 export interface Series {
-  title: string,
-  slug: string,
-  excerpt: string,
-  date_published: string,
-  published: boolean,
-  body: string,
-  images: ImageInfo[]
+  title: string;
+  slug: string;
+  excerpt: string;
+  date_published: string;
+  published: boolean;
+  body: string;
+  images: ImageInfo[];
 }
 
 export const isSeries = (obj: any): obj is Series => {

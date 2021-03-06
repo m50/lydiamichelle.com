@@ -1,4 +1,3 @@
-import { Image } from 'components/Image';
 import * as React from 'react';
 import Nav from './Nav';
 
@@ -10,7 +9,7 @@ const headerClasses = `
 
 export const Header: React.FC = () => (
   <header className={headerClasses}>
-    <Image className="h-12 mb-4 md:hidden"
+    <img className="h-12 mb-4 md:hidden"
       src="/imgs/logo.png" alt="Lydia Michelle Logo"
     />
     <a className="ml-0 md:ml-20 flex flex-col md:flex-row mb-4" rel="author" href="/">

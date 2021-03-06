@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { getAllSeries } from '../../lib/api';
-import { Series } from '../../types/Series';
+import { Paths, Series } from '../../types/Series';
 
 interface Props {
   published: Series[];
@@ -23,7 +23,7 @@ const nbspDivStyles = `
 `;
 
 export const Portfolio: React.FC<Props> = ({ published }) => {
-  const [bg, setBg] = useState('');
+  const [bg, setBg] = useState<Paths>({original: '', full: '', half: ''});
   const [bgActive, setBgActive] = useState(false);
 
   return (
@@ -34,7 +34,7 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
       <div className={
         `z-0 absolute inset-0 transition-opacity ease-in-out duration-150 ${bgActive ? 'opacity-25' : 'opacity-0'}`
       }>
-        <Image className="w-full h-full object-cover object-center" src={bg} alt="" height={1080} />
+        <Image className="w-full h-full object-cover object-center" paths={bg} alt="" />
       </div>
       <section className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
         {published.map((series) => {
@@ -68,7 +68,7 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: Props }> => {
-  const published = getAllSeries().filter(series => series.published);
+  const published = (await getAllSeries()).filter(series => series.published);
 
   return { props: { published } };
 }

@@ -7,7 +7,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'Alegreya Sans SC', 'Roboto', "Helvetica Neue", "Segoe UI",
+          'Rokkitt', 'Roboto', "Helvetica Neue", "Segoe UI",
           'Arial', "Apple Color Emoji",
           "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", 'sans-serif'
         ],

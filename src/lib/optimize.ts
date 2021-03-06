@@ -32,8 +32,6 @@ export const optimizeImage = async (imagePath: string, height: Height = 800): Pr
     return '';
   }
 
-  await mkDirs(sizePath);
-
   if (await exists(buildImage)) {
     if (!(await exists(join(sizePath, basename(buildImage))))) {
       await copyFile(buildImage, join(sizePath, basename(buildImage)));
@@ -67,7 +65,7 @@ const convert = async (path: string, imageName: string, adjustHeight: Height): P
   return `/build/${adjustHeight}/${basename(outputFile)}`;
 }
 
-const mkDirs = async (sizePath: string) => {
+export const mkDirs = async () => {
   if (!fs.existsSync(nextPath)) {
     await mkdir(nextPath);
   }
@@ -81,7 +79,10 @@ const mkDirs = async (sizePath: string) => {
   if (!fs.existsSync(publicPath)) {
     await mkdir(publicPath);
   }
-  if (!fs.existsSync(sizePath)) {
-    await mkdir(sizePath);
+  if (!fs.existsSync(join(publicPath, '400'))) {
+    await mkdir(join(publicPath, '400'));
+  }
+  if (!fs.existsSync(join(publicPath, '800'))) {
+    await mkdir(join(publicPath, '800'));
   }
 }

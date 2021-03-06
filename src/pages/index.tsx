@@ -22,7 +22,7 @@ export const Home: React.FC<Props> = (props) => {
 
       <section className="bg-theme-pink px-5 py-16 md:py-32 relative select-text" aria-label="About section">
         <div className="md:mx-auto w-full md:w-2/3 lg:w-1/2 relative">
-          <h2 className="uppercase text-4xl font-serif font-thin tracking-wider">All about me</h2>
+          <h2 id="about" className="uppercase text-4xl font-serif font-thin tracking-wider">All about me</h2>
           <p className="font-serif text-2xl italic my-10">Let's move forward</p>
           <p className="font-light text-xl leading-loose">
             Hi, my name is Lydia. I am a self-taught artist from Texas.

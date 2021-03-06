@@ -1,3 +1,5 @@
+const { getRedirectStatus } = require('next/dist/lib/load-custom-routes');
+
 require('./prepare');
 
 module.exports = {
@@ -9,5 +11,12 @@ module.exports = {
 		});
 
 		return config;
-	}
+	},
+	redirects: async () => [
+		{
+			source: '/about',
+			destination: '/#about',
+			permanent: true,
+		}
+	]
 }

@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Lydia Michelle Art" />
         <meta property="og:description" content="Portfolio website for Lydia Michelle" />
         <meta property="og:image" content="https://lydiamichelle.art/imgs/logo.png" />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content="https://lydiamichelle.art/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Lydia Michelle Art" />
         <meta property="og:locale" content="en_US" />

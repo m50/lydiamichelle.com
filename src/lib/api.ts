@@ -3,7 +3,7 @@ import { join } from 'path';
 import matter from 'gray-matter';
 import { ImageInfo, isSeries, Series } from '../types/Series';
 import { seriesDirectory } from './constants';
-import { optimizeImage, mkDirs } from './optimize';
+import { optimizeImage } from './optimize';
 import { promisify } from 'util';
 
 const readFile = promisify(fs.readFile);
@@ -23,8 +23,6 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
   const fullPath = join(seriesDirectory, `${realSlug}.md`);
   const fileContents = await readFile(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
-
-  await mkDirs();
 
   data.body = content;
   data.slug = realSlug;

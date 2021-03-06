@@ -65,24 +65,3 @@ const convert = async (path: string, imageName: string, adjustHeight: Height): P
   return `/build/${adjustHeight}/${basename(outputFile)}`;
 }
 
-export const mkDirs = async () => {
-  if (!fs.existsSync(nextPath)) {
-    await mkdir(nextPath);
-  }
-  if (!fs.existsSync(cachePath)) {
-    await mkdir(cachePath);
-  }
-  if (!fs.existsSync(buildPath)) {
-    await mkdir(buildPath);
-  }
-
-  if (!fs.existsSync(publicPath)) {
-    await mkdir(publicPath);
-  }
-  if (!fs.existsSync(join(publicPath, '400'))) {
-    await mkdir(join(publicPath, '400'));
-  }
-  if (!fs.existsSync(join(publicPath, '800'))) {
-    await mkdir(join(publicPath, '800'));
-  }
-}

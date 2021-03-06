@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { email, etsy, redBubble } from '../lib/constants';
-import { ExtLink } from './styled/Links';
+import { ExtLink, IntLink } from './styled/Links';
 
 const Copy: React.FC = () => (
   <small className="text-xs text-white">
@@ -30,6 +30,9 @@ export const Footer: React.FC = () => (
         <p>
           If you would like to support me, purchase something from my <ExtLink href={redBubble}>Redbubble shop</ExtLink>
           &nbsp;or from my <ExtLink href={etsy}>Etsy!</ExtLink>
+        </p>
+        <p>
+          Or make a <IntLink href="/commissions">Comission</IntLink>!
         </p>
       </div>
       <Copy />

@@ -9,6 +9,7 @@ export const Nav: React.FC = () => (
   <nav className="mr-0 md:mr-20 text-md font-light mb-4">
     <IntLinkWhite href="/">Home</IntLinkWhite>
     <IntLinkWhite href="/portfolio">Portfolio</IntLinkWhite>
+    <IntLinkWhite href="/commissions">Commission</IntLinkWhite>
     <ExtLinkWhite href={redBubble}>
       <span className="sr-only">Shop</span>
       <ShopIcon className="inline fill-current w-5 h-5" />

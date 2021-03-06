@@ -1,11 +1,21 @@
 ---
 title: Landscapes
+excerpt: Beginning Concepts
 date_published: 2020-01-12
 published: true
-excerpt: Beginning Concepts
 images:
-  - { wip: false, title: Landscape No. 1, medium: Acrylics, image: "/images/landscape1.jpg" }
-  - { wip: false, title: Landscape No. 2, medium: Acrylics, image: "/images/landscape2.jpg" }
+  - wip: false
+    title: Landscape No. 1
+    medium: Acrylics
+    image: /images/landscape1.jpg
+  - wip: false
+    title: Landscape No. 2
+    medium: Acrylics
+    image: /images/landscape2.jpg
+  - medium: "Oils "
+    wip: false
+    title: Landscape No. 3
+    image: /images/153326325_432007354916985_83965019558356568_n.jpg
 ---
 
 # Scenery

@@ -1,6 +1,6 @@
 ---
 title: Greenly
-excerpt: A collection of natural curiosities.
+excerpt: A collection of natural curiosities. (Pre-professional)
 date_published: 2020-04-18
 published: true
 images:

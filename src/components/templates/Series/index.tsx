@@ -37,7 +37,7 @@ export const SeriesTemplate: React.FC<Series> = (series) => {
         <meta property="og:description" content={series.excerpt} />
         <meta property="og:image:height" content="400" />
         <meta property="og:type" content="article" />
-        {series.images.map((image) => (
+        {!selectedImage && series.images.map((image) => (
           <meta key={image.title} property="og:image" content={`https://lydiamichelle.art${image.image.half}`} />
         ))}
         <meta property="twitter:card" content="summary_large_image" />

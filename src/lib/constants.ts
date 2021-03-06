@@ -5,4 +5,6 @@ export const etsy = "https://www.etsy.com/shop/LydiaMichelleArts?ref=seller-plat
 export const email = "mailto:me@lydiamichelle.com";
 export const instagram = "https://instagram.com/lydiamichelle.art";
 
-export const seriesDirectory = join(process.cwd(), 'src', 'series');
+export const collectionsDir = join(process.cwd(), 'src', 'collections');
+export const seriesDir = join(process.cwd(), 'src', 'series');
+export const commissionsDir = join(collectionsDir, 'commissions');

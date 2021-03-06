@@ -6,6 +6,37 @@ media_folder: "public/images"
 public_folder: "/images"
 site_url: https://lydiamichelle.art
 collections:
+  - name: commissions
+    label: Commissions
+    folder: "src/collections/commissions"
+    extension: json
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Medium
+        name: type
+        widget: string
+      - label: Additional Info
+        name: additionalInfo
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: text }
+      - label: Work Sizes
+        name: workSizes
+        widget: list
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Price Sections
+            name: prices
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Value, name: value, widget: string}
   - name: series
     label: Series
     folder: "src/series"

@@ -2,14 +2,10 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { ImageInfo, isSeries, Series } from '../types/Series';
-import { seriesDirectory } from './constants';
+import { seriesDir, commissionsDir } from './constants';
 import { optimizeImage } from './optimize';
 import { promisify } from 'util';
-
-const readFile = promisify(fs.readFile);
-export const getSeriesSlugs = () => fs.readdirSync(seriesDirectory);
-
-let cache: Series[] = []
+import { Commission, isCommission } from 'types/Commission';
 
 interface UnsettledImageInfo {
   wip: boolean;
@@ -18,9 +14,17 @@ interface UnsettledImageInfo {
   image: string;
 }
 
+const readFile = promisify(fs.readFile);
+const readdir = promisify(fs.readdir);
+
+/*
+ * Series API
+ */
+let seriesCache: Series[] = []
+export const getSeriesSlugs = () => fs.readdirSync(seriesDir);
 export async function getSeriesBySlug(slug: string): Promise<Series> {
   const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(seriesDirectory, `${realSlug}.md`);
+  const fullPath = join(seriesDir, `${realSlug}.md`);
   const fileContents = await readFile(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
@@ -51,10 +55,9 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
 
   return data;
 }
-
 export async function getAllSeries() {
-  if (cache.length > 0) {
-    return cache;
+  if (seriesCache.length > 0) {
+    return seriesCache;
   }
   const slugs = await getSeriesSlugs();
   const seriesPromises = slugs
@@ -63,7 +66,37 @@ export async function getAllSeries() {
   const series = (await Promise.all(seriesPromises))
     .sort((series1, series2) => (new Date(series1.date_published) > new Date(series2.date_published) ? -1 : 1));
 
-  cache = series;
+  seriesCache = series;
 
   return series;
+}
+
+/*
+ * Commissions API
+ */
+let commissionCache: Commission[] = [];
+export const getCommissionSlugs = async () => await readdir(commissionsDir);
+export const getCommissionBySlug = async (slug: string): Promise<Commission> => {
+  const realSlug = slug.replace(/\.json$/, '');
+  const fullPath = join(commissionsDir, `${realSlug}.json`);
+  const fileContents = await readFile(fullPath, 'utf8');
+  const data = JSON.parse(fileContents);
+  data.slug = realSlug;
+
+  if (!isCommission(data)) {
+    throw new Error('commission undetermined . ' + JSON.stringify(data));
+  }
+
+  return data;
+}
+export const getAllCommissions = async () => {
+  if (commissionCache.length > 0) {
+    return commissionCache;
+  }
+  const slugs = await getCommissionSlugs();
+  commissionCache = await Promise.all(
+    slugs.map(async (slug) => await getCommissionBySlug(slug))
+  );
+
+  return commissionCache;
 }

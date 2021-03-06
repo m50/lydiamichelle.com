@@ -14,6 +14,7 @@ export const Home: React.FC<Props> = (props) => {
     <div>
       <Head>
         <title>Lydia Michelle Art</title>
+        <meta property="og:image" content="https://lydiamichelle.art/imgs/logo.png" />
       </Head>
       <section className="bg-theme-gray flex flex-col-reverse lg:flex-row" aria-label="Latest Series section">
         <LatestSeries {...props} />

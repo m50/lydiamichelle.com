@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const wrapperClasses = "flex flex-col justify-between min-h-screen text-theme-gray";
 export const DefaultTemplate: React.FC<React.PropsWithChildren<any>> = ({children}) => (

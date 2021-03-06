@@ -2,7 +2,7 @@ import * as React from 'react';
 import '../styles/tailwind.css'
 import '../styles/colorful.css'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
-import DefaultTemplate from '../components/templates/Default';
+import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {

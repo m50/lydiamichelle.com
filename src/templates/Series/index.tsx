@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ImageInfo, Series } from '../../../types/Series';
+import { ImageInfo, Series } from '../../types/Series';
 import Head from 'next/head';
 import Header from './Header';
 import Body from './Body';

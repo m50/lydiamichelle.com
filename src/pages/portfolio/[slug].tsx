@@ -4,7 +4,7 @@ import ErrorPage from 'next/error';
 import * as React from 'react';
 import { getAllSeries, getSeriesBySlug } from '../../lib/api';
 import { Series as SeriesType } from '../../types/Series';
-import SeriesTemplate from '../../components/templates/Series';
+import SeriesTemplate from '../../templates/Series';
 
 interface Props {
   series: SeriesType;

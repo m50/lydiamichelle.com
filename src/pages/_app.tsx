@@ -26,6 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:site_name" content="Lydia Michelle Art" />
         <meta property="og:locale" content="en_US" />
         <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@LydiaBu63687088" />
+        <meta property="twitter:creator" content="@LydiaBu63687088" />
       </Head>
       <Component {...pageProps} />
     </DefaultTemplate>

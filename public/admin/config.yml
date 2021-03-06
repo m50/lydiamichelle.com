@@ -16,7 +16,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Excerpt", name: "excerpt", widget: "string" }
       - { label: "Date Published", name: "date_published", widget: "datetime" }
-      - { label: "Is Published", name: "published", widget: "boolean" }
+      - { label: "Is Published", name: "published", widget: "boolean", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
       - label: Gallery
         name: images

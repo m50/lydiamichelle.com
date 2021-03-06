@@ -13,7 +13,7 @@ export const ExtLink: React.FC<P> = ({ href, children, newTab = true }) => (
 );
 export const ExtLinkWhite: React.FC<P> = ({ href, children, newTab = true }) => (
   <a {...(newTab ? { target: "_blank" } : {})}
-    className="text-theme-white hover:text-theme-pink mx-2"
+    className="text-white hover:text-theme-pink mx-2"
     href={href}>{children}</a>
 );
 
@@ -24,6 +24,6 @@ export const IntLink: React.FC<LinkProps> = ({ children, ...linkProps }) => (
 );
 export const IntLinkWhite: React.FC<LinkProps> = ({ children, ...linkProps }) => (
   <Link {...linkProps}>
-    <a className="text-theme-white hover:text-theme-pink mx-2">{children}</a>
+    <a className="text-white hover:text-theme-pink mx-2">{children}</a>
   </Link>
 );

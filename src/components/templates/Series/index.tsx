@@ -33,7 +33,18 @@ export const SeriesTemplate: React.FC<Series> = (series) => {
     <article className="h-full">
       <Head>
         <title>{series.title} | Lydia Michelle Art</title>
-        <meta property="og:image" content={series.images[0]?.image.full} />
+        <meta property="og:title" content={series.title} />
+        <meta property="og:description" content={series.excerpt} />
+        <meta property="og:image:height" content="400" />
+        <meta property="og:type" content="article" />
+        {series.images.map((image) => (
+          <meta property="og:image" content={`https://lydiamichelle.art${image.image.half}`} />
+        ))}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content={series.images[0].image.half} />
+        <meta property="twitter:image:alt"
+          content={series.images[0].title + " - " + (series.images[0].blurb || series.images[0].medium)}
+        />
       </Head>
       <Header {...series} />
       <Body content={series.body} />

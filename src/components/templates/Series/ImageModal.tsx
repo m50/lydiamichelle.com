@@ -14,7 +14,13 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => {
     <figure className="fixed top-0 left-0 w-full h-full z-30">
       <Head>
         <title>{image.title} | Lydia Michelle Art</title>
-        <meta property="og:image" content={image.image.full} />
+        <meta property="og:title" content={image.title} />
+        <meta property="og:description" content={image.blurb || image.medium} />
+        <meta property="twitter:image:alt" content={image.title + " - " + (image.blurb || image.medium)} />
+        <meta property="og:image" content={`https://lydiamichelle.art${image.image.half}`} />
+        <meta property="og:image:height" content="400" />
+        <meta property="og:type" content="website" />
+        <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <div className="flex justify-center content-center items-center h-full px-2">
         <div className="h-auto sm:h-3/4 lg:h-auto static flex flex-col sm:flex-row md:flex-col lg:flex-row w-auto z-50 bg-theme-gray rounded-xl justify-between">

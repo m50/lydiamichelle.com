@@ -29,7 +29,7 @@ export const Footer: React.FC = () => (
         <p>You can contact me at my <a className="text-theme-pink hover:underline" href={email}>email.</a></p>
         <p>
           If you would like to support me, purchase something from my <ExtLink href={redBubble}>Redbubble shop</ExtLink>
-          or from my <ExtLink href={etsy}>Etsy!</ExtLink>
+          &nbsp;or from my <ExtLink href={etsy}>Etsy!</ExtLink>
         </p>
       </div>
       <Copy />

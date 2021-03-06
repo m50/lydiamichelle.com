@@ -15,10 +15,10 @@ const CommissionContact: React.FC<Props> = ({ commission }) => {
     const formData = new FormData(e.target as HTMLFormElement);
     fetch('/', {
       method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: { "Content-Type": "multipart/form-data" },
       body: new URLSearchParams(formData as any).toString(),
     }).then((res) => {
-
+      console.log('Form successfully submitted');
     });
   }
 

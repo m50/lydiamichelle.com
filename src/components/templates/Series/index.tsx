@@ -41,7 +41,7 @@ export const SeriesTemplate: React.FC<Series> = (series) => {
           <meta key={image.title} property="og:image" content={`https://lydiamichelle.art${image.image.half}`} />
         ))}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content={series.images[0].image.half} />
+        <meta property="twitter:image" content={'https://lydiamichelle.art' + series.images[0].image.half} />
         <meta property="twitter:image:alt"
           content={series.images[0].title + " - " + (series.images[0].blurb || series.images[0].medium)}
         />

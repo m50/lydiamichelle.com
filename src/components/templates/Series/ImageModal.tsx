@@ -18,6 +18,7 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => {
         <meta property="og:description" content={image.blurb || image.medium} />
         <meta property="twitter:image:alt" content={image.title + " - " + (image.blurb || image.medium)} />
         <meta property="og:image" content={`https://lydiamichelle.art${image.image.half}`} />
+        <meta property="twitter:image" content={`https://lydiamichelle.art${image.image.half}`} />
         <meta property="og:image:height" content="400" />
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />

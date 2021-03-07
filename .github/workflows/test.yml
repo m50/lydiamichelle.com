@@ -2,6 +2,32 @@ on: pull_request
 name: Test
 
 jobs:
+  unit:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install Modules
+        run: yarn
+      - name: Run Tests
+        run: yarn test
+
+  lint:
+    name: Lint TS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install Modules
+        run: yarn
+      - name: Run Tests
+        run: yarn lint
+
   build:
     name: Validate Build
     runs-on: ubuntu-latest

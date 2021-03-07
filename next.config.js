@@ -29,4 +29,11 @@ module.exports = {
 
 		return config;
 	},
+  redirects: async () => [
+    {
+      source: '/about',
+      destination: '/#about',
+      permanent: true,
+    },
+  ],
 };

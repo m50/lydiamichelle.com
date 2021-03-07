@@ -9,9 +9,14 @@ interface Props {
   commission: Commission;
 }
 
+const sectionClassNames = `
+  bg-black py-20 text-white flex flex-col
+  justify-center content-center items-center text-center
+`;
+
 const CommissionContact: React.FC<Props> = ({ commission }) => (
   <div>
-    <section className="bg-black py-20 text-white flex flex-col justify-center content-center items-center">
+    <section className={sectionClassNames}>
       <p className="text-4xl mb-4">
         If you would like to place an order, you can contact me on my
         <ExtLink href={instagram}><InstaIcon className="inline fill-current w-8 h-8" /> Instagram</ExtLink>.

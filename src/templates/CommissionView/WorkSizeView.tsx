@@ -10,7 +10,7 @@ export const WorkSizeView: React.FC<WorkSize> = ({ title, prices }) => (
       {prices.map((price, idx) => (
         <div key={idx} className="w-full flex justify-between px-2">
           <p>{price.title}</p>
-          <p>{price.value}</p>
+          <p className="uppercase">{price.value}</p>
         </div>
       ))}
     </section>

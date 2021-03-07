@@ -35,6 +35,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'react/no-array-index-key': 'off',
+    'object-curly-newline': 'off',
     'jsx-a11y/anchor-is-valid': 'off', // invalid - <Link> autopasses href
     'max-len': ['error', { code: 120 }],
     'jsx-a11y/click-events-have-key-events': ['warn'],

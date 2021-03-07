@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { LatestSeries } from '../components/LatestSeries';
 import { getAllSeries } from '../lib/node-only/api';
 import { ImageInfo, Series } from '../types/Series';
+import PaperSection from 'components/styled/PaperSection';
 
 interface Props {
   latestSeries: Series;
@@ -38,11 +39,7 @@ export const Home: React.FC<Props> = (props) => (
       </div>
     </section>
 
-    <section className="bg-white sm:pt-40 lg:py-40 relative select-text" aria-label="A favourite quote section">
-      <img
-        className="absolute opacity-25 top-0 left-0 w-full h-full object-cover object-center select-none"
-        src="/imgs/grunge-paper-texture.jpg" alt="" unselectable="on" aria-hidden="true"
-      />
+    <PaperSection className="sm:pt-40 lg:py-40 select-text" aria-label="A favourite quote section">
       <div className={'w-full md:w-2/3 2xl:w-1/2 mx-auto flex items-center'
         + ' content-center flex-col-reverse lg:flex-row relative z-10'}
       >
@@ -60,7 +57,7 @@ export const Home: React.FC<Props> = (props) => (
           alt="Levi - Graphite and ink"
         />
       </div>
-    </section>
+    </PaperSection>
   </div>
 );
 

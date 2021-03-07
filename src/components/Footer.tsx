@@ -10,8 +10,18 @@ const Copy: React.FC = () => (
       with love for Lydia Michelle Clardy
     </p>
     <p>
-      Icons made by <a className="hover:text-theme-pink hover:underline" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
-      from <a className="hover:text-theme-pink hover:underline" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      Icons made by
+      <a className="hover:text-theme-pink hover:underline"
+        href="https://www.flaticon.com/authors/freepik" title="Freepik"
+      >
+        Freepik
+      </a>
+      from
+      <a className="hover:text-theme-pink hover:underline"
+        href="https://www.flaticon.com/" title="Flaticon"
+      >
+        www.flaticon.com
+      </a>
     </p>
   </small>
 );

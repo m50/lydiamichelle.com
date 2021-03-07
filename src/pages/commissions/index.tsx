@@ -10,17 +10,17 @@ interface Props {
 
 export const Commissions: React.FC<Props> = ({ firstCommission }) => {
   useEffect(() => {
-    window.location.href += '/' + firstCommission.slug;
+    window.location.href += `/${firstCommission.slug}`;
   }, []);
   return (
     <CommissionContact commission={firstCommission} />
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }): Promise<{ props: Props }> => {
+export const getStaticProps: GetStaticProps = async (): Promise<{ props: Props }> => {
   const allCommissions = await getAllCommissions();
 
   return { props: { firstCommission: allCommissions[0] } };
-}
+};
 
 export default Commissions;

@@ -35,7 +35,7 @@ export const Commissions: React.FC<Props> = ({ commission, allCommissions, curre
   }, [allCommissions, currentIdx]);
 
   if (!router.isFallback && !commission?.slug) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
   return (
     <div className="h-full flex flex-col">
@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async ({ params }): Promise<{ prop
   const currentIdx = allCommissions.findIndex((c) => c.slug === commission.slug);
 
   return { props: { commission, allCommissions, currentIdx } };
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allCommissions = await getAllCommissions();
@@ -72,7 +72,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: allCommissions.map(({ slug }) => ({ params: { slug } })),
     fallback: false,
-  }
-}
+  };
+};
 
 export default Commissions;

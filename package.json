@@ -6,8 +6,9 @@
     "build": "next build && next export",
     "start": "next dev",
     "test": "jest",
-    "lint": "eslint ./src/**/*.tsx ./src/**/*.ts --ignore-path .gitignore --ignore-path .eslintignore",
-    "lint:fix": "yarn lint --fix"
+    "lint": "eslint **/*.ts **/*.tsx",
+    "lint:fix": "yarn lint --fix",
+    "lint:ci": "yarn lint --quiet"
   },
   "dependencies": {
     "insights-js": "^1.2.10",

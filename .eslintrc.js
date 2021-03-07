@@ -18,28 +18,34 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 12,
   },
   plugins: [
     'react',
     '@typescript-eslint',
   ],
   rules: {
+    'react/destructuring-assignment': 'off',
     'react/jsx-first-prop-new-line': 'off',
-    'no-use-before-define': 'off',
-    'no-unused-vars': 'off',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-max-props-per-line': 'off',
     'import/no-named-as-default': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'no-unused-vars': 'off',
+    'no-use-before-define': 'off',
+    'react/no-array-index-key': 'off',
+    'jsx-a11y/anchor-is-valid': 'off', // invalid - <Link> autopasses href
+    'max-len': ['error', { code: 120 }],
+    'jsx-a11y/click-events-have-key-events': ['warn'],
+    'jsx-a11y/no-static-element-interactions': ['warn'],
+    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-use-before-define': ['error'],
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: ['**/*.test.*', './lib/node-only/*'],
       optionalDependencies: false,
       peerDependencies: false,
     }],
-    '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/no-use-before-define': ['error'],
     'react/no-unescaped-entities': ['error', { forbid: ['>', '}'] }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
     'import/no-unresolved': 'error',
@@ -66,4 +72,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ['**/*.d.ts'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
+  ],
 };

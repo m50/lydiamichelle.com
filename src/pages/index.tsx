@@ -43,7 +43,9 @@ export const Home: React.FC<Props> = (props) => (
         className="absolute opacity-25 top-0 left-0 w-full h-full object-cover object-center select-none"
         src="/imgs/grunge-paper-texture.jpg" alt="" unselectable="on" aria-hidden="true"
       />
-      <div className="w-full md:w-2/3 2xl:w-1/2 mx-auto flex items-center content-center flex-col-reverse lg:flex-row relative z-10">
+      <div className={'w-full md:w-2/3 2xl:w-1/2 mx-auto flex items-center'
+        + ' content-center flex-col-reverse lg:flex-row relative z-10'}
+      >
         <blockquote className="md:w-1/2 lg:mr-24 my-24 lg:my-auto text-center lg:text-left px-5 sm:px-0">
           <p className="mb-12 text-2xl font-serif">
             "I think it would be well, and proper, and obedient, and pure,

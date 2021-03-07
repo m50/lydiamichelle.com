@@ -12,7 +12,9 @@ export const LatestSeries: React.FC<Props> = ({ latestSeries, image }) => {
   return (
     <>
       <div className="hidden lg:block my-64 mx-auto text-center">
-        <h2 className="uppercase tracking-widest font-thin text-theme-pink text-6xl font-serif mb-5">{latestSeries.title}</h2>
+        <h2 className="uppercase tracking-widest font-thin text-theme-pink text-6xl font-serif mb-5">
+          {latestSeries.title}
+        </h2>
         <p className="text-white mb-16 font-thin">{latestSeries.excerpt}</p>
         <a className="text-theme-pink hover:underline" href={`portfolio/${latestSeries.slug}`}>
           {latestSeries.title} Series
@@ -30,9 +32,13 @@ export const LatestSeries: React.FC<Props> = ({ latestSeries, image }) => {
         style={{ backgroundImage: `linear-gradient( ${blk}, ${blk} ), url('${image.image.half}')` }}
       >
         <div className="my-32 mx-auto text-center">
-          <h2 className="uppercase tracking-wider font-thin text-theme-pink text-6xl font-serif mb-5">{latestSeries.title}</h2>
+          <h2 className="uppercase tracking-wider font-thin text-theme-pink text-6xl font-serif mb-5">
+            {latestSeries.title}
+          </h2>
           <p className="text-white mb-16 font-thin">{latestSeries.excerpt}</p>
-          <a className="text-theme-pink hover:underline" href={`/portfolio/${latestSeries.slug}`}>{latestSeries.title} Series</a>
+          <a className="text-theme-pink hover:underline" href={`/portfolio/${latestSeries.slug}`}>
+            {latestSeries.title} Series
+          </a>
         </div>
         <p className="sr-only">Background image alt-text: {image.title} in {image.medium}</p>
       </div>

@@ -23,7 +23,7 @@ const nbspDivStyles = `
 `;
 
 export const Portfolio: React.FC<Props> = ({ published }) => {
-  const [bg, setBg] = useState<Paths>({original: '', full: '', half: ''});
+  const [bg, setBg] = useState<Paths>({ original: '', full: '', half: '' });
   const [bgActive, setBgActive] = useState(false);
 
   return (
@@ -34,7 +34,8 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
       </Head>
       <div className={
         `z-0 absolute inset-0 transition-opacity ease-in-out duration-150 ${bgActive ? 'opacity-25' : 'opacity-0'}`
-      }>
+      }
+      >
         <Image className="w-full h-full object-cover object-center" paths={bg} alt="" />
       </div>
       <section className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
@@ -45,7 +46,7 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
               setBgActive(true);
               setBg(image.image);
             }
-          }
+          };
           return (
             <Link href={`portfolio/${series.slug}`} key={series.slug}>
               <a className={anchorStyles}
@@ -69,9 +70,9 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: Props }> => {
-  const published = (await getAllSeries()).filter(series => series.published);
+  const published = (await getAllSeries()).filter((series) => series.published);
 
   return { props: { published } };
-}
+};
 
 export default Portfolio;

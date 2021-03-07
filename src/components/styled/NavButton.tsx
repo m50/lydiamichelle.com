@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 
-
 interface NavArrowProps extends React.PropsWithChildren<any> {
   to: string;
   className?: string;
@@ -16,7 +15,7 @@ const arrowLinkClasses = `
 `;
 
 const NavArrow: React.FC<NavArrowProps> = (props) => (
-  <div className={"justify-center content-center " + props.className}>
+  <div className={`justify-center content-center ${props.className}`}>
     <Link href={props.to}>
       <a className={arrowLinkClasses}>{props.children}</a>
     </Link>

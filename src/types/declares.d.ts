@@ -1,5 +1,3 @@
-import type React from 'react';
-
 declare module 'remark-gemoji';
 
 declare module '*.svg' {

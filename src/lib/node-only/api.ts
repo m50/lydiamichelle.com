@@ -2,10 +2,10 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { ImageInfo, isSeries, Series } from 'types/Series';
-import { seriesDir, commissionsDir } from '../constants';
-import { optimizeImage } from './optimize';
 import { promisify } from 'util';
 import { Commission, isCommission } from 'types/Commission';
+import { seriesDir, commissionsDir } from '../constants';
+import { optimizeImage } from './optimize';
 
 interface UnsettledImageInfo {
   wip: boolean;
@@ -16,7 +16,6 @@ interface UnsettledImageInfo {
 
 const readFile = promisify(fs.readFile);
 const readdir = promisify(fs.readdir);
-
 
 /*
  * Series API
@@ -40,23 +39,24 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
     data.date_published = data.date_published.toDateString();
   }
 
-  data.images = await Promise.all(data.images.map(async (i: UnsettledImageInfo|ImageInfo): Promise<ImageInfo> => {
-    if (typeof i.image !== 'string') {
-      return i as ImageInfo;
-    }
-    return {
-      ...i,
-      image: {
-        original: i.image,
-        full: await optimizeImage(i.image, 800),
-        half: await optimizeImage(i.image, 400),
-      },
-    };
-  }));
-
+  data.images = await Promise.all(
+    data.images.map(async (i: UnsettledImageInfo | ImageInfo): Promise<ImageInfo> => {
+      if (typeof i.image !== 'string') {
+        return i as ImageInfo;
+      }
+      return {
+        ...i,
+        image: {
+          original: i.image,
+          full: await optimizeImage(i.image, 800),
+          half: await optimizeImage(i.image, 400),
+        },
+      };
+    }),
+  );
 
   if (!isSeries(data)) {
-    throw new Error('series undetermined . ' + JSON.stringify(data));
+    throw new Error(`series undetermined . ${JSON.stringify(data)}`);
   }
 
   seriesCache.push(data);
@@ -69,7 +69,7 @@ export async function getAllSeries() {
   }
   const slugs = await getSeriesSlugs();
   const seriesPromises = slugs
-    .map(async (slug) => await getSeriesBySlug(slug));
+    .map(async (slug) => getSeriesBySlug(slug));
 
   const series = (await Promise.all(seriesPromises))
     .sort((series1, series2) => (new Date(series1.date_published) > new Date(series2.date_published) ? -1 : 1));
@@ -83,7 +83,7 @@ export async function getAllSeries() {
  * Commissions API
  */
 let commissionCache: Commission[] = [];
-export const getCommissionSlugs = async () => await readdir(commissionsDir);
+export const getCommissionSlugs = async () => readdir(commissionsDir);
 export const getCommissionBySlug = async (slug: string): Promise<Commission> => {
   const cacheIndex = seriesCache.findIndex((s) => s.slug === slug);
   if (cacheIndex >= 0) {
@@ -97,21 +97,21 @@ export const getCommissionBySlug = async (slug: string): Promise<Commission> => 
   data.slug = realSlug;
 
   if (!isCommission(data)) {
-    throw new Error('commission undetermined . ' + JSON.stringify(data));
+    throw new Error(`commission undetermined . ${JSON.stringify(data)}`);
   }
 
   commissionCache.push(data);
 
   return data;
-}
+};
 export const getAllCommissions = async () => {
   if (commissionCache.length > 0) {
     return commissionCache;
   }
   const slugs = await getCommissionSlugs();
   commissionCache = await Promise.all(
-    slugs.map(async (slug) => await getCommissionBySlug(slug))
+    slugs.map(async (slug) => getCommissionBySlug(slug)),
   );
 
   return commissionCache;
-}
+};

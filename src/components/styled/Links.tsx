@@ -44,11 +44,11 @@ export const ExtLinkWhite: React.FC<P> = ({ href, children, newTab = true }) => 
 
 export const IntLink: React.FC<LinkProps> = ({ children, ...linkProps }) => (
   <Link {...linkProps}>
-    <a className="text-theme-pink hover:underline mx-2">{children}</a>
+    <a className="text-theme-pink hover:underline mx-2 cursor-pointer">{children}</a>
   </Link>
 );
 export const IntLinkWhite: React.FC<LinkProps> = ({ children, ...linkProps }) => (
   <Link {...linkProps}>
-    <a className="text-white hover:text-theme-pink mx-2">{children}</a>
+    <a className="text-white hover:text-theme-pink mx-2 cursor-pointer">{children}</a>
   </Link>
 );

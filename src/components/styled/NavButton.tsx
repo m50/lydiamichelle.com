@@ -15,7 +15,7 @@ const arrowLinkClasses = `
 `;
 
 const NavArrow: React.FC<NavArrowProps> = ({ className, to, children }) => (
-  <div className={`justify-center content-center ${className}`}>
+  <div className={`justify-center content-center cursor-pointer ${className}`}>
     <Link href={to}>
       <a href={to} className={arrowLinkClasses}>{children}</a>
     </Link>

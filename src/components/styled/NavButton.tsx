@@ -14,10 +14,10 @@ const arrowLinkClasses = `
   hover:bg-opacity-40 hover:shadow-lg
 `;
 
-const NavArrow: React.FC<NavArrowProps> = (props) => (
-  <div className={`justify-center content-center ${props.className}`}>
-    <Link href={props.to}>
-      <a className={arrowLinkClasses}>{props.children}</a>
+const NavArrow: React.FC<NavArrowProps> = ({ className, to, children }) => (
+  <div className={`justify-center content-center ${className}`}>
+    <Link href={to}>
+      <a href={to} className={arrowLinkClasses}>{children}</a>
     </Link>
   </div>
 );

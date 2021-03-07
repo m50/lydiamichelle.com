@@ -64,7 +64,7 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
   return data;
 }
 export async function getAllSeries() {
-  if (seriesCache.length > 0) {
+  if (seriesCache.length >= (await getSeriesSlugs()).length) {
     return seriesCache;
   }
   const slugs = await getSeriesSlugs();
@@ -105,7 +105,7 @@ export const getCommissionBySlug = async (slug: string): Promise<Commission> => 
   return data;
 };
 export const getAllCommissions = async () => {
-  if (commissionCache.length > 0) {
+  if (commissionCache.length >= (await getCommissionSlugs()).length) {
     return commissionCache;
   }
   const slugs = await getCommissionSlugs();

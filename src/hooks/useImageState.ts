@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import type { ImageInfo, Series } from 'types/Series';
 import { slug } from 'lib/helpers';
 
@@ -21,16 +21,17 @@ const useImageState = (series: Series): Ret => {
     }
   }, [series.images]);
 
-  const onImageClick = (image: ImageInfo) => {
+  const onImageClick = useCallback((image: ImageInfo) => {
     const imageSlug = slug(image.title);
     window.location.hash = `#${imageSlug}`;
     setSelectedImage(image);
-  };
-  const onOutsideClick = () => {
+  }, []);
+
+  const onOutsideClick = useCallback(() => {
     setSelectedImage(null);
     window.history.pushState('', document.title,
       window.location.pathname + window.location.search);
-  };
+  }, []);
 
   return { selectedImage, onImageClick, onOutsideClick };
 };

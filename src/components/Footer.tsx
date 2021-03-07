@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { email, etsy, redBubble } from '../lib/constants';
 import { ExtLink, IntLink } from './styled/Links';
 
@@ -28,7 +28,8 @@ export const Footer: React.FC = () => (
       <div className="text-xl font-serif italic mb-10 md:mb-20">
         <p>You can contact me at my <a className="text-theme-pink hover:underline" href={email}>email.</a></p>
         <p>
-          If you would like to support me, purchase something from my <ExtLink href={redBubble}>Redbubble shop</ExtLink>
+          If you would like to support me, purchase something from my
+          <ExtLink href={redBubble}>Redbubble shop</ExtLink>
           &nbsp;or from my <ExtLink href={etsy}>Etsy!</ExtLink>
         </p>
         <p>

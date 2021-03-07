@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageInfo } from '../../types/Series';
+import type { ImageInfo } from 'types/Series';
 import Head from 'next/head';
 import { Image } from 'components/Image';
 

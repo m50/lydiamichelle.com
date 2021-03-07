@@ -6,7 +6,7 @@ interface Props {
   image: ImageInfo;
 }
 
-export const LatestSeries: React.FC<Props> = ({latestSeries, image}) => {
+export const LatestSeries: React.FC<Props> = ({ latestSeries, image }) => {
   const blk = 'rgba(0, 0, 0, 0.4)';
 
   return (
@@ -18,13 +18,15 @@ export const LatestSeries: React.FC<Props> = ({latestSeries, image}) => {
           {latestSeries.title} Series
         </a>
       </div>
-      <div className="hidden lg:block w-1/2 bg-center bg-no-repeat bg-cover"
+      <div
+        className="hidden lg:block w-1/2 bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: `url('${image.image.full}')` }}
       >
         <p className="sr-only">Background image alt-text: {image.title} in {image.medium}</p>
       </div>
 
-      <div className="lg:hidden block bg-center bg-no-repeat bg-cover"
+      <div
+        className="lg:hidden block bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: `linear-gradient( ${blk}, ${blk} ), url('${image.image.half}')` }}
       >
         <div className="my-32 mx-auto text-center">
@@ -36,4 +38,6 @@ export const LatestSeries: React.FC<Props> = ({latestSeries, image}) => {
       </div>
     </>
   );
-}
+};
+
+export default LatestSeries;

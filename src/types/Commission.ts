@@ -21,11 +21,9 @@ export interface Commission {
   workSizes: WorkSize[];
 }
 
-export const isCommission = (obj: any): obj is Commission => {
-  return typeof obj.title === 'string' &&
-    typeof obj.slug === 'string' &&
-    typeof obj.additionalInfo === 'object' &&
-    typeof obj.additionalInfo?.title === 'string' &&
-    typeof obj.additionalInfo?.body === 'string' &&
-    Array.isArray(obj.workSizes);
-}
+export const isCommission = (obj: any): obj is Commission => typeof obj.title === 'string'
+    && typeof obj.slug === 'string'
+    && typeof obj.additionalInfo === 'object'
+    && typeof obj.additionalInfo?.title === 'string'
+    && typeof obj.additionalInfo?.body === 'string'
+    && Array.isArray(obj.workSizes);

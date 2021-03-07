@@ -1,8 +1,8 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { ImageInfo, isSeries, Series } from '../types/Series';
-import { seriesDir, commissionsDir } from './constants';
+import { ImageInfo, isSeries, Series } from 'types/Series';
+import { seriesDir, commissionsDir } from '../constants';
 import { optimizeImage } from './optimize';
 import { promisify } from 'util';
 import { Commission, isCommission } from 'types/Commission';
@@ -17,12 +17,18 @@ interface UnsettledImageInfo {
 const readFile = promisify(fs.readFile);
 const readdir = promisify(fs.readdir);
 
+
 /*
  * Series API
  */
-let seriesCache: Series[] = []
+let seriesCache: Series[] = [];
 export const getSeriesSlugs = () => fs.readdirSync(seriesDir);
 export async function getSeriesBySlug(slug: string): Promise<Series> {
+  const cacheIndex = seriesCache.findIndex((s) => s.slug === slug);
+  if (cacheIndex >= 0) {
+    return seriesCache[cacheIndex];
+  }
+
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(seriesDir, `${realSlug}.md`);
   const fileContents = await readFile(fullPath, 'utf8');
@@ -53,6 +59,8 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
     throw new Error('series undetermined . ' + JSON.stringify(data));
   }
 
+  seriesCache.push(data);
+
   return data;
 }
 export async function getAllSeries() {
@@ -77,6 +85,11 @@ export async function getAllSeries() {
 let commissionCache: Commission[] = [];
 export const getCommissionSlugs = async () => await readdir(commissionsDir);
 export const getCommissionBySlug = async (slug: string): Promise<Commission> => {
+  const cacheIndex = seriesCache.findIndex((s) => s.slug === slug);
+  if (cacheIndex >= 0) {
+    return commissionCache[cacheIndex];
+  }
+
   const realSlug = slug.replace(/\.json$/, '');
   const fullPath = join(commissionsDir, `${realSlug}.json`);
   const fileContents = await readFile(fullPath, 'utf8');
@@ -86,6 +99,8 @@ export const getCommissionBySlug = async (slug: string): Promise<Commission> => 
   if (!isCommission(data)) {
     throw new Error('commission undetermined . ' + JSON.stringify(data));
   }
+
+  commissionCache.push(data);
 
   return data;
 }

@@ -1,6 +1,6 @@
 import { Image } from 'components/Image';
+import { slug } from 'lib/helpers';
 import React from 'react';
-import slugify from 'slugify';
 import { ImageInfo } from 'types/Series';
 
 interface Props {
@@ -16,10 +16,10 @@ const captionClasses = `
 
 export const DisplayImage: React.FC<Props> = ({ image, onImageClick }) => {
   {
-    const slug = slugify(image.title, { lower: true, strict: true, locale: 'en' });
+    const imageSlug = slug(image.title);
     return (
       <div>
-        <a onClick={() => onImageClick(image)} href={`#${slug}`}>
+        <a onClick={() => onImageClick(image)} href={`#${imageSlug}`}>
           <figure className="relative w-full h-88 md:h-64 2xl:h-88 rounded-xl overflow-hidden">
             <Image className="h-full w-full object-cover object-center rounded-xl"
               paths={image.image} alt={image.title} loading="lazy" height={400} />

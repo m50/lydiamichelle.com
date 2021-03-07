@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllCommissions, getCommissionBySlug } from 'lib/api';
+import { getAllCommissions, getCommissionBySlug } from 'lib/node-only/api';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';

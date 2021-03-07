@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getAllCommissions } from 'lib/api';
+import { getAllCommissions } from 'lib/node-only/api';
 import { GetStaticProps } from 'next';
 import { Commission } from 'types/Commission';
 import CommissionContact from 'components/CommissionContact';

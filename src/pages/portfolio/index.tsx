@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { getAllSeries } from '../../lib/api';
+import { getAllSeries } from '../../lib/node-only/api';
 import { Paths, Series } from '../../types/Series';
 
 interface Props {

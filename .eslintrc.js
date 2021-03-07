@@ -25,6 +25,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'react/jsx-first-prop-new-line': 'off',
     'no-use-before-define': 'off',
     'no-unused-vars': 'off',
     'react/prop-types': 'off',

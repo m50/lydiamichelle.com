@@ -36,7 +36,8 @@ const CommissionContact: React.FC<Props> = ({ commission }) => {
         <img className="absolute opacity-25 top-0 left-0 w-full h-full object-cover object-center select-none"
           src="/imgs/grunge-paper-texture.jpg" alt="" unselectable="on" aria-hidden="true" />
         <div className="w-full md:w-2/3 2xl:w-1/2 mx-auto flex items-center content-center flex-col-reverse lg:flex-row relative z-10">
-          <form name="commission-contact" data-netlify="true" onSubmit={formSubmit}>
+          <form name="commission-contact" data-netlify="true" method="POST" onSubmit={formSubmit}>
+            <input type="hidden" name="commission-contact" value="contact" />
           </form>
         </div>
       </section>

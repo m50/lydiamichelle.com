@@ -1,10 +1,10 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import PaperSection from 'components/styled/PaperSection';
 import { LatestSeries } from '../components/LatestSeries';
 import { getAllSeries } from '../lib/node-only/api';
 import { ImageInfo, Series } from '../types/Series';
-import PaperSection from 'components/styled/PaperSection';
 
 interface Props {
   latestSeries: Series;

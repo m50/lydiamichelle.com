@@ -4,8 +4,7 @@ const { SENTRY_ORG, SENTRY_PROJECT, SENTRY_AUTH_TOKEN, NODE_ENV } = process.env;
 require('./prepare');
 
 module.exports = {
-	env = {
-		NODE_ENV: process.env.NODE_ENV,
+	env: {
 		RELEASE: process.env.DEPLOY_PRIME_URL,
 	},
 	webpack: (config) => {

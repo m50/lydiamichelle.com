@@ -5,9 +5,9 @@ import { AppProps } from 'next/dist/next-server/lib/router/router'
 import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
 import { init as sentry } from "@sentry/react";
-import { init as insight, trackPages } from "insights-js";
-import { isClientSide, isProduction } from 'lib/helpers';
 import { Integrations } from "@sentry/tracing";
+import { init as insight, trackPages, DEFAULT_APP } from "insights-js";
+import { isClientSide, isProduction } from 'lib/helpers';
 
 sentry({
   enabled: process.env.NODE_ENV === 'production',
@@ -18,11 +18,11 @@ sentry({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  if (process.env.INSIGHTS_KEY && isProduction && isClientSide ) {
+  if (process.env.INSIGHTS_KEY && isProduction() && isClientSide()) {
     insight(process.env.INSIGHTS_KEY, { ignoreErrors: true });
     trackPages();
   }
-  
+
   return (
     <DefaultTemplate>
       <Head>

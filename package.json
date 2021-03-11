@@ -7,6 +7,8 @@
     "start": "next dev"
   },
   "dependencies": {
+    "@sentry/react": "^6.2.1",
+    "@sentry/tracing": "^6.2.1",
     "next": "^10",
     "react": "^17",
     "react-dom": "^17",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/runtime": "^7.13.9",
+    "@sentry/webpack-plugin": "^1.14.1",
     "@types/imagemin": "^7.0.0",
     "@types/imagemin-webp": "^5.1.1",
     "@types/node": "^14.14.31",

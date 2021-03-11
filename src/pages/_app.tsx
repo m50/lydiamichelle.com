@@ -6,6 +6,7 @@ import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
 import { init } from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+import Insights from "insights-js";
 
 init({
   enabled: process.env.NODE_ENV === 'production',
@@ -14,6 +15,11 @@ init({
   tracesSampleRate: 0.5,
   release: process.env.RELEASE,
 });
+
+if (process.env.INSIGHTS_KEY && process.env.NODE_ENV === 'production') {
+  Insights.init(process.env.INSIGHTS_KEY, { ignoreErrors: true });
+  Insights.trackPages();
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -7,8 +7,10 @@
     "start": "next dev"
   },
   "dependencies": {
+    "insights-js": "^1.2.10",
     "@sentry/react": "^6.2.1",
     "@sentry/tracing": "^6.2.1",
+    "insights-js": "^1.2.10",
     "next": "^10",
     "react": "^17",
     "react-dom": "^17",

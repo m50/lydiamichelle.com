@@ -1,6 +1,8 @@
 # lydiamichelle.com
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b7ac93c7-000b-4873-beaa-ed9150caffec/deploy-status)](https://app.netlify.com/sites/lydia-michelle-art/deploys)
+[![Insights](https://img.shields.io/badge/analytics-getinsights.io-blue)](https://getinsights.io/dashboard)
+[![Sentry](https://img.shields.io/badge/error%20tracking-sentry.io-red)](https://sentry.io/organizations/marisa/issues/?project=5670929)
 
 https://lydiamichelle.com - The website for my girlfriend.
 

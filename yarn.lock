@@ -2211,6 +2211,11 @@ inline-style-parser@0.1.1:
   resolved "https://registry.yarnpkg.com/inline-style-parser/-/inline-style-parser-0.1.1.tgz#ec8a3b429274e9c0a1f1c4ffa9453a7fef72cea1"
   integrity sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==
 
+insights-js@^1.2.10:
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/insights-js/-/insights-js-1.2.10.tgz#e109c83c9d5052c8a4b099f7ecde6924aef538e0"
+  integrity sha512-BFk00KuGKK9ri4hAC8CuP8ap1xvYfDtU+J6VU9tBhcMKFPIoLR9LTFkb7H0HLW2ltT232DAb8xIlAmZ1JVT7dA==
+
 into-stream@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/into-stream/-/into-stream-3.1.0.tgz#96fb0a936c12babd6ff1752a17d05616abd094c6"

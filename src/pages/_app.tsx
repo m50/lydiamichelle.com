@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { init } from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
 import Insights from "insights-js";
+import { isClientSide, isProduction } from 'lib/helpers';
 
 init({
   enabled: process.env.NODE_ENV === 'production',
@@ -16,12 +17,12 @@ init({
   release: process.env.RELEASE,
 });
 
-if (process.env.INSIGHTS_KEY && process.env.NODE_ENV === 'production') {
-  Insights.init(process.env.INSIGHTS_KEY, { ignoreErrors: true });
-  Insights.trackPages();
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
+  if (process.env.INSIGHTS_KEY && isProduction && isClientSide ) {
+    Insights.init(process.env.INSIGHTS_KEY, { ignoreErrors: true });
+    Insights.trackPages();
+  }
+
   return (
     <DefaultTemplate>
       <Head>

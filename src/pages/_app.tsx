@@ -4,6 +4,16 @@ import '../styles/colorful.css'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
+import { init } from "@sentry/react";
+import { Integrations } from "@sentry/tracing";
+
+init({
+  enabled: process.env.NODE_ENV === 'production',
+  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  integrations: [new Integrations.BrowserTracing()],
+  tracesSampleRate: 0.5,
+  release: process.env.RELEASE,
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

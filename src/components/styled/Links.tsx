@@ -8,12 +8,12 @@ interface P extends React.PropsWithChildren<any> {
 
 export const ExtLink: React.FC<P> = ({ href, children, newTab = true }) => (
   <a {...(newTab ? { target: "_blank" } : {})}
-    className="text-theme-pink hover:underline mx-2"
+    className="text-theme-pink hover:underline mx-2" rel="noopener"
     href={href}>{children}</a>
 );
 export const ExtLinkWhite: React.FC<P> = ({ href, children, newTab = true }) => (
   <a {...(newTab ? { target: "_blank" } : {})}
-    className="text-white hover:text-theme-pink mx-2"
+    className="text-white hover:text-theme-pink mx-2" rel="noopener"
     href={href}>{children}</a>
 );
 

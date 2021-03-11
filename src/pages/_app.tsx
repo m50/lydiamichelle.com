@@ -4,6 +4,12 @@ import '../styles/colorful.css'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
+import Insights from "insights-js";
+
+if (process.env.INSIGHTS_KEY && process.env.NODE_ENV === 'production') {
+  Insights.init(process.env.INSIGHTS_KEY, { ignoreErrors: true });
+  Insights.trackPages();
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

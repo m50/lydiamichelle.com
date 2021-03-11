@@ -1,8 +1,11 @@
-const { getRedirectStatus } = require('next/dist/lib/load-custom-routes');
+const { INSIGHTS_KEY } = process.env;
 
 require('./prepare');
 
 module.exports = {
+	env: {
+		INSIGHTS_KEY,
+	},
 	webpack: (config) => {
 		config.module.rules.push({
 			test: /\.md$/,

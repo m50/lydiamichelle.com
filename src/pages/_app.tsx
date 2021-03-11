@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/tailwind.css'
 import '../styles/colorful.css'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
@@ -6,7 +6,7 @@ import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
 import { init as sentry } from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
-import { init as insight, trackPages, DEFAULT_APP } from "insights-js";
+import { init as insight, trackPages } from "insights-js";
 import { isClientSide, isProduction } from 'lib/helpers';
 
 sentry({
@@ -17,11 +17,16 @@ sentry({
   release: process.env.RELEASE,
 });
 
+let isTracking = false;
+
 function MyApp({ Component, pageProps }: AppProps) {
-  if (process.env.INSIGHTS_KEY && isProduction() && isClientSide()) {
-    insight(process.env.INSIGHTS_KEY, { ignoreErrors: true });
-    trackPages();
-  }
+  useEffect(() => {
+    if (!isTracking && process.env.INSIGHTS_KEY && isProduction() && isClientSide()) {
+      insight(process.env.INSIGHTS_KEY, { ignoreErrors: true });
+      trackPages();
+      isTracking = true;
+    }
+  }, []);
 
   return (
     <DefaultTemplate>

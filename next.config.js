@@ -6,6 +6,7 @@ require('./prepare');
 
 module.exports = {
 	env: {
+		INSIGHTS_KEY,
 		RELEASE: process.env.COMMIT_REF,
 		INSIGHTS_KEY,
 	},

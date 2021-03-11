@@ -5,7 +5,7 @@ require('./prepare');
 
 module.exports = {
 	env: {
-		RELEASE: process.env.DEPLOY_PRIME_URL,
+		RELEASE: process.env.COMMIT_REF,
 	},
 	webpack: (config) => {
 		config.module.rules.push({
@@ -20,7 +20,7 @@ module.exports = {
 				urlPrefix: "~/_next",
 				stripPrefix: ['webpack://_N_E/'],
 				ext: ['js', 'ts', 'map', 'jsbundle'],
-				release: process.env.DEPLOY_PRIME_URL,
+				release: process.env.COMMIT_REF,
 			}));
 		}
 

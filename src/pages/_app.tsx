@@ -4,12 +4,12 @@ import '../styles/colorful.css'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
-import { init } from "@sentry/react";
+import { init as sentry } from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
-import Insights from "insights-js";
+import { init as insight, trackPages } from "insights-js";
 import { isClientSide, isProduction } from 'lib/helpers';
 
-init({
+sentry({
   enabled: process.env.NODE_ENV === 'production',
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
   integrations: [new Integrations.BrowserTracing()],
@@ -18,9 +18,9 @@ init({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  if (process.env.INSIGHTS_KEY && isProduction && isClientSide ) {
-    Insights.init(process.env.INSIGHTS_KEY, { ignoreErrors: true });
-    Insights.trackPages();
+  if (process.env.INSIGHTS_KEY && isProduction() && isClientSide()) {
+    insight(process.env.INSIGHTS_KEY, { ignoreErrors: true });
+    trackPages();
   }
 
   return (

@@ -8,7 +8,6 @@ https://lydiamichelle.com - The website for my girlfriend.
 
 - [Netlify for hosting](https://www.netlify.com/)
     - [Netlify CMS](https://www.netlifycms.org)
-    - [netlify-plugin-nextjs](https://github.com/netlify/netlify-plugin-nextjs)
 - [Next.js](https://www.nextjs.org)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Heroicons-ui](https://github.com/sschoger/heroicons-ui)

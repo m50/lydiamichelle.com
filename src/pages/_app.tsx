@@ -6,7 +6,7 @@ import DefaultTemplate from '../templates/Default';
 import Head from 'next/head';
 import { init as sentry } from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
-import { init as insight, trackPages } from "insights-js";
+import { init as insight, trackPages, track, parameters } from "insights-js";
 import { isClientSide, isProduction } from 'lib/helpers';
 
 sentry({
@@ -24,6 +24,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (!isTracking && process.env.INSIGHTS_KEY && isProduction() && isClientSide()) {
       insight(process.env.INSIGHTS_KEY, { ignoreErrors: true });
       trackPages();
+      track({
+        id: 'entered-site',
+        parameters: {
+          referrer: parameters.referrer(),
+          locale: parameters.locale(),
+          screenSize: parameters.screenType(),
+        }
+      });
       isTracking = true;
     }
   }, []);

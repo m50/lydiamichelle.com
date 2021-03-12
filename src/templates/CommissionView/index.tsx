@@ -25,7 +25,7 @@ export const CommissionView: React.FC<Props> = ({ commission, className }) => (
     <small className="text-sm">
       <p>
         Any and all work made for a client is the sole intellectual property of the artist
-        (Lydia Bullock). No reproduction or use can be used without the artists
+        (Lydia Bullock). No reproduction or use can be used without the artist's
         direct knowledge or consent. Under no circumstances may you download,
         reproduce, public or distribute elsewhere, in any medium, any of the images
         for commercial purposes, without proper and prior written permission from the artist.

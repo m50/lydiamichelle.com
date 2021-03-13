@@ -1,13 +1,15 @@
 const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 const { SENTRY_ORG, SENTRY_PROJECT, SENTRY_AUTH_TOKEN, NODE_ENV } = process.env;
-const { INSIGHTS_KEY, MAILER_SEND_KEY } = process.env;
+const { INSIGHTS_KEY, MAILER_SEND_KEY, CONTEXT } = process.env;
 
 require('./prepare');
 
 module.exports = {
+	productionBrowserSourceMaps: NODE_ENV === 'production',
 	env: {
 		INSIGHTS_KEY,
 		MAILER_SEND_KEY,
+		CONTEXT,
 		RELEASE: process.env.COMMIT_REF,
 	},
 	webpack: (config) => {

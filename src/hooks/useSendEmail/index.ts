@@ -22,7 +22,7 @@ const useSendEmail = () => {
 
       return response.status < 300;
     } catch (err) {
-      if (process.env.NODE_ENV !== 'production') {
+      if (process.env.CONTEXT !== 'production') {
         throw err;
       }
       return false;

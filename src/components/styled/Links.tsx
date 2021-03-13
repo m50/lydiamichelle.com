@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import Link, { LinkProps } from 'next/link';
-import { track, parameters } from "insights-js";
+import { track, parameters } from 'insights-js';
 
 interface P extends React.PropsWithChildren<any> {
   href: string;

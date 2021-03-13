@@ -28,6 +28,19 @@ jobs:
       - name: Run Tests
         run: yarn lint:ci
 
+  types:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install Modules
+        run: yarn
+      - name: Run Tests
+        run: yarn lint:types
+
   build:
     name: Validate Build
     runs-on: ubuntu-latest

@@ -8,7 +8,8 @@
     "test": "jest",
     "lint": "eslint **/*.ts **/*.tsx",
     "lint:fix": "yarn lint --fix",
-    "lint:ci": "yarn lint --quiet"
+    "lint:ci": "yarn lint --quiet",
+    "lint:types": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "insights-js": "^1.2.10",

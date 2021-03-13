@@ -24,14 +24,10 @@
     "isolatedModules": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.jsx",
-    "jest.config.js"
+    "src"
   ],
   "exclude": [
-    "node_modules/*",
-    "public/*",
-    "_site/*"
+    "node_modules",
+    "out",
   ]
 }

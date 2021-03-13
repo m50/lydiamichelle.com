@@ -39,7 +39,7 @@ interface Body {
 const request = (body: Body): Promise<Response> => fetch(endPoint, {
   method: 'POST',
   headers: {
-    Authorization: `Bearer ${process.env.NEXT_PUBLIC_MAILER_SEND_KEY}`,
+    Authorization: `Bearer ${process.env.MAILER_SEND_KEY}`,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(body),
@@ -68,7 +68,7 @@ const useSendEmail = () => {
       };
       console.log(body);
 
-      if (typeof process.env.NEXT_PUBLIC_MAILER_SEND_KEY === 'undefined') {
+      if (typeof process.env.MAILER_SEND_KEY === 'undefined') {
         console.log('No send key provided');
         return false;
       }

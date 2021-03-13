@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import usePrevNextLinks from './usePrevNextLinks';
 
-describe('usePrevNextLinks', () => {
+describe('usePrevNextLinks()', () => {
   it('gets prev and next links', async () => {
     const arr = [
       { slug: 'test' },

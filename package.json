@@ -12,13 +12,13 @@
     "lint:types": "tsc --noEmit --pretty"
   },
   "dependencies": {
-    "insights-js": "^1.2.10",
     "@sentry/react": "^6.2.1",
     "@sentry/tracing": "^6.2.1",
     "gray-matter": "^4.0.2",
     "image-size": "^0.9.4",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
+    "insights-js": "^1.2.10",
     "next": "^10",
     "react": "^17",
     "react-dom": "^17",
@@ -29,13 +29,12 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "chalk": "^4.1.0",
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.13.9",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime": "^7.13.9",
-    "@sentry/webpack-plugin": "^1.14.1",
     "@jest/types": "^26.6.2",
+    "@sentry/webpack-plugin": "^1.14.1",
     "@tailwindcss/custom-forms": "^0.2.1",
     "@testing-library/react": "^11.2.5",
     "@testing-library/react-hooks": "^5.1.0",
@@ -50,6 +49,7 @@
     "autoprefixer": "^10.2.4",
     "babel-jest": "^26.6.3",
     "babel-plugin-inline-react-svg": "^2.0.1",
+    "chalk": "^4.1.0",
     "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -59,9 +59,11 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "jest": "^26.6.3",
+    "msw": "^0.27.1",
     "postcss": "^8.2.6",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.3",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.2",
+    "whatwg-fetch": "^3.6.2"
   }
 }

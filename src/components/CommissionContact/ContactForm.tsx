@@ -22,7 +22,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [message, setMessage] = useState<string[]>([]);
   const [isError, setIsError] = useState(false);
-  const { sendEmail, setFromName, setFromEmail } = useSendEmail();
+  const sendEmail = useSendEmail();
 
   const formSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault();
@@ -40,8 +40,6 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
       totalPrice,
     };
     if (await validate(values, setIsError, setMessage)) {
-      setFromName(name);
-      setFromEmail(email);
       const success = await sendEmail({
         medium: commission.type,
         type: commission.title,

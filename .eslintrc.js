@@ -25,6 +25,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'import/prefer-default-export': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-first-prop-new-line': 'off',
     'react/prop-types': 'off',

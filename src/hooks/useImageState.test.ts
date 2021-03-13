@@ -3,7 +3,7 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { slug } from 'lib/helpers';
 import useImageState from './useImageState';
 
-describe('useImageState', () => {
+describe('useImageState()', () => {
   const getSeries = async () => getSeriesBySlug('greenly');
 
   it('runs', async () => {

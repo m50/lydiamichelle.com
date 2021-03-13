@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-export const endPoint = 'https://api.mailersend.com/v1/email';
+export const endPoint = '/api/email';
 export const email = process.env.CONTEXT === 'production' ? 'lydiamb0925@gmail.com' : 'marisa@clardy.eu';
 export const requestConstants = {
   method: 'POST',
@@ -10,8 +10,10 @@ export const requestConstants = {
   },
 };
 
-export const to = {
-  email,
-  name: 'Lydia Michelle Clardy',
-};
+export const to = [
+  {
+    email,
+    name: 'Lydia Michelle Clardy',
+  },
+];
 export const template_id = 'pr9084zdejgw63dn';

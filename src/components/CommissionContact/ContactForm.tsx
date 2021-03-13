@@ -46,7 +46,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
         size: workSize as string,
         name,
         email,
-        valueOptions: valueOptions.map((v) => ` - ${v}`).join('\n'),
+        valueOptions: `<ul style="color: white;">${valueOptions.map((v) => `<li>${v}</li>`).join('')}</ul>`,
         extraInfo,
         totalPrice,
       });

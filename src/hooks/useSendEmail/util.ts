@@ -9,9 +9,11 @@ export const buildBody = (fromEmail: string, fromName: string, values: Values): 
     name: fromName,
   },
   template_id,
-  variables: {
-    email,
-    substitutions: Object.entries(values)
-      .map(([k, value]) => ({ var: k, value })),
-  },
+  variables: [
+    {
+      email,
+      substitutions: Object.entries(values)
+        .map(([k, value]) => ({ var: k, value: String(value) })),
+    },
+  ],
 });

@@ -4,20 +4,19 @@ export interface Substitution {
   value: string;
 }
 
+interface Contact {
+  name: string;
+  email: string;
+}
+
 export interface Body {
-  reply_to: {
-    name: string;
-    email: string;
-  };
-  to: {
-    name: string;
-    email: string;
-  };
+  reply_to: Contact;
+  to: Contact[];
   template_id: string;
   variables: {
     email: string;
     substitutions: Substitution[];
-  }
+  }[];
 }
 
 export interface Values {

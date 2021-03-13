@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { isProduction } from 'lib/helpers';
 import { Body, Values } from './types';
 import { endPoint, requestConstants } from './constants';
 import { buildBody } from './util';
@@ -10,19 +11,23 @@ const useSendEmail = () => {
   }), []);
 
   return useCallback(async (values: Values): Promise<boolean> => {
+    if (!process.env.MAILER_SEND_KEY) {
+      console.log('No send key provided');
+      return false;
+    }
+
     try {
       const body = buildBody(values.email, values.name, values);
-      console.log(body);
 
-      if (!process.env.MAILER_SEND_KEY) {
-        console.log('No send key provided');
-        return false;
-      }
       const response = await request(body);
 
-      return response.status < 300;
+      if (response.status >= 300) {
+        throw await response.json();
+      }
+
+      return true;
     } catch (err) {
-      if (process.env.CONTEXT !== 'production') {
+      if (!isProduction()) {
         throw err;
       }
       return false;

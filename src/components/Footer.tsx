@@ -5,18 +5,20 @@ import { ExtLink, IntLink } from './styled/Links';
 const Copy: React.FC = () => (
   <small className="text-xs text-white">
     <p>
-      &copy; built by
-      <a className="hover:text-theme-pink hover:underline" href="https://clardy.eu/">Marisa Clardy</a>
-      with love for Lydia Michelle Clardy
+      &copy; built by&nbsp;
+      <a className="hover:text-theme-pink hover:underline" href="https://clardy.eu/">
+        Marisa Clardy
+      </a>
+      &nbsp;with love for Lydia Michelle Clardy
     </p>
     <p>
-      Icons made by
+      Icons made by&nbsp;
       <a className="hover:text-theme-pink hover:underline"
         href="https://www.flaticon.com/authors/freepik" title="Freepik"
       >
         Freepik
       </a>
-      from
+      &nbsp;from&nbsp;
       <a className="hover:text-theme-pink hover:underline"
         href="https://www.flaticon.com/" title="Flaticon"
       >

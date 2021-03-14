@@ -84,7 +84,7 @@ export async function getAllSeries() {
  */
 let commissionCache: Commission[] = [];
 export const getCommissionSlugs = async () => readdir(commissionsDir);
-export const getCommissionBySlug = async (slug: string): Promise<Commission> => {
+export const getCommissionBySlug = async (slug: string): Promise<Commission | null> => {
   const cacheIndex = commissionCache.findIndex((s) => s.slug === slug);
   if (cacheIndex >= 0) {
     return commissionCache[cacheIndex];
@@ -100,6 +100,10 @@ export const getCommissionBySlug = async (slug: string): Promise<Commission> => 
     throw new Error(`commission undetermined . ${JSON.stringify(data, null, 2)}`);
   }
 
+  if (!data.open) {
+    return null;
+  }
+
   commissionCache.push(data);
 
   return data;
@@ -109,9 +113,9 @@ export const getAllCommissions = async () => {
     return commissionCache;
   }
   const slugs = await getCommissionSlugs();
-  commissionCache = await Promise.all(
+  commissionCache = (await Promise.all(
     slugs.map(async (slug) => getCommissionBySlug(slug)),
-  );
+  )).filter((c) => c !== null) as Commission[];
 
   return commissionCache;
 };

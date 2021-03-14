@@ -21,6 +21,9 @@ collections:
       - label: Allow image upload
         name: allowImageUpload
         widget: boolean
+      - label: Open for requests
+        name: open
+        widget: boolean
       - label: Additional Info
         name: additionalInfo
         widget: object

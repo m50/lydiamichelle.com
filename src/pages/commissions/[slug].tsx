@@ -25,6 +25,8 @@ export const Commissions: React.FC<Props> = ({ commission, allCommissions, curre
     accessor: 'slug',
   });
 
+  const morePages = allCommissions.length > 1;
+
   if (!router.isFallback && !commission?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -34,15 +36,21 @@ export const Commissions: React.FC<Props> = ({ commission, allCommissions, curre
         <title>{commission.title} Commissions | Lydia Michelle Art</title>
       </Head>
       {/* Nav Arrows for mobile */}
-      <div className="flex justify-around bg-theme-pink lg:hidden">
-        <NavArrow className="w-1/2 flex my-5" to={prevLink}>&#8592;</NavArrow>
-        <NavArrow className="w-1/2 flex my-5" to={nextLink}>&#8594;</NavArrow>
-      </div>
+      {morePages && (
+        <div className="flex justify-around bg-theme-pink lg:hidden">
+          <NavArrow className="w-1/2 flex my-5" to={prevLink} left />
+          <NavArrow className="w-1/2 flex my-5" to={nextLink} />
+        </div>
+      )}
       {/* Nav Arrows are on the left/right of commission view on desktop */}
-      <div className="flex justify-around items-center bg-theme-pink pb-10 lg:py-20">
-        <NavArrow className="w-1/4 hidden lg:flex my-10" to={prevLink}>&#8592;</NavArrow>
+      <div className="flex justify-around items-center bg-theme-pink pb-10 lg:py-20 pt-5">
+        { morePages
+          ? <NavArrow className="w-1/4 hidden lg:flex my-10" to={prevLink} left />
+          : <div className="w-1/4 h-full hidden lg:block" /> }
         <CommissionView commission={commission} className="w-1/2 px-6 lg:px-0" />
-        <NavArrow className="w-1/4 hidden lg:flex my-10" to={nextLink}>&#8594;</NavArrow>
+        { morePages
+          ? <NavArrow className="w-1/4 hidden lg:flex my-10" to={nextLink} />
+          : <div className="w-1/4 h-full hidden lg:block" /> }
       </div>
       <CommissionContact commission={commission} />
     </div>
@@ -50,7 +58,7 @@ export const Commissions: React.FC<Props> = ({ commission, allCommissions, curre
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }): Promise<{ props: Props }> => {
-  const commission = await getCommissionBySlug(params?.slug as string);
+  const commission = await getCommissionBySlug(params?.slug as string) as Commission;
   const allCommissions = await getAllCommissions();
   const currentIdx = allCommissions.findIndex((c) => c.slug === commission.slug);
 

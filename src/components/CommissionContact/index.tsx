@@ -17,12 +17,12 @@ const sectionClassNames = `
 const CommissionContact: React.FC<Props> = ({ commission }) => (
   <div>
     <section className={sectionClassNames}>
-      <p className="text-4xl mb-4">
+      <p className="px-5 text-3xl lg:text-4xl mb-4">
         If you would like to place an order, you can contact me on my
         <ExtLink href={instagram}><InstaIcon className="inline fill-current w-8 h-8" /> Instagram</ExtLink>.
       </p>
-      <p className="text-4xl my-8">Or</p>
-      <p className="text-4xl mt-4">You can Email me:</p>
+      <p className="px-5 text-3xl lg:text-4xl my-8">Or</p>
+      <p className="px-5 text-3xl lg:text-4xl mt-4">You can Email me:</p>
     </section>
     <ContactForm commission={commission} />
   </div>

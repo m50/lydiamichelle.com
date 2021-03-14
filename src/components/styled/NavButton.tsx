@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
 
-interface NavArrowProps extends React.PropsWithChildren<any> {
+interface NavArrowProps {
   to: string;
   className?: string;
+  left?: boolean;
 }
 
 const arrowLinkClasses = `
@@ -14,10 +15,10 @@ const arrowLinkClasses = `
   hover:bg-opacity-40 hover:shadow-lg
 `;
 
-const NavArrow: React.FC<NavArrowProps> = ({ className, to, children }) => (
+const NavArrow: React.FC<NavArrowProps> = ({ className, to, left }) => (
   <div className={`justify-center content-center cursor-pointer ${className}`}>
     <Link href={to}>
-      <a href={to} className={arrowLinkClasses}>{children}</a>
+      <a href={to} className={arrowLinkClasses}>{left ? <span>&#8592;</span> : <span>&#8594;</span>}</a>
     </Link>
   </div>
 );

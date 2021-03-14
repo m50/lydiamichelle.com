@@ -13,6 +13,9 @@ const usePrevNextLinks = <T extends object>(prefix: string, props: Props<T>) => 
   const [nextLink, setNextLink] = useState<string>('');
 
   useEffect(() => {
+    if (arr.length === 0) {
+      return;
+    }
     let prev = currentIdx - 1;
     if (prev < 0) {
       prev = arr.length - 1;

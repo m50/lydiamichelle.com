@@ -91,18 +91,17 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
       if (!Number.isNaN(+price.value)) {
         setTotalPrice((p) => p + Number(price.value));
       }
-      setValueOptions([...valueOptions, price.title]);
+      setValueOptions((vo) => [...vo, price.title]);
     } else {
       if (!Number.isNaN(+price.value)) {
         setTotalPrice((p) => p - Number(price.value));
       }
-      const newValueOptions = valueOptions.filter((vp) => vp !== price.title);
-      setValueOptions(newValueOptions);
+      setValueOptions((vo) => vo.filter((vp) => vp !== price.title));
     }
-  }, [totalPrice, commission, size]);
+  }, [commission, size]);
 
   return (
-    <PaperSection aria-label="Commission form">
+    <PaperSection aria-label="Commission form" className="px-5">
       <form className={formClasses} onSubmit={formSubmit}>
         <p className="hidden">
           <label htmlFor="bot-field">
@@ -145,14 +144,16 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
                   id={`${idx}-${slug(price.title)}`} onChange={({ target }) => onPriceChange(target, price)}
                   className={`
                     form-checkbox text-theme-pink rounded bg-transparent border border-gray-400 cursor-pointer
+                    my-5 lg:my-0 p-4 lg:p-0
                   `}
                 />
                 <span className="ml-2">{price.title}</span>
               </label>
-              <p className="uppercase">{price.value}</p>
+              <p className="uppercase inline-flex items-center">{price.value}</p>
             </div>
           ))}
         </div>
+        <span className="mt-5 text-2xl">Total Price: &euro;{totalPrice}</span>
         <label htmlFor="extra-info" className="w-full lg:w-1/2 mt-10">
           <span className="text-3xl mr-4 block">Extra Info:</span>
           <textarea name="extra-info" id="extra-info" rows={5} onChange={({ target }) => setExtraInfo(target.value)}

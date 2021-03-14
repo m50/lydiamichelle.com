@@ -85,7 +85,7 @@ export async function getAllSeries() {
 let commissionCache: Commission[] = [];
 export const getCommissionSlugs = async () => readdir(commissionsDir);
 export const getCommissionBySlug = async (slug: string): Promise<Commission> => {
-  const cacheIndex = seriesCache.findIndex((s) => s.slug === slug);
+  const cacheIndex = commissionCache.findIndex((s) => s.slug === slug);
   if (cacheIndex >= 0) {
     return commissionCache[cacheIndex];
   }

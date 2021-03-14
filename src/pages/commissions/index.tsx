@@ -12,9 +12,7 @@ export const Commissions: React.FC<Props> = ({ firstCommission }) => {
   useEffect(() => {
     window.location.href += `/${firstCommission.slug}`;
   }, []);
-  return (
-    <CommissionContact commission={firstCommission} />
-  );
+  return <CommissionContact commission={firstCommission} />;
 };
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: Props }> => {

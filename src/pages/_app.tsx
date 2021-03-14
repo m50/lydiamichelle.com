@@ -8,6 +8,9 @@ import { init as sentry } from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
 import { init as insight, trackPages, track, parameters } from "insights-js";
 import { isClientSide, isProduction } from 'lib/helpers';
+import Favicons from 'components/seo/favicon';
+import OG from 'components/seo/og';
+import Twitter from 'components/seo/twitter';
 
 sentry({
   enabled: process.env.NODE_ENV === 'production',
@@ -39,26 +42,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <DefaultTemplate>
       <Head>
-        <html lang="en" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/ico" href="/imgs/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicon/favicon-16x16.png" />
-        <link rel="manifest" href="/imgs/favicon/site.webmanifest" />
-        <meta property="og:title" content="Lydia Michelle Art" />
-        <meta name="description" content="Portfolio website for Lydia Michelle" />
-        <meta property="og:description" content="Portfolio website for Lydia Michelle" />
-        <meta property="og:url" content="https://lydiamichelle.art/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Lydia Michelle Art" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="twitter:card" content="summary" />
-        <meta property="twitter:site" content="@LydiaBu63687088" />
-        <meta property="twitter:creator" content="@LydiaBu63687088" />
       </Head>
+      <Favicons />
+      <OG />
+      <Twitter />
       <Component {...pageProps} />
     </DefaultTemplate>
   );

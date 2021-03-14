@@ -58,7 +58,7 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
                 </h2>
                 <div className="relative md:ml-10 text-center md:text-left">
                   <p className="text-xs md:text-sm">{series.excerpt}</p>
-                  <cite className="text-xs md:text-sm opacity-75">{series.date_published}</cite>
+                  <cite className="text-xs md:text-sm opacity-75">{new Date(series.date_published).getFullYear()}</cite>
                 </div>
               </a>
             </Link>

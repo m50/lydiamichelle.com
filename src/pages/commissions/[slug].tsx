@@ -12,7 +12,7 @@ import dynamic from 'next/dynamic';
 
 const CommissionContact = dynamic(
   () => import('../../components/CommissionContact'),
-  { loading: () => <p className="w-full text-center">...</p> },
+  { loading: () => <p className="w-full text-center">...</p>, ssr: false },
 );
 
 interface Props {

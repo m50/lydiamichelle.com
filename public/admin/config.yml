@@ -18,6 +18,9 @@ collections:
       - label: Medium
         name: type
         widget: string
+      - label: Allow image upload
+        name: allowImageUpload
+        widget: boolean
       - label: Additional Info
         name: additionalInfo
         widget: object

@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import PaperSection from 'components/styled/PaperSection';
 import { slug } from 'lib/helpers';
-import React, { FormEvent, useCallback, useState } from 'react';
+import React, { FormEvent, useCallback, useEffect, useState } from 'react';
 import { Commission, Price, WorkSize } from 'types/Commission';
 import useSendEmail from 'hooks/useSendEmail';
+import { FileInput, ImageData } from 'components/styled/FileInput';
 import { ReactComponent as CheckMark } from '../svg/tick.svg';
 import { ReactComponent as ErrorMark } from '../svg/exclamation.svg';
 import { formClasses, errorClasses, successClasses } from './classes';
@@ -22,7 +24,15 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [message, setMessage] = useState<string[]>([]);
   const [isError, setIsError] = useState(false);
+  const [imageData, setImageData] = useState<ImageData | null>(null);
   const sendEmail = useSendEmail();
+
+  useEffect(() => {
+    setMessage([]);
+    setTotalPrice(0);
+    setValueOptions([]);
+    setSize(commission.workSizes[0]);
+  }, [commission]);
 
   const formSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault();
@@ -49,6 +59,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
         valueOptions: `<ul style="color: white;">${valueOptions.map((v) => `<li>${v}</li>`).join('')}</ul>`,
         extraInfo,
         totalPrice,
+        imageData,
       });
       if (success) {
         setIsError(false);
@@ -62,7 +73,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
       setIsError(true);
       setMessage(['Unable to send commission.', 'Please try again later']);
     }
-  }, [size, bot, email, valueOptions, extraInfo, totalPrice, name]);
+  }, [size, bot, email, valueOptions, extraInfo, totalPrice, name, imageData]);
 
   const onWorkSizeChange: React.ChangeEventHandler<HTMLSelectElement> = useCallback(
     ({ target }) => {
@@ -80,14 +91,15 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
       if (!Number.isNaN(+price.value)) {
         setTotalPrice((p) => p + Number(price.value));
       }
-      setValueOptions((vp) => [...vp, price.title]);
+      setValueOptions([...valueOptions, price.title]);
     } else {
       if (!Number.isNaN(+price.value)) {
         setTotalPrice((p) => p - Number(price.value));
       }
-      setValueOptions((vp) => vp.filter((k) => k === price.title));
+      const newValueOptions = valueOptions.filter((vp) => vp !== price.title);
+      setValueOptions(newValueOptions);
     }
-  }, [totalPrice]);
+  }, [totalPrice, commission, size]);
 
   return (
     <PaperSection aria-label="Commission form">
@@ -118,7 +130,9 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
             className="bg-transparent border-b-2 text-3xl border-gray-300 cursor-pointer"
           >
             {commission.workSizes.map((workSize, idx) => (
-              <option key={idx} value={workSize.title}>{workSize.title}</option>
+              <option key={idx} value={workSize.title} selected={size?.title === workSize.title}>
+                {workSize.title}
+              </option>
             ))}
           </select>
         </label>
@@ -127,6 +141,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
             <div key={idx} className="w-full flex justify-between px-2">
               <label htmlFor={`${idx}-${slug(price.title)}`} className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" name={`${idx}-${slug(price.title)}`}
+                  checked={valueOptions.indexOf(price.title) >= 0}
                   id={`${idx}-${slug(price.title)}`} onChange={({ target }) => onPriceChange(target, price)}
                   className={`
                     form-checkbox text-theme-pink rounded bg-transparent border border-gray-400 cursor-pointer
@@ -144,10 +159,26 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
             className="w-full bg-white bg-opacity-40 border border-gray-300 p-2 rounded-lg"
           />
         </label>
-        <small className="text-center text-gray-500 mt-2">
-          <p>An image of the pet(s) will be requested upon acceptance of commission.</p>
-          <p>Alternatively, a link to a photo of your pet(s) can be provided in the "Extra Info" section.</p>
-        </small>
+        {commission.allowImageUpload ? (
+          <label htmlFor="referenceImage" className="w-full lg:w-1/2 mt-10">
+            <p className="text-3xl mr-4">Reference image:</p>
+            <FileInput id="referenceImage" name="referenceImage" text="Pick reference image"
+              onChange={setImageData}
+              className={`
+                bg-theme-pink-dark text-white font-bold py-2 px-4 w-full inline-flex items-center justify-center
+                hover:bg-theme-pink
+              `}
+            />
+          </label>
+        ) : (
+          <small className="text-center text-gray-500 mt-2">
+            <p>No image is needed for this commission type.</p>
+            <p>
+              If you would like to give images for reference,
+              they can be provided in the "Extra Info" section as links.
+            </p>
+          </small>
+        )}
         <input type="submit" value="Submit"
           className={`
             block px-8 py-4 bg-theme-pink-dark rounded text-white mt-10 cursor-pointer

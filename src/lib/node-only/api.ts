@@ -97,7 +97,7 @@ export const getCommissionBySlug = async (slug: string): Promise<Commission> => 
   data.slug = realSlug;
 
   if (!isCommission(data)) {
-    throw new Error(`commission undetermined . ${JSON.stringify(data)}`);
+    throw new Error(`commission undetermined . ${JSON.stringify(data, null, 2)}`);
   }
 
   commissionCache.push(data);

@@ -1,3 +1,5 @@
+import { ImageData } from "components/styled/FileInput";
+
 /* eslint-disable camelcase */
 export interface Substitution {
   var: string;
@@ -9,6 +11,12 @@ interface Contact {
   email: string;
 }
 
+interface Attachment {
+  content: string;
+  filename: string;
+  id?: string;
+}
+
 export interface Body {
   reply_to: Contact;
   to: Contact[];
@@ -17,6 +25,7 @@ export interface Body {
     email: string;
     substitutions: Substitution[];
   }[];
+  attachments?: Attachment[];
 }
 
 export interface Values {
@@ -28,5 +37,6 @@ export interface Values {
   valueOptions: string;
   extraInfo: string;
   totalPrice: number;
+  imageData: ImageData | null;
 }
 

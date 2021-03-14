@@ -28,7 +28,7 @@ const useSendEmail = () => {
       return true;
     } catch (err) {
       if (!isProduction()) {
-        throw err;
+        console.error('Error in request: ', err);
       }
       return false;
     }

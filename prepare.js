@@ -1,5 +1,5 @@
 /* eslint-disable */
-require('whatwg-fetch');
+require('node-fetch');
 const fs = require('fs');
 const { join } = require('path');
 const chalk = require('chalk');

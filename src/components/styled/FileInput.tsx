@@ -53,7 +53,7 @@ export const FileInput: React.FC<Props> = ({ className, id, name, text, onChange
   }, [file]);
 
   useEffect(() => {
-    onChange({
+    onChange?.({
       name: fileName,
       base64: fileData,
     });

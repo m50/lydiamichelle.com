@@ -1,4 +1,4 @@
-import { ImageData } from "components/styled/FileInput";
+import { ImageData } from 'components/styled/FileInput';
 
 /* eslint-disable camelcase */
 export interface Substitution {

@@ -4,12 +4,13 @@ import { setupServer } from 'msw/node';
 import { renderHook } from '@testing-library/react-hooks';
 import { endPoint } from './constants';
 import useSendEmail from './index';
+import { Values } from './types';
 
 const server = setupServer(
   rest.post(endPoint, (req, res, ctx) => res(ctx.status(204))),
 );
 
-const mockData = {
+const mockData: Values = {
   medium: 'Oil',
   type: 'Pet Portrait',
   size: 'A4',
@@ -18,6 +19,7 @@ const mockData = {
   valueOptions: '',
   extraInfo: '',
   totalPrice: 200,
+  imageData: null,
 };
 
 describe('useSendEmail()', () => {

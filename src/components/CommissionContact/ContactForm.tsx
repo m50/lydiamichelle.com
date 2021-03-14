@@ -127,9 +127,10 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
           <span className="text-3xl mr-4">Size:</span>
           <select name="work-size" onChange={onWorkSizeChange}
             className="bg-transparent border-b-2 text-3xl border-gray-300 cursor-pointer"
+            defaultValue={size?.title}
           >
             {commission.workSizes.map((workSize, idx) => (
-              <option key={idx} value={workSize.title} selected={size?.title === workSize.title}>
+              <option key={idx} value={workSize.title}>
                 {workSize.title}
               </option>
             ))}

@@ -3,12 +3,17 @@ import { getAllCommissions, getCommissionBySlug } from 'lib/node-only/api';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { Commission } from 'types/Commission';
+import type { Commission } from 'types/Commission';
 import { CommissionView } from 'templates/CommissionView';
 import Head from 'next/head';
 import NavArrow from 'components/styled/NavButton';
-import CommissionContact from 'components/CommissionContact';
 import usePrevNextLinks from 'hooks/usePrevNextLinks';
+import dynamic from 'next/dynamic';
+
+const CommissionContact = dynamic(
+  () => import('../../components/CommissionContact'),
+  { loading: () => <p className="w-full text-center">...</p> },
+);
 
 interface Props {
   commission: Commission;

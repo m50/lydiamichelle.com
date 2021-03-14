@@ -24,6 +24,9 @@ const mockData: Values = {
 
 describe('useSendEmail()', () => {
   beforeAll(() => {
+    if (process.env.MAILER_SEND_KEY) {
+      delete process.env.MAILER_SEND_KEY;
+    }
     server.listen();
   });
 

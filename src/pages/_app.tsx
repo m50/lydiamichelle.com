@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import '../styles/tailwind.css'
-import '../styles/colorful.css'
-import { AppProps } from 'next/dist/next-server/lib/router/router'
-import DefaultTemplate from '../templates/Default';
+import '../styles/tailwind.css';
+import '../styles/colorful.css';
+import { AppProps } from 'next/dist/next-server/lib/router/router';
+import DefaultTemplate from 'templates/Default';
 import Head from 'next/head';
-import { init as sentry } from "@sentry/react";
-import { Integrations } from "@sentry/tracing";
-import { init as insight, trackPages, track, parameters } from "insights-js";
+import { init as sentry } from '@sentry/react';
+import { Integrations } from '@sentry/tracing';
+import { init as insight, trackPages, track, parameters } from 'insights-js';
 import { isClientSide, isProduction } from 'lib/helpers';
 import Favicons from 'components/seo/favicon';
 import OG from 'components/seo/og';
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           referrer: parameters.referrer(),
           locale: parameters.locale(),
           screenSize: parameters.screenType(),
-        }
+        },
       });
       isTracking = true;
     }
@@ -54,4 +54,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp
+export default MyApp;

@@ -1,0 +1,43 @@
+{
+  "title": "Pet Portrait",
+  "type": "Oil Paintings",
+  "allowImageUpload": true,
+  "open": true,
+  "additionalInfo": {
+    "title": "Payment, Materials",
+    "body": "Half of the payment can be made as a deposit via paypal. The painting will not be started without a deposit and the whole payment must be paid in full before the painting is shipped. These paintings are made in oils, which can take some time to dry, and be ready for shipping. The painting is done on high quality oil painting paper and can be mounted or framed."
+  },
+  "workSizes": [
+    {
+      "title": "A4",
+      "prices": [
+        {"title": "One Pet", "value": "110"},
+        {"title": "Two Pets", "value": "125"},
+        {"title": "Basic Background (My Artistic Choice)", "value": "Free"},
+        {"title": "Chosen Background", "value": "15"},
+        {"title": "Post (IE)", "value": "3"},
+        {"title": "International Shipping", "value": "Ask"}
+      ]
+    },
+    {
+      "title": "A3",
+      "prices": [
+        {"title": "One Pet", "value": "150"},
+        {"title": "Two Pets", "value": "180"},
+        {"title": "Basic Background (My Artistic Choice)", "value": "Free"},
+        {"title": "Chosen Background", "value": "15"},
+        {"title": "Post (IE)", "value": "4"},
+        {"title": "International Shipping", "value": "Ask"}
+      ]
+    },
+    {
+      "title": "The Mini - A7",
+      "prices": [
+        {"title": "One Pet", "value": "60"},
+        {"title": "Chosen Background", "value": "Free"},
+        {"title": "Post (IE)", "value": "3"},
+        {"title": "International Shipping", "value": "Ask"}
+      ]
+    }
+  ]
+}

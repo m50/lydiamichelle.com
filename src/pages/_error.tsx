@@ -13,13 +13,18 @@ const MyError: NextPage<ErrorProps> = ({ statusCode, err }) => {
     captureException(err);
   }
 
-  return <NextError statusCode={statusCode} />
-}
+  return <NextError statusCode={statusCode} />;
+};
 
 MyError.getInitialProps = ({ res, err }) => {
-  const statusCode = (res ? res.statusCode : (err ? err.statusCode : 500));
+  let statusCode = 500;
+  if (res) {
+    statusCode = res.statusCode;
+  } else if (err) {
+    statusCode = err.statusCode ?? 500;
+  }
 
   return { statusCode, err } as ErrorProps;
-}
+};
 
 export default MyError;

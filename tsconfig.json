@@ -24,13 +24,10 @@
     "isolatedModules": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.jsx"
+    "src"
   ],
   "exclude": [
-    "node_modules/*",
-    "public/*",
-    "_site/*"
+    "node_modules",
+    "out",
   ]
 }

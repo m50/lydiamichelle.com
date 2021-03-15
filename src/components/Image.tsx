@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable jsx-a11y/alt-text */
 import React, { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
 import { Paths } from 'types/Series';
 
@@ -12,3 +14,5 @@ export const Image: React.FC<ImgProps> = ({ src, paths, ...props }) => (
     <img loading="lazy" src={src || paths.original} {...props} />
   </picture>
 );
+
+export default Image;

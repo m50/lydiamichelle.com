@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import Link, { LinkProps } from 'next/link';
-import { track, parameters } from "insights-js";
+import { track, parameters } from 'insights-js';
 
 interface P extends React.PropsWithChildren<any> {
   href: string;
@@ -19,9 +19,11 @@ export const ExtLink: React.FC<P> = ({ href, children, newTab = true }) => {
     });
   }, [href]);
   return (
-    <a {...(newTab ? { target: "_blank" } : {})}
+    <a {...(newTab ? { target: '_blank' } : {})}
       className="text-white hover:text-theme-pink mx-2" rel="noopener"
-      href={href}>{children}</a>
+      href={href} onClick={onClick}
+    >{children}
+    </a>
   );
 };
 export const ExtLinkWhite: React.FC<P> = ({ href, children, newTab = true }) => {
@@ -36,19 +38,21 @@ export const ExtLinkWhite: React.FC<P> = ({ href, children, newTab = true }) => 
     });
   }, [href]);
   return (
-    <a {...(newTab ? { target: "_blank" } : {})}
+    <a {...(newTab ? { target: '_blank' } : {})}
       className="text-white hover:text-theme-pink mx-2" rel="noopener"
-      href={href} onClick={onClick}>{children}</a>
+      href={href} onClick={onClick}
+    >{children}
+    </a>
   );
 };
 
 export const IntLink: React.FC<LinkProps> = ({ children, ...linkProps }) => (
   <Link {...linkProps}>
-    <a className="text-theme-pink hover:underline mx-2">{children}</a>
+    <a className="text-theme-pink hover:underline mx-2 cursor-pointer">{children}</a>
   </Link>
 );
 export const IntLinkWhite: React.FC<LinkProps> = ({ children, ...linkProps }) => (
   <Link {...linkProps}>
-    <a className="text-white hover:text-theme-pink mx-2">{children}</a>
+    <a className="text-white hover:text-theme-pink mx-2 cursor-pointer">{children}</a>
   </Link>
 );

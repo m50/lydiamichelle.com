@@ -6,5 +6,5 @@ export const email = 'mailto:me@lydiamichelle.com';
 export const instagram = 'https://instagram.com/lydiamichelle.art';
 
 export const collectionsDir = join(process.cwd(), 'src', 'collections');
-export const seriesDir = join(process.cwd(), 'src', 'series');
+export const seriesDir = join(collectionsDir, 'series');
 export const commissionsDir = join(collectionsDir, 'commissions');

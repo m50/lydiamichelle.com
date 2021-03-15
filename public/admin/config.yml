@@ -45,7 +45,7 @@ collections:
               - {label: Value, name: value, widget: string}
   - name: series
     label: Series
-    folder: "src/series"
+    folder: "src/collections/series"
     extension: md
     create: true
     preview_path: "portfolio/{{slug}}"

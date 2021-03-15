@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import usePrevNextLinks from './usePrevNextLinks';
 
 describe('usePrevNextLinks()', () => {
-  it('gets prev and next links', async () => {
+  it.concurrent('gets prev and next links', async () => {
     const arr = [
       { slug: 'test' },
       { slug: 'test2' },
@@ -19,7 +19,7 @@ describe('usePrevNextLinks()', () => {
     expect(result.current.nextLink).toBe('/test3');
   });
 
-  it('wraps prev link', async () => {
+  it.concurrent('wraps prev link', async () => {
     const arr = [
       { slug: 'test' },
       { slug: 'test2' },
@@ -36,7 +36,7 @@ describe('usePrevNextLinks()', () => {
     expect(result.current.nextLink).toBe('/test2');
   });
 
-  it('wraps next link', async () => {
+  it.concurrent('wraps next link', async () => {
     const arr = [
       { slug: 'test' },
       { slug: 'test2' },

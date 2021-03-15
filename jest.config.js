@@ -20,6 +20,13 @@ module.exports = {
     '<rootDir>/public/',
     '<rootDir>/.next/',
   ],
-  modulePaths: ['src'],
+  moduleDirectories: ['<rootDir>/src', '<rootDir>/node_modules'],
+  moduleFileExtensions: [
+    'js',
+    'json',
+    'ts',
+    'tsx',
+    'jsx'
+  ],
   testURL: 'http://localhost',
 };

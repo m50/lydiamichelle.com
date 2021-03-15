@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { ImageInfo, isSeries, Series } from 'types/Series';
 import { promisify } from 'util';
 import { Commission, isCommission } from 'types/Commission';
+import { isDeployed } from 'lib/helpers';
 import { seriesDir, commissionsDir } from '../constants';
 import { optimizeImage } from './optimize';
 
@@ -21,7 +22,7 @@ const readdir = promisify(fs.readdir);
  * Series API
  */
 let seriesCache: Series[] = [];
-export const getSeriesSlugs = () => fs.readdirSync(seriesDir);
+export const getSeriesSlugs = () => readdir(seriesDir);
 export async function getSeriesBySlug(slug: string): Promise<Series> {
   const cacheIndex = seriesCache.findIndex((s) => s.slug === slug);
   if (cacheIndex >= 0) {
@@ -72,6 +73,7 @@ export async function getAllSeries() {
     .map(async (slug) => getSeriesBySlug(slug));
 
   const series = (await Promise.all(seriesPromises))
+    .filter((s) => s.published)
     .sort((series1, series2) => (new Date(series1.date_published) > new Date(series2.date_published) ? -1 : 1));
 
   seriesCache = series;
@@ -100,7 +102,7 @@ export const getCommissionBySlug = async (slug: string): Promise<Commission | nu
     throw new Error(`commission undetermined . ${JSON.stringify(data, null, 2)}`);
   }
 
-  if (!data.open) {
+  if (!data.open && isDeployed()) {
     return null;
   }
 

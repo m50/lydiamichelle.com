@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next build",
     "start": "next dev",
-    "test": "jest",
+    "test": "jest --silent",
     "lint": "eslint **/*.ts **/*.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:ci": "yarn lint --quiet",

@@ -7,7 +7,6 @@ describe('useImageState()', () => {
   const getSeries = async () => getSeriesBySlug('greenly');
 
   it('runs', async () => {
-    console.log = jest.fn();
     const series = await getSeries();
     const { result } = renderHook(() => useImageState(series));
 
@@ -15,7 +14,6 @@ describe('useImageState()', () => {
   });
 
   it('gets image from hash', async () => {
-    console.log = jest.fn();
     const series = await getSeries();
     window.location.hash = '#hanging-off-the-bed';
     const { result } = renderHook(() => useImageState(series));
@@ -35,7 +33,6 @@ describe('useImageState()', () => {
   });
 
   it('onOutsideClick removes hash', async () => {
-    console.log = jest.fn();
     const series = await getSeries();
     window.location.hash = '#hanging-off-the-bed';
     const { result } = renderHook(() => useImageState(series));
@@ -47,7 +44,6 @@ describe('useImageState()', () => {
   });
 
   it('onImageClick picks an image', async () => {
-    console.log = jest.fn();
     const series = await getSeries();
     const { result } = renderHook(() => useImageState(series));
 

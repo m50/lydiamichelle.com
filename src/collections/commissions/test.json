@@ -1,0 +1,18 @@
+{
+  "title": "Test",
+  "type": "Oil Paintings",
+  "allowImageUpload": true,
+  "open": false,
+  "additionalInfo": {
+    "title": "Test Info",
+    "body": "Do not delete me, do not open me!"
+  },
+  "workSizes": [
+    {
+      "title": "Size 1",
+      "prices": [
+        {"title": "Test", "value": "200"}
+      ]
+    }
+  ]
+}

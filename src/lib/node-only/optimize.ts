@@ -59,5 +59,3 @@ export const optimizeImage = async (imagePath: string, height: Height = 800): Pr
 
   return convert(imagePath, imageName, height);
 };
-
-export default optimizeImage;

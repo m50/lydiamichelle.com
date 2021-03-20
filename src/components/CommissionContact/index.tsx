@@ -1,8 +1,8 @@
 import React from 'react';
-import { ExtLink } from 'components/styled/Links';
-import { ReactComponent as InstaIcon } from 'components/svg/Instagram.svg';
 import { instagram } from 'lib/constants';
 import type { Commission } from 'types/Commission';
+import { ExtLink } from '../styled/Links';
+import { ReactComponent as InstaIcon } from '../svg/Instagram.svg';
 import ContactForm from './ContactForm';
 
 interface Props {

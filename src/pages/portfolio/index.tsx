@@ -49,13 +49,11 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
           };
           return (
             <Link href={`portfolio/${series.slug}`} key={series.slug}>
-              <Head>
-                <link rel="preload" as="image" href={image.image.half} />
-                <link rel="preload" as="image" href={image.image.full} />
-              </Head>
-              <a className={anchorStyles}
-                onMouseEnter={onMouseEnter} onMouseLeave={() => setBgActive(false)}
-              >
+              <a className={anchorStyles} onMouseEnter={onMouseEnter} onMouseLeave={() => setBgActive(false)}>
+                <Head>
+                  <link rel="preload" as="image" href={image.image.half} />
+                  <link rel="preload" as="image" href={image.image.full} />
+                </Head>
                 <div className={nbspDivStyles}>&nbsp;</div>
                 <h2 className="relative tracking-widest uppercase inline-block text-4xl lg:text-5xl font-serif">
                   {series.title}

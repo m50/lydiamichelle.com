@@ -30,7 +30,7 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
     <div className="w-full py-16 flex justify-center bg-no-repeat bg-cover bg-center">
       <Head>
         <title>Portfolio | Lydia Michelle Art</title>
-        <meta property="og:image" content="https://lydiamichelle.art/imgs/logo.png" />
+        <meta property="og:image" content="https://lydiamichelle.art/imgs/logo.webp" />
       </Head>
       <div className={
         `z-0 absolute inset-0 transition-opacity ease-in-out duration-150 ${bgActive ? 'opacity-25' : 'opacity-0'}`

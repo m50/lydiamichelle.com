@@ -21,6 +21,14 @@ if (!fs.existsSync(buildPath)) {
   fs.mkdirSync(buildPath);
   console.log(`${chalk.cyan('info')}  - Created folder ${buildPath}`);
 }
+if (!fs.existsSync(join(buildPath, '400'))) {
+  fs.mkdirSync(join(buildPath, '400'));
+  console.log(`${chalk.cyan('info')}  - Created folder ${join(buildPath, '400')}`);
+}
+if (!fs.existsSync(join(buildPath, '800'))) {
+  fs.mkdirSync(join(buildPath, '800'));
+  console.log(`${chalk.cyan('info')}  - Created folder ${join(buildPath, '800')}`);
+}
 
 if (!fs.existsSync(publicPath)) {
   fs.mkdirSync(publicPath);

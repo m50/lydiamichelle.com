@@ -21,7 +21,7 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => (
       <meta property="og:type" content="website" />
       <meta property="twitter:card" content="summary_large_image" />
     </Head>
-    <div className="flex justify-center content-center items-center h-full px-2">
+    <div className="flex justify-center content-center items-center h-full px-2" role="dialog">
       <div className={`
         h-auto static flex flex-col w-auto z-50 bg-theme-gray rounded-xl justify-between
         sm:h-3/4 lg:h-auto sm:flex-row md:flex-col lg:flex-row
@@ -50,7 +50,10 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => (
           )}
         </figcaption>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full opacity-75 bg-black z-30" onClick={onClickAway} />
+      <div className="absolute top-0 left-0 w-full h-full opacity-75 bg-black z-30"
+        onClick={onClickAway} onKeyPress={(e) => e.key === 'Escape' && onClickAway()}
+        role="button" aria-label="Close Image" tabIndex={0}
+      />
     </div>
   </figure>
 );

@@ -22,7 +22,7 @@ jobs:
         run: yarn test
 
   lint:
-    name: Lint TS
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

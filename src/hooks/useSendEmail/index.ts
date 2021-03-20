@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useCallback } from 'react';
 import { isProduction } from 'lib/helpers';
 import { Body, Values } from './types';

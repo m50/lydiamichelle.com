@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { renderHook } from '@testing-library/react-hooks';

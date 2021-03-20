@@ -63,8 +63,12 @@ export const optimizeImage = async (imagePath: string, height: Height = 800): Pr
 
   const existingCacheFile = join(buildPath, imageName.replace(ext, 'webp'));
   if (await exists(existingCacheFile)) {
-    await rm(existingCacheFile);
-    console.log(`${chalk.yellow('warn')}  - Deleted file ${existingCacheFile}`);
+    try {
+      await rm(existingCacheFile);
+      console.log(`${chalk.yellow('warn')}  - Deleted file ${existingCacheFile}`);
+    } catch (err) {
+      console.error(`${chalk.red('error')} - ${err.message}`);
+    }
   }
 
   const pattern = new RegExp(`${imageSlug}\\.(\\.[a-f0-9]+|[a-f0-9]+(?<!${md5}))\\.webp$`, 'gmi');

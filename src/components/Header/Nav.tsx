@@ -1,9 +1,9 @@
 import React from 'react';
-import { etsy, instagram, redBubble } from '../../lib/constants';
+import { etsy, instagram, redBubble } from 'lib/constants';
+import { ReactComponent as ShopIcon } from 'components/svg/Shop.svg';
+import { ReactComponent as EtsyIcon } from 'components/svg/Etsy.svg';
+import { ReactComponent as InstaIcon } from 'components/svg/Instagram.svg';
 import { ExtLinkWhite, IntLinkWhite } from '../styled/Links';
-import { ReactComponent as ShopIcon } from './SVG/Shop.svg';
-import { ReactComponent as EtsyIcon } from './SVG/Etsy.svg';
-import { ReactComponent as InstaIcon } from './SVG/Instagram.svg';
 
 export const Nav: React.FC = () => (
   <nav className="mr-0 md:mr-20 text-md font-light mb-4 flex flex-col lg:flex-row items-center">

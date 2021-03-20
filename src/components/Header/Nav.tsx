@@ -1,8 +1,8 @@
 import React from 'react';
 import { etsy, instagram, redBubble } from 'lib/constants';
-import { ReactComponent as ShopIcon } from 'components/svg/Shop.svg';
-import { ReactComponent as EtsyIcon } from 'components/svg/Etsy.svg';
-import { ReactComponent as InstaIcon } from 'components/svg/Instagram.svg';
+import { ReactComponent as ShopIcon } from '../svg/Shop.svg';
+import { ReactComponent as EtsyIcon } from '../svg/Etsy.svg';
+import { ReactComponent as InstaIcon } from '../svg/Instagram.svg';
 import { ExtLinkWhite, IntLinkWhite } from '../styled/Links';
 
 export const Nav: React.FC = () => (

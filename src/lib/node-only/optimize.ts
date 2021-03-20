@@ -86,7 +86,7 @@ export const optimizeImage = async (imagePath: string, height: Height = 800): Pr
       console.log(`${chalk.cyan('info')}  - Wrote file ${join(sizePath, basename(cacheFile))}`);
     }
 
-    return join('build', `${height}`, basename(cacheFile));
+    return `/build/${height}/${basename(cacheFile)}`;
   }
 
   return convert(imagePath, imageName, height);

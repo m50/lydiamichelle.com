@@ -20,8 +20,8 @@ describe('useImageState()', () => {
 
     const expected = {
       image: {
-        full: '/build/800/1-hanging-off-the-bed.webp',
-        half: '/build/400/1-hanging-off-the-bed.webp',
+        full: '/build/800/1-hanging-off-the-bed.b4cdd1.webp',
+        half: '/build/400/1-hanging-off-the-bed.b4cdd1.webp',
         original: '/images/1-hanging-off-the-bed.webp',
       },
       medium: 'Pen and Ink',

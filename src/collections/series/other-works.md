@@ -45,4 +45,4 @@ images:
     image: /images/volcano-islands-pen-and-ink.jpg
     title: Volcano Islands (2016)
 ---
-Here are some uncategorised pieces of work that start from my earliest years as an artist in high school to now.
+These are some uncategorised pieces of work that start from my earliest years as an artist in high school to now.

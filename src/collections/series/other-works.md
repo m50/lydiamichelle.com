@@ -18,7 +18,7 @@ images:
     title: Fawning Love (T-Shirt Design)
   - medium: Digital
     wip: false
-    image: /images/1-30sp.jpg
+    image: /images/1_30sp.jpg
     title: 1994 by George Orwell, Book Cover Illustration
   - medium: Pen and Ink
     wip: false

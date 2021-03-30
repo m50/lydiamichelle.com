@@ -1,7 +1,8 @@
+import { cl } from 'lib/helpers';
 import * as React from 'react';
 import Nav from './Nav';
 
-const headerClasses = `
+const headerClasses = cl`
   z-10 py-3 h-auto md:h-32 print:hidden flex flex-col
   md:flex-row items-center content-center justify-between
   bg-black text-gray-100 w-full

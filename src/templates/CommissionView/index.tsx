@@ -1,3 +1,4 @@
+import { cl } from 'lib/helpers';
 import React from 'react';
 import { Commission } from 'types/Commission';
 import { WorkSizeView } from './WorkSizeView';
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export const CommissionView: React.FC<Props> = ({ commission, className }) => (
-  <article className={`flex flex-col w-full ${className}`}>
+  <article className={cl`flex flex-col w-full ${className ?? ''}`}>
     <header className="flex flex-col justify-center content-center items-center uppercase mb-12">
       <h2 className="text-4xl lg:text-6xl mb-5 text-center">{commission.title} Comissions</h2>
       <h3 className="text-md">{commission.type}</h3>

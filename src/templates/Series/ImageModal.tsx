@@ -2,6 +2,7 @@ import React from 'react';
 import type { ImageInfo } from 'types/Series';
 import Head from 'next/head';
 import { Image } from 'components/Image';
+import { cl } from 'lib/helpers';
 
 interface Props {
   image: ImageInfo;
@@ -22,7 +23,7 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => (
       <meta property="twitter:card" content="summary_large_image" />
     </Head>
     <div className="flex justify-center content-center items-center h-full px-2" role="dialog">
-      <div className={`
+      <div className={cl`
         h-auto static flex flex-col w-auto z-50 bg-theme-gray rounded-xl justify-between
         sm:h-3/4 lg:h-auto sm:flex-row md:flex-col lg:flex-row
       `}

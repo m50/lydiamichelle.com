@@ -18,3 +18,8 @@ https://lydiamichelle.com - The website for my girlfriend.
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Freepik Icons from Flaticon](https://www.flaticon.com/authors/freepik)
 - [Github Flavoured Markdown for Tailwind](https://github.com/iandinwoodie/github-markdown-tailwindcss)
+
+## License and Copyright
+
+All rights reserved. Copyright belongs to Marisa Clardy for the express purpose of the website,
+while all artwork displayed on the website belongs solely to Lydia Michelle Clardy.

@@ -1,3 +1,4 @@
+import { cl } from 'lib/helpers';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ReactComponent as Upload } from '../svg/upload.svg';
 
@@ -62,7 +63,7 @@ export const FileInput: React.FC<Props> = ({ className, id, name, text, onChange
   return (
     <div className="overflow-hidden relative w-full h-full">
       <button type="button" onClick={onClick}
-        className={`relative top-0 right-0 left-0 bottom-0 ${className}`}
+        className={cl`relative top-0 right-0 left-0 bottom-0 ${className ?? ''}`}
       >
         <Upload className="inline fill-current w-5 h-5 mr-2" />
         {fileName || text}

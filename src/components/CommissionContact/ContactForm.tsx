@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import PaperSection from 'components/styled/PaperSection';
-import { slug } from 'lib/helpers';
+import { cl, slug } from 'lib/helpers';
 import React, { FormEvent, useCallback, useEffect, useState } from 'react';
 import { Commission, Price, WorkSize } from 'types/Commission';
 import useSendEmail from 'hooks/useSendEmail';
@@ -143,7 +143,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
                 <input type="checkbox" name={`${idx}-${slug(price.title)}`}
                   checked={valueOptions.indexOf(price.title) >= 0}
                   id={`${idx}-${slug(price.title)}`} onChange={({ target }) => onPriceChange(target, price)}
-                  className={`
+                  className={cl`
                     form-checkbox text-theme-pink rounded bg-transparent border border-gray-400 cursor-pointer
                     my-5 lg:my-0 p-4 lg:p-0
                   `}
@@ -166,7 +166,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
             <p className="text-3xl mr-4">Reference image:</p>
             <FileInput id="referenceImage" name="referenceImage" text="Pick reference image"
               onChange={setImageData}
-              className={`
+              className={cl`
                 bg-theme-pink-dark text-white font-bold py-2 px-4 w-full inline-flex items-center justify-center
                 hover:bg-theme-pink
               `}
@@ -182,7 +182,7 @@ const ContactForm: React.FC<Props> = ({ commission }) => {
           </small>
         )}
         <input type="submit" value="Submit"
-          className={`
+          className={cl`
             block px-8 py-4 bg-theme-pink-dark rounded text-white mt-10 cursor-pointer
             hover:bg-theme-pink
           `}

@@ -1,5 +1,5 @@
 import { Image } from 'components/Image';
-import { slug } from 'lib/helpers';
+import { cl, slug } from 'lib/helpers';
 import React from 'react';
 import { ImageInfo } from 'types/Series';
 
@@ -8,7 +8,7 @@ interface Props {
   onImageClick: (image: ImageInfo) => void;
 }
 
-const captionClasses = `
+const captionClasses = cl`
   top-0 left-0 h-16 xl:h-full w-full xl:absolute transform transition-opacity rounded-xl
   duration-300 ease-in-out text-center xl:opacity-0 hover:opacity-100 text-white
   flex flex-col justify-center -mt-16 xl:mt-0 rounded-t-none

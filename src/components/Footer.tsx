@@ -1,29 +1,17 @@
 import { cl } from 'lib/helpers';
 import React from 'react';
-import { email, etsy, redBubble } from '../lib/constants';
+import { email, etsy, instagram, redBubble } from '../lib/constants';
 import { ExtLink, IntLink } from './styled/Links';
 
 const Copy: React.FC = () => (
   <small className="text-xs text-white">
-    <p>
-      &copy; built by{' '}
+    <p className="my-2">
+      &copy; All artwork copyrighted to Lydia Michelle Clardy
+    </p>
+    <p className="my-2">
+      &copy; Built with love by{' '}
       <a className="hover:text-theme-pink hover:underline" href="https://clardy.eu/">
         Marisa Clardy
-      </a>{' '}
-      with love for Lydia Michelle Clardy
-    </p>
-    <p>
-      Icons made by{' '}
-      <a className="hover:text-theme-pink hover:underline"
-        href="https://www.flaticon.com/authors/freepik" title="Freepik"
-      >
-        Freepik
-      </a>{' '}
-      from{' '}
-      <a className="hover:text-theme-pink hover:underline"
-        href="https://www.flaticon.com/" title="Flaticon"
-      >
-        www.flaticon.com
       </a>
     </p>
   </small>
@@ -38,15 +26,20 @@ const footerClasses = cl`
 export const Footer: React.FC = () => (
   <footer className={footerClasses}>
     <div>
-      <div className="text-xl font-serif italic mb-10 md:mb-20">
-        <p>You can contact me at my <a className="text-theme-pink hover:underline" href={email}>email.</a></p>
+      <div className="text-2xl font-serif italic mb-5 space-y-2">
         <p>
-          If you would like to support me, purchase something from my
-          <ExtLink href={redBubble}>Redbubble shop</ExtLink>{' '}
-          or from my <ExtLink href={etsy}>Etsy!</ExtLink>
+          You can contact me at my{' '}
+          <a className="text-theme-pink hover:underline" href={email}>email</a>{' '}
+          or on my <a className="text-theme-pink hover:underline" href={instagram}>Instagram.</a>
         </p>
         <p>
-          Or make a <IntLink href="/commissions">Comission</IntLink>!
+          If you would like to support me, please request a{' '}
+          <IntLink href="/commissions">Comission</IntLink>!
+        </p>
+        <p>
+          Or purchase something from my
+          <ExtLink href={redBubble}>Redbubble shop</ExtLink>{' '}
+          or from my <ExtLink href={etsy}>Etsy!</ExtLink>
         </p>
       </div>
       <Copy />

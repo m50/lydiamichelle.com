@@ -1,4 +1,4 @@
-import { slug, isClientSide, isProduction, isDeployed } from './helpers';
+import { slug, isClientSide, isProduction, isDeployed, cl } from './helpers';
 
 describe('helpers', () => {
   test.concurrent('slug()', async () => {
@@ -21,5 +21,14 @@ describe('helpers', () => {
     expect(isDeployed()).toBe(false);
     process.env.NETLIFY = 'true';
     expect(isDeployed()).toBe(true);
+  });
+
+  test.concurrent('cl``', async () => {
+    const out = cl`
+    test
+    new
+    lines
+    `;
+    expect(out).toBe('test new lines');
   });
 });

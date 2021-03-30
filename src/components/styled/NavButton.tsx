@@ -1,3 +1,4 @@
+import { cl } from 'lib/helpers';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,7 +8,7 @@ interface NavArrowProps {
   left?: boolean;
 }
 
-const arrowLinkClasses = `
+const arrowLinkClasses = cl`
   text-white bg-white bg-opacity-30 rounded-full
   w-20 h-20
   flex justify-center content-center items-center
@@ -16,7 +17,7 @@ const arrowLinkClasses = `
 `;
 
 const NavArrow: React.FC<NavArrowProps> = ({ className, to, left }) => (
-  <div className={`justify-center content-center cursor-pointer ${className}`}>
+  <div className={cl`justify-center content-center cursor-pointer ${className ?? ''}`}>
     <Link href={to}>
       <a href={to} className={arrowLinkClasses}>{left ? <span>&#8592;</span> : <span>&#8594;</span>}</a>
     </Link>

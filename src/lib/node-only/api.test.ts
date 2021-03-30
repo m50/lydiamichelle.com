@@ -24,12 +24,6 @@ describe('api', () => {
       expect(series.images[0].image.full).toBe('/images/800/1-hanging-off-the-bed.webp');
       expect(series.images[0].image.original).toBe('/images/1-hanging-off-the-bed.webp');
       expect(opti.optimizeImage).toHaveBeenCalledTimes(2);
-
-      // Test caching
-      const start = new Date().getTime();
-      await getSeriesBySlug('test.md');
-      const elapsed = new Date().getTime() - start;
-      expect(elapsed).toBeLessThan(5);
     });
 
     it('getAllSeries()', async () => {
@@ -37,12 +31,6 @@ describe('api', () => {
       opti.optimizeImage = jest.fn();
       const series = await getAllSeries();
       expect(series.length).toBeGreaterThanOrEqual(1);
-
-      // Test caching
-      const start = new Date().getTime();
-      await getAllSeries();
-      const elapsed = new Date().getTime() - start;
-      expect(elapsed).toBeLessThan(5);
     });
   });
 
@@ -61,12 +49,6 @@ describe('api', () => {
       expect(commission?.title).toBe('Test');
       expect(commission?.open).toBe(false);
       expect(commission?.workSizes[0].title).toBe('Size 1');
-
-      // Test caching
-      const start = new Date().getTime();
-      await getCommissionBySlug('test.json');
-      const elapsed = new Date().getTime() - start;
-      expect(elapsed).toBeLessThan(5);
     });
 
     it('getAllCommissions()', async () => {
@@ -74,12 +56,6 @@ describe('api', () => {
       opti.optimizeImage = jest.fn();
       const series = await getAllCommissions();
       expect(series.length).toBeGreaterThanOrEqual(1);
-
-      // Test caching
-      const start = new Date().getTime();
-      await getAllCommissions();
-      const elapsed = new Date().getTime() - start;
-      expect(elapsed).toBeLessThan(5);
     });
   });
 });

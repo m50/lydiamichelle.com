@@ -17,7 +17,6 @@ https://lydiamichelle.com - The website for my girlfriend.
 - [GetInsights](https://getinsights.io/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Freepik Icons from Flaticon](https://www.flaticon.com/authors/freepik)
-- [Github Flavoured Markdown for Tailwind](https://github.com/iandinwoodie/github-markdown-tailwindcss)
 
 ## License and Copyright
 

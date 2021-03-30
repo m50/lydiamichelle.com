@@ -21,5 +21,10 @@ https://lydiamichelle.com - The website for my girlfriend.
 
 ## License and Copyright
 
-All rights reserved. Copyright belongs to Marisa Clardy for the express purpose of the website,
-while all artwork displayed on the website belongs solely to Lydia Michelle Clardy.
+All rights reserved.
+
+© Copyright for the website belongs and all related code to Marisa Clardy.
+© Copyright for all artwork displayed on the website belongs solely to Lydia Michelle Clardy.
+Only those with write access to this repository may use or redistribute anything within the
+repository without express permission, except for in the cases of utilities or artwork as
+described in the above section.

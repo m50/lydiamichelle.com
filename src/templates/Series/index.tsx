@@ -1,6 +1,6 @@
 import React from 'react';
 import useImageState from 'hooks/useImageState';
-import type { Series } from 'types/Series';
+import type { Series } from 'collections/series/Series';
 import Head from 'next/head';
 import Header from './Header';
 import Body from './Body';

@@ -3,7 +3,7 @@ import { getAllCommissions, getCommissionBySlug } from 'lib/node-only/api';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import type { Commission } from 'types/Commission';
+import type { Commission } from 'collections/commissions/Commission';
 import { CommissionView } from 'templates/CommissionView';
 import Head from 'next/head';
 import NavArrow from 'components/styled/NavButton';

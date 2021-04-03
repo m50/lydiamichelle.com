@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
-import { Paths } from 'types/Series';
+import { Paths } from 'collections/series/Series';
 
 type ImgProps = DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> & {
   paths: Paths;

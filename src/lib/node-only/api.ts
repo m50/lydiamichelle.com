@@ -1,9 +1,9 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { ImageInfo, isSeries, Series } from 'types/Series';
+import { ImageInfo, isSeries, Series } from 'collections/series/Series';
 import { promisify } from 'util';
-import { Commission, isCommission } from 'types/Commission';
+import { Commission, isCommission } from 'collections/commissions/Commission';
 import { isDeployed } from 'lib/helpers';
 import { seriesDir, commissionsDir } from '../constants';
 import { optimizeImage } from './optimize';
@@ -22,7 +22,8 @@ const readdir = promisify(fs.readdir);
  * Series API
  */
 let seriesCache: Series[] = [];
-export const getSeriesSlugs = () => readdir(seriesDir);
+export const getSeriesSlugs = () => readdir(seriesDir)
+  .then((files) => files.filter((fileName) => fileName.endsWith('.md')));
 export async function getSeriesBySlug(slug: string): Promise<Series> {
   const cacheIndex = seriesCache.findIndex((s) => s.slug === slug);
   if (cacheIndex >= 0) {
@@ -85,7 +86,8 @@ export async function getAllSeries() {
  * Commissions API
  */
 let commissionCache: Commission[] = [];
-export const getCommissionSlugs = async () => readdir(commissionsDir);
+export const getCommissionSlugs = async () => readdir(commissionsDir)
+  .then((files) => files.filter((fileName) => fileName.endsWith('.json')));
 export const getCommissionBySlug = async (slug: string): Promise<Commission | null> => {
   const cacheIndex = commissionCache.findIndex((s) => s.slug === slug);
   if (cacheIndex >= 0) {

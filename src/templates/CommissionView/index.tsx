@@ -1,6 +1,6 @@
 import { cl } from 'lib/helpers';
 import React from 'react';
-import { Commission } from 'types/Commission';
+import { Commission } from 'collections/commissions/Commission';
 import { WorkSizeView } from './WorkSizeView';
 
 interface Props {

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import PaperSection from 'components/styled/PaperSection';
 import { LatestSeries } from '../components/LatestSeries';
 import { getAllSeries } from '../lib/node-only/api';
-import { ImageInfo, Series } from '../types/Series';
+import { ImageInfo, Series } from '../collections/series/Series';
 
 interface Props {
   latestSeries: Series;

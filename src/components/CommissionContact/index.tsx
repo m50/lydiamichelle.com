@@ -1,6 +1,6 @@
 import React from 'react';
 import { instagram } from 'lib/constants';
-import type { Commission } from 'types/Commission';
+import type { Commission } from 'collections/commissions/Commission';
 import { ExtLink } from '../styled/Links';
 import { ReactComponent as InstaIcon } from '../svg/Instagram.svg';
 import ContactForm from './ContactForm';

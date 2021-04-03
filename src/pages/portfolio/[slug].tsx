@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { getAllSeries, getSeriesBySlug } from 'lib/node-only/api';
-import { Series as SeriesType } from 'types/Series';
+import { Series as SeriesType } from 'collections/series/Series';
 import SeriesTemplate from 'templates/Series';
 
 interface Props {

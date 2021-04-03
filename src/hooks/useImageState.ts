@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import type { ImageInfo, Series } from 'types/Series';
+import type { ImageInfo, Series } from 'collections/series/Series';
 import { slug } from 'lib/helpers';
 
 interface Ret {

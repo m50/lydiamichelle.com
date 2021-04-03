@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Series } from 'types/Series';
+import type { Series } from 'collections/series/Series';
 
 export const Header: React.FC<Series> = (series) => (
   <section className="bg-theme-gray text-theme-pink grid justify-center px-5 py-20 text-center font-serif font-thin">

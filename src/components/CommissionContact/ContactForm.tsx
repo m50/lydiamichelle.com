@@ -2,7 +2,7 @@
 import PaperSection from 'components/styled/PaperSection';
 import { cl, slug } from 'lib/helpers';
 import React, { FormEvent, useCallback, useEffect, useState } from 'react';
-import { Commission, Price, WorkSize } from 'types/Commission';
+import { Commission, Price, WorkSize } from 'collections/commissions/Commission';
 import useSendEmail from 'hooks/useSendEmail';
 import { FileInput, ImageData } from 'components/styled/FileInput';
 import { ReactComponent as CheckMark } from '../svg/tick.svg';

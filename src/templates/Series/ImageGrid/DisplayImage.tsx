@@ -1,7 +1,7 @@
 import { Image } from 'components/Image';
 import { cl, slug } from 'lib/helpers';
 import React from 'react';
-import { ImageInfo } from 'types/Series';
+import { ImageInfo } from 'collections/series/Series';
 
 interface Props {
   image: ImageInfo;

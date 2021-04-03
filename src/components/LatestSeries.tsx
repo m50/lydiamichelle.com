@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageInfo, Series } from '../types/Series';
+import { ImageInfo, Series } from '../collections/series/Series';
 
 interface Props {
   latestSeries: Series;

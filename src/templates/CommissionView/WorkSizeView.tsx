@@ -1,5 +1,5 @@
 import React from 'react';
-import { WorkSize } from 'types/Commission';
+import { WorkSize } from 'collections/commissions/Commission';
 
 export const WorkSizeView: React.FC<WorkSize> = ({ title, prices }) => (
   <section className="w-full">

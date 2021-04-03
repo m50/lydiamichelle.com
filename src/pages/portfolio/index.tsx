@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { getAllSeries } from '../../lib/node-only/api';
-import { Paths, Series } from '../../types/Series';
+import { Paths, Series } from '../../collections/series/Series';
 
 interface Props {
   published: Series[];

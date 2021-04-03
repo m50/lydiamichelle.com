@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { getAllCommissions } from 'lib/node-only/api';
 import { GetStaticProps } from 'next';
-import { Commission } from 'types/Commission';
+import { Commission } from 'collections/commissions/Commission';
 import Commissions from './[slug]';
 
 interface Props {

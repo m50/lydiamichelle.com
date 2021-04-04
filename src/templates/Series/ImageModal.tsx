@@ -3,6 +3,8 @@ import type { ImageInfo } from 'collections/series/Series';
 import Head from 'next/head';
 import { Image } from 'components/Image';
 import { cl } from 'lib/helpers';
+import { Remark } from 'react-remark';
+import remarkGemoji from 'remark-gemoji';
 
 interface Props {
   image: ImageInfo;
@@ -16,8 +18,8 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => (
       <meta property="og:title" content={image.title} />
       <meta property="og:description" content={image.blurb || image.medium} />
       <meta property="twitter:image:alt" content={`${image.title} - ${image.blurb || image.medium}`} />
-      <meta property="og:image" content={`https://lydiamichelle.art${image.image.half}`} />
-      <meta property="twitter:image" content={`https://lydiamichelle.art${image.image.half}`} />
+      {!image.extLink && <meta property="og:image" content={`https://lydiamichelle.art${image.image.half}`} />}
+      {!image.extLink && <meta property="twitter:image" content={`https://lydiamichelle.art${image.image.half}`} />}
       <meta property="og:image:height" content="400" />
       <meta property="og:type" content="website" />
       <meta property="twitter:card" content="summary_large_image" />
@@ -28,9 +30,19 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => (
         sm:h-3/4 lg:h-auto sm:flex-row md:flex-col lg:flex-row
       `}
       >
-        <Image className="h-auto max-h-screen sm:h-full md:h-2/3 xl:h-auto rounded-xl"
-          paths={image.image} onContextMenu={() => false}
-        />
+        {
+          image.extLink ? (
+            <a href={image.extLink} target="_blank" rel="noreferrer">
+              <Image className="h-auto max-h-screen sm:h-full md:h-2/3 xl:h-auto rounded-xl"
+                paths={image.image} onContextMenu={() => false}
+              />
+            </a>
+          ) : (
+            <Image className="h-auto max-h-screen sm:h-full md:h-2/3 xl:h-auto rounded-xl"
+              paths={image.image} onContextMenu={() => false}
+            />
+          )
+        }
         <figcaption className="flex flex-col justify-center content-center items-center p-5">
           <cite className="capitalize text-white text-lg xl:text-3xl font-serif">
             <span className="sr-only">Piece: </span>{image.title}
@@ -44,9 +56,11 @@ export const ImageModal: React.FC<Props> = ({ image, onClickAway }) => (
             </small>
           )}
           {image.blurb && (
-            <small className="capitalize text-white text-md xl:text-2xl">
+            <small>
               <br />
-              {image.blurb}
+              <section className="prose xl:prose-2xl text-white">
+                <Remark remarkPlugins={[remarkGemoji]}>{image.blurb}</Remark>
+              </section>
             </small>
           )}
         </figcaption>

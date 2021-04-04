@@ -1,22 +1,24 @@
+import React, { useState } from 'react';
 import { Image } from 'components/Image';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useState } from 'react';
-import { getAllSeries } from '../../lib/node-only/api';
-import { Paths, Series } from '../../collections/series/Series';
+import { getInstagramData } from 'lib/instagram';
+import { cl } from 'lib/helpers';
+import { getAllSeries } from 'lib/node-only/api';
+import { Paths, Series } from 'collections/series/Series';
 
 interface Props {
   published: Series[];
 }
 
-const anchorStyles = `
+const anchorStyles = cl`
   group text-theme-gray flex flex-col py-2 px-5 my-20
   md:flex-row justify-start items-center content-center relative
   transform transition-transform ease-in-out duration-300
   hover:translate-x-10 hover:translate-y-1 focus:translate-x-10 focus:translate-y-1
 `;
-const nbspDivStyles = `
+const nbspDivStyles = cl`
   hidden lg:block absolute top-0 left-0 w-full h-full bg-theme-pink skew-x-12
   transform transition-transform ease-in-out duration-300 origin-left scale-x-0
   group-hover:scale-x-100
@@ -32,15 +34,17 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
         <title>Portfolio | Lydia Michelle Art</title>
         <meta property="og:image" content="https://lydiamichelle.art/imgs/logo.webp" />
       </Head>
-      <div className={
-        `z-0 absolute inset-0 transition-opacity ease-in-out duration-150 ${bgActive ? 'opacity-25' : 'opacity-0'}`
-      }
+      <div className={cl`
+        z-0 absolute inset-0 transition-opacity ease-in-out duration-150
+        ${bgActive ? 'opacity-25' : 'opacity-0'}
+      `}
       >
         <Image className="w-full h-full object-cover object-center" paths={bg} alt="" />
       </div>
       <section className="w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
         {published.map((series) => {
-          const image = series.images[0];
+          const idx = Math.floor(Math.random() * series.images.length);
+          const image = series.images[idx];
           const onMouseEnter = () => {
             if (image && image.image) {
               setBgActive(true);
@@ -72,7 +76,9 @@ export const Portfolio: React.FC<Props> = ({ published }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: Props }> => {
-  const published = (await getAllSeries()).filter((series) => series.published);
+  const series = (await getAllSeries()).filter((s) => s.published);
+  const instagram = await getInstagramData();
+  const published = [instagram, ...series];
 
   return { props: { published } };
 };

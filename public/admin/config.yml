@@ -62,6 +62,6 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Medium, name: medium, widget: string, default: "Pen and Ink" }
-          - { label: Blurb, name: blurb, widget: text, required: false }
+          - { label: Blurb, name: blurb, widget: markdown, required: false }
           - { label: "Work in Progress?", name: "wip", widget: boolean, default: false }
           - { label: Image, name: image, widget: image }

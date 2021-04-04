@@ -2,6 +2,8 @@ import { Image } from 'components/Image';
 import { cl, slug } from 'lib/helpers';
 import React from 'react';
 import { ImageInfo } from 'collections/series/Series';
+import { Remark } from 'react-remark';
+import remarkGemoji from 'remark-gemoji';
 
 interface Props {
   image: ImageInfo;
@@ -9,9 +11,11 @@ interface Props {
 }
 
 const captionClasses = cl`
-  top-0 left-0 h-16 xl:h-full w-full xl:absolute transform transition-opacity rounded-xl
-  duration-300 ease-in-out text-center xl:opacity-0 hover:opacity-100 text-white
-  flex flex-col justify-center -mt-16 xl:mt-0 rounded-t-none
+  top-0 left-0 h-auto w-full transform transition-opacity rounded-xl
+  duration-300 ease-in-out text-center text-white
+  flex flex-col justify-center -mt-16 rounded-t-none
+  hover:opacity-100
+  lg:h-full lg:mt-0 lg:absolute lg:opacity-0
 `;
 
 export const DisplayImage: React.FC<Props> = ({ image, onImageClick }) => {
@@ -30,6 +34,13 @@ export const DisplayImage: React.FC<Props> = ({ image, onImageClick }) => {
             <small className="text-sm xl:text-lg capitalize">
               <span className="sr-only">Medium: </span>{image.medium}
             </small>
+            {image.blurb && (
+              <small className="lg:block hidden">
+                <section className="prose prose-sm text-white">
+                  <Remark remarkPlugins={[remarkGemoji]}>{image.blurb}</Remark>
+                </section>
+              </small>
+            )}
           </figcaption>
         </figure>
       </a>

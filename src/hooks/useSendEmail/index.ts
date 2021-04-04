@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
 import { useCallback } from 'react';
 import { isProduction } from 'lib/helpers';
+import { url } from 'pages/api/email';
 import { Body, Values } from './types';
-import { endPoint, requestConstants } from './constants';
+import { requestConstants } from './constants';
 import { buildBody } from './util';
 
 const useSendEmail = () => {
-  const request = useCallback((body: Body): Promise<Response> => fetch(endPoint, {
+  const request = useCallback((body: Body): Promise<Response> => fetch(url, {
     ...requestConstants,
     body: JSON.stringify(body),
   }), []);

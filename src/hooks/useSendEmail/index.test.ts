@@ -3,12 +3,12 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { renderHook } from '@testing-library/react-hooks';
-import { endPoint } from './constants';
+import { url } from 'pages/api/email';
 import useSendEmail from './index';
 import { Values } from './types';
 
 const server = setupServer(
-  rest.post(endPoint, (req, res, ctx) => res(ctx.status(204))),
+  rest.post(url, (req, res, ctx) => res(ctx.status(204))),
 );
 
 const mockData: Values = {
@@ -24,19 +24,21 @@ const mockData: Values = {
 };
 
 describe('useSendEmail()', () => {
+  const { log } = console;
   beforeAll(() => {
     if (process.env.MAILER_SEND_KEY) {
       delete process.env.MAILER_SEND_KEY;
     }
     server.listen();
+    console.log = jest.fn();
   });
 
   afterAll(() => {
     server.close();
+    console.log = log;
   });
 
   it('fails if key not set', async () => {
-    console.log = jest.fn();
     const { result } = renderHook(() => useSendEmail());
     const sendEmail = result.current;
     const res = await sendEmail(mockData);
@@ -45,7 +47,6 @@ describe('useSendEmail()', () => {
   });
 
   it('succeeds', async () => {
-    console.log = jest.fn();
     process.env.MAILER_SEND_KEY = 'sadasd';
     const { result } = renderHook(() => useSendEmail());
     const sendEmail = result.current;

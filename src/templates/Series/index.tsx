@@ -28,7 +28,7 @@ export const SeriesTemplate: React.FC<Series> = (series) => {
         />
       </Head>
       <Header {...series} />
-      <Body content={series.body} />
+      {series.body && <Body content={series.body} />}
       <ImageGrid images={series.images} onImageClick={onImageClick} />
       {selectedImage && <ImageModal onClickAway={onOutsideClick} image={selectedImage} />}
     </article>

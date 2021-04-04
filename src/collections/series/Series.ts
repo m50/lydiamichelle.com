@@ -1,7 +1,7 @@
 export interface Paths {
   original: string;
-  full: string;
-  half: string;
+  full?: string;
+  half?: string;
 }
 
 export interface ImageInfo {
@@ -10,6 +10,7 @@ export interface ImageInfo {
   blurb?: string;
   wip: boolean;
   image: Paths;
+  extLink?: string;
 }
 
 export interface Series {

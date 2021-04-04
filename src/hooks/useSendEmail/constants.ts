@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-export const endPoint = '/api/email';
 export const email = process.env.CONTEXT === 'production' ? 'lydiamb0925@gmail.com' : 'marisa@clardy.eu';
 export const requestConstants = {
   method: 'POST',

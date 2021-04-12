@@ -13,7 +13,8 @@ module.exports = {
     '<rootDir>/prepare.js',
   ],
   testMatch: [
-    '<rootDir>/src/**/?(*.)+(spec|test).[tj]sx?',
+    '<rootDir>/src/**/?(*.)+(spec|test).[tj]s',
+    '<rootDir>/src/**/?(*.)+(spec|test).[tj]sx',
   ],
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',

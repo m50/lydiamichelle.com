@@ -17,7 +17,7 @@
     "@sentry/tracing": "^6.2.5",
     "gray-matter": "^4.0.2",
     "image-size": "^1.0.0",
-    "imagemin": "^7.0.1",
+    "imagemin": "^8.0.0",
     "imagemin-webp": "^6.0.0",
     "insights-js": "^1.2.10",
     "md5-file": "^5.0.0",

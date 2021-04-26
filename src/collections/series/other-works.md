@@ -4,6 +4,10 @@ excerpt: Painting, Illustration, Other
 date_published: 2021-03-29T08:34:02.948Z
 published: true
 images:
+  - medium: Watercolor, guache, colored pencil, ink
+    wip: false
+    title: per mortem infecunditate
+    image: /images/per-mortem-infecunditate.jpg
   - medium: Oils
     wip: false
     image: /images/the-picking.jpg

@@ -54,7 +54,7 @@
     "babel-plugin-inline-react-svg": "^2.0.1",
     "chalk": "^4.1.1",
     "cwebp-bin": "^6.1.1",
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.2.0",
     "eslint-import-resolver-typescript": "^2.4.0",

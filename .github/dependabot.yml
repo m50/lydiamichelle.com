@@ -1,0 +1,46 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - m50
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: "@sentry/react"
+    versions:
+    - 6.3.1
+    - 6.3.3
+  - dependency-name: "@sentry/tracing"
+    versions:
+    - 6.2.5
+    - 6.3.1
+    - 6.3.3
+  - dependency-name: "@types/node"
+    versions:
+    - 15.0.0
+  - dependency-name: postcss
+    versions:
+    - 8.2.10
+  - dependency-name: image-size
+    versions:
+    - 0.9.7
+  - dependency-name: "@sentry/webpack-plugin"
+    versions:
+    - 1.14.2
+  - dependency-name: eslint
+    versions:
+    - 7.23.0
+  - dependency-name: react
+    versions:
+    - 17.0.2
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.13.12
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.20.0

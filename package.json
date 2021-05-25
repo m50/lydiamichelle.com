@@ -40,7 +40,7 @@
     "@tailwindcss/custom-forms": "^0.2.1",
     "@tailwindcss/typography": "^0.4.0",
     "@testing-library/react": "^11.2.7",
-    "@testing-library/react-hooks": "^6.0.0",
+    "@testing-library/react-hooks": "^7.0.0",
     "@types/imagemin": "^7.0.0",
     "@types/imagemin-webp": "^5.1.1",
     "@types/jest": "^26.0.23",

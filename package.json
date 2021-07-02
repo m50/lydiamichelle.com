@@ -44,7 +44,7 @@
     "@types/imagemin": "^7.0.0",
     "@types/imagemin-webp": "^5.1.1",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.12.5",
+    "@types/node": "^15.14.0",
     "@types/react": "^17.0.13",
     "@types/yup": "^0.29.11",
     "@typescript-eslint/eslint-plugin": "^4.28.1",

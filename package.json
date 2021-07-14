@@ -21,7 +21,7 @@
     "imagemin-webp": "^6.0.0",
     "insights-js": "^1.2.10",
     "md5-file": "^5.0.0",
-    "next": "^10",
+    "next": "^11",
     "react": "^17",
     "react-dom": "^17",
     "react-remark": "^2.0.3",

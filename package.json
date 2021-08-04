@@ -25,7 +25,7 @@
     "react": "^17",
     "react-dom": "^17",
     "react-remark": "^2.0.3",
-    "remark": "^14.0.0",
+    "remark": "^14.0.1",
     "remark-gemoji": "^6.0.0",
     "slugify": "^1.6.0",
     "yup": "^0.32.9"

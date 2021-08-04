@@ -8367,11 +8367,12 @@ remark-stringify@^10.0.0:
     mdast-util-to-markdown "^1.0.0"
     unified "^10.0.0"
 
-remark@^14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/remark/-/remark-14.0.0.tgz#7f58972997a2c8d7deaa26058c20ab1ae74381be"
-  integrity sha512-LiJCEOBwTlqAkCdZ288gLu5CP1xX2rFEZGGMYlsrXNb5y+IDpbhIDmZ5kLiHqFQiivzTkuP70t9DtQbF005nNA==
+remark@^14.0.1:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/remark/-/remark-14.0.1.tgz#a97280d4f2a3010a7d81e6c292a310dcd5554d80"
+  integrity sha512-7zLG3u8EUjOGuaAS9gUNJPD2j+SqDqAFHv2g6WMpE5CU9rZ6e3IKDM12KHZ3x+YNje+NMAuN55yx8S5msGSx7Q==
   dependencies:
+    "@types/mdast" "^3.0.0"
     remark-parse "^10.0.0"
     remark-stringify "^10.0.0"
     unified "^10.0.0"

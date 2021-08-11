@@ -34,7 +34,7 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@jest/types": "^27.0.6",
     "@sentry/webpack-plugin": "^1.17.1",
     "@tailwindcss/custom-forms": "^0.2.1",

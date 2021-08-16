@@ -4,6 +4,14 @@ excerpt: Painting, Illustration, Other
 date_published: 2021-03-29T08:34:02.948Z
 published: true
 images:
+  - medium: "Oil "
+    wip: false
+    title: Epona's Defenders
+    blurb: Gaelic and Roman Goddess of horses and donkeys, as well as a symbolic
+      character if fertility, Epona was said to help us travel to our final
+      destinations after death. This illustrative oil work is inspired by her
+      character and those who may have been alongside her journeys.
+    image: /images/dissidenceposterprint.png
   - medium: Watercolor, guache, colored pencil, ink
     wip: false
     title: per mortem infecunditate

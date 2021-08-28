@@ -36,8 +36,10 @@ const validate: Validate = async (values, setIsError, setMessage) => {
 
     return true;
   } catch (err) {
-    setIsError(true);
-    setMessage(err.errors);
+    if (err instanceof yup.ValidationError) {
+      setIsError(true);
+      setMessage(err.errors);
+    }
 
     return false;
   }

@@ -66,7 +66,7 @@ export const optimizeImage = async (imagePath: string, height: Height = 800): Pr
     try {
       await rm(existingCacheFile);
       console.log(`${chalk.yellow('warn')}  - Deleted file ${existingCacheFile}`);
-    } catch (err) {
+    } catch (err: any) {
       console.error(`${chalk.red('error')} - ${err.message}`);
     }
   }
@@ -78,7 +78,7 @@ export const optimizeImage = async (imagePath: string, height: Height = 800): Pr
       try {
         await rm(join(buildPath, `${height}`, file));
         console.log(`${chalk.yellow('warn')}  - Deleted file ${join(`${height}`, file)}`);
-      } catch (err) {
+      } catch (err: any) {
         console.error(`${chalk.red('error')} - ${err.message}`);
       }
     }

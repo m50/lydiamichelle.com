@@ -8,6 +8,7 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    'plugin:@next/next/recommended',
   ],
   globals: {
     Atomics: 'readonly',
@@ -25,6 +26,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    '@next/next/no-img-element': 'off',
     'import/prefer-default-export': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-first-prop-new-line': 'off',

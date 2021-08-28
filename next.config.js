@@ -6,6 +6,7 @@ require('./prepare');
 
 module.exports = {
 	target: 'experimental-serverless-trace',
+	cleanDistDir: false,
 	productionBrowserSourceMaps: NODE_ENV === 'production',
 	env: {
 		INSIGHTS_KEY,

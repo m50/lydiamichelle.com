@@ -6,6 +6,7 @@ module.exports = {
     '<rootDir>/node_modules/',
   ],
   coverageProvider: 'v8',
+  testEnvironment: 'jsdom',
   coverageReporters: [
     'text',
   ],

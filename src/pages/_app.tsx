@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/tailwind.css';
 import '../styles/colorful.css';
-import { AppProps } from 'next/dist/next-server/lib/router/router';
+import { AppProps } from 'next/app';
 import DefaultTemplate from 'templates/Default';
 import Head from 'next/head';
 import { init as sentry } from '@sentry/react';

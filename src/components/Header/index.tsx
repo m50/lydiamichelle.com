@@ -1,4 +1,5 @@
 import { cl } from 'lib/helpers';
+import Link from 'next/link';
 import * as React from 'react';
 import Nav from './Nav';
 
@@ -16,9 +17,11 @@ export const Header: React.FC = () => (
         src="/imgs/logo.png" alt="Lydia Michelle Logo"
       />
     </picture>
-    <a className="ml-0 md:ml-20 flex flex-col md:flex-row mb-4" rel="author" href="/">
-      <h1 className="font-serif uppercase text-xl tracking-wider">Lydia Michelle</h1>
-    </a>
+    <Link href="/">
+      <a className="ml-0 md:ml-20 flex flex-col md:flex-row mb-4" rel="author">
+        <h1 className="font-serif uppercase text-xl tracking-wider">Lydia Michelle</h1>
+      </a>
+    </Link>
     <Nav />
   </header>
 );

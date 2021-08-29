@@ -33,9 +33,9 @@ const fetchData = async () => {
         .replace(/#/, '\n\n#'),
       wip: false,
       image: {
-        original: node.display_url,
-        full: node.display_url,
-        half: node.thumbnail_src,
+        original: `/api/insta/proxy?img=${encodeURIComponent(node.display_url)}`,
+        full: `/api/insta/proxy?img=${encodeURIComponent(node.display_url)}`,
+        half: `/api/insta/proxy?img=${encodeURIComponent(node.thumbnail_src)}`,
       },
       extLink: `https://instagram.com/p/${node.shortcode}`,
     };

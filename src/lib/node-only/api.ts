@@ -37,7 +37,6 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
 
   data.body = content;
   data.slug = realSlug;
-  data.blurb = data.blurb ?? null;
   if (typeof data.date_published !== 'string') {
     data.date_published = data.date_published.toDateString();
   }
@@ -57,6 +56,12 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
       };
     }),
   );
+
+  data.images = data.images.map((i: ImageInfo): ImageInfo => ({
+    ...i,
+    blurb: i.blurb ?? null,
+    extLink: i.extLink ?? null,
+  }));
 
   if (!isSeries(data)) {
     throw new Error(`series undetermined . ${JSON.stringify(data)}`);

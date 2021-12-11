@@ -7,10 +7,10 @@ export interface Paths {
 export interface ImageInfo {
   title: string;
   medium: string;
-  blurb?: string;
+  blurb?: string | null;
   wip: boolean;
   image: Paths;
-  extLink?: string;
+  extLink?: string | null;
 }
 
 export interface Series {

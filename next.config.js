@@ -5,7 +5,6 @@ const { INSIGHTS_KEY, MAILER_SEND_KEY, CONTEXT } = process.env;
 require('./prepare');
 
 module.exports = {
-	target: 'serverless',
 	cleanDistDir: false,
 	productionBrowserSourceMaps: NODE_ENV === 'production',
 	env: {

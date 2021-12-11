@@ -13,13 +13,9 @@ export const Nav: React.FC = () => (
       <IntLinkWhite href="/commissions">Commission</IntLinkWhite>
     </span>
     <span>
-      <ExtLinkWhite href={redBubble}>
-        <span className="sr-only">Shop</span>
-        <ShopIcon className="inline fill-current w-5 h-5" />
-      </ExtLinkWhite>
       <ExtLinkWhite href={etsy}>
         <span className="sr-only">Etsy</span>
-        <EtsyIcon className="inline fill-current w-5 h-5" />
+        <ShopIcon className="inline fill-current w-5 h-5" />
       </ExtLinkWhite>
       <ExtLinkWhite href={instagram}>
         <span className="sr-only">My Instagram</span>

@@ -1,6 +1,6 @@
 import { cl } from 'lib/helpers';
 import React from 'react';
-import { email, etsy, instagram, redBubble } from '../lib/constants';
+import { email, etsy, instagram } from '../lib/constants';
 import { ExtLink, IntLink } from './styled/Links';
 
 const Copy: React.FC = () => (
@@ -38,8 +38,7 @@ export const Footer: React.FC = () => (
         </p>
         <p>
           Or purchase something from my
-          <ExtLink href={redBubble}>Redbubble shop</ExtLink>{' '}
-          or from my <ExtLink href={etsy}>Etsy!</ExtLink>
+          <ExtLink href={etsy}>Etsy!</ExtLink>
         </p>
       </div>
       <Copy />

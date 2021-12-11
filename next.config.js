@@ -38,5 +38,8 @@ module.exports = {
       destination: '/#about',
       permanent: true,
     },
-  ],
+	],
+	eslint: {
+    ignoreDuringBuilds: true,
+  },
 };

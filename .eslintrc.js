@@ -26,6 +26,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'react/require-default-props': 'off',
     '@next/next/no-img-element': 'off',
     'import/prefer-default-export': 'off',
     'react/destructuring-assignment': 'off',

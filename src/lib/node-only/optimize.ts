@@ -34,7 +34,7 @@ const convert = async (path: string, imageName: string, adjustHeight: Height): P
     preset: 'drawing',
     resize: {
       height: adjustHeight,
-      width: (width as number) * (adjustHeight / (height as number)),
+      width: Math.floor((width as number) * (adjustHeight / (height as number))),
     },
   });
   const outputBuffer = await converter(inputBuffer);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
+import Image from 'next/image';
 import Head from 'next/head';
 import PaperSection from 'components/styled/PaperSection';
 import { LatestSeries } from '../components/LatestSeries';
@@ -22,20 +23,29 @@ export const Home: React.FC<Props> = (props) => (
     </section>
 
     <section className="bg-theme-pink px-5 py-16 md:py-32 relative select-text" aria-label="About section">
-      <div className="md:mx-auto w-full md:w-2/3 lg:w-1/2 relative">
-        <h2 id="about" className="uppercase text-4xl font-serif font-thin tracking-wider">All about me</h2>
-        <p className="font-serif text-2xl italic my-10">Let's move forward</p>
-        <p className="font-light text-xl leading-loose">
-          Hi, my name is Lydia. I am a self-taught artist from Texas.
-          I work in many different mediums, including pen and ink, oil, acrylics,
-          clay sculpture and ceramics. My ambitions include going to university to get
-          a degree in the fine arts and education. I hope to one day become a professor
-          where I can give others the reigns to the artistic experience. I also wish
-          to use the arts as a way to give relief and therapy for others whom have
-          suffered great trauma such as domestic and sexual abuse survivors.
-          My current projects are my illustrative art series Greenly, and an upcoming
-          novel intended as art therapy for sexual assault survivors.
-        </p>
+      <div className="md:mx-auto w-full md:w-2/3 relative flex gap-24 justify-center items-center">
+        <div className="hidden md:flex border-white border-4 rounded-xl shadow-xl">
+          <Image
+            src="/imgs/headshot.jpg" alt="Picture of Lydia"
+            height={367} width={270} layout="fixed"
+            className="rounded-xl"
+          />
+        </div>
+        <div>
+          <h2 id="about" className="uppercase text-4xl font-serif font-thin tracking-wider">All about me</h2>
+          <p className="font-serif text-2xl italic my-10">Let's move forward</p>
+          <p className="font-light text-xl leading-loose">
+            Hi, my name is Lydia. I am a self-taught artist from Texas.
+            I work in many different mediums, including pen and ink, oil, acrylics,
+            clay sculpture and ceramics. My ambitions include going to university to get
+            a degree in the fine arts and education. I hope to one day become a professor
+            where I can give others the reigns to the artistic experience. I also wish
+            to use the arts as a way to give relief and therapy for others whom have
+            suffered great trauma such as domestic and sexual abuse survivors.
+            My current projects are my illustrative art series Greenly, and an upcoming
+            novel intended as art therapy for sexual assault survivors.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -52,7 +62,7 @@ export const Home: React.FC<Props> = (props) => (
           <cite className="italic font-hairline font-serif">Annie Dillard</cite>
         </blockquote>
         <img
-          className="h-88 sm:h-auto lg:h-88 w-auto shadow-xl"
+          className="h-88 sm:h-auto lg:h-88 w-auto shadow-xl rounded-xl border-white border-4"
           src="/imgs/levi_graphite-and-ink.webp" height={300}
           alt="Levi - Graphite and ink"
         />

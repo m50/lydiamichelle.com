@@ -24,7 +24,7 @@ const rm = promisify(fs.unlink);
 type Height = 400 | 800;
 
 const convert = async (path: string, imageName: string, adjustHeight: Height): Promise<string> => {
-  const md5 = (await md5File(join(process.cwd(), 'public', path))).substr(0, 6);
+  const md5 = (await md5File(join(process.cwd(), 'public', path))).substring(0, 6);
   const ext = extname(path);
   const cacheFile = join(buildPath, `${adjustHeight}`, imageName.replace(ext, `${md5}.webp`));
   const inputBuffer = await readFile(join(process.cwd(), 'public', path));

@@ -28,9 +28,9 @@ const fetchData = async () => {
     const image = {
       title: '',
       medium: '',
-      blurb: node.edge_media_to_caption.edges?.[0]?.node.text
+      blurb: (node.edge_media_to_caption.edges?.[0]?.node.text
         .replace(/\n/g, '\n\n')
-        .replace(/#/, '\n\n#'),
+        .replace(/#/, '\n\n#')) ?? null,
       wip: false,
       image: {
         original: `/api/insta/proxy?img=${encodeURIComponent(node.display_url)}`,

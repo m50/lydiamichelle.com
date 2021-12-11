@@ -26,6 +26,8 @@ describe('useImageState()', () => {
       },
       medium: 'Pen and Ink',
       title: 'Hanging Off the Bed',
+      blurb: null,
+      extLink: null,
       wip: true,
     };
     expect(result.current.selectedImage).not.toBeNull();

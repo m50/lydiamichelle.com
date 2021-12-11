@@ -37,6 +37,7 @@ export async function getSeriesBySlug(slug: string): Promise<Series> {
 
   data.body = content;
   data.slug = realSlug;
+  data.blurb = data.blurb ?? null;
   if (typeof data.date_published !== 'string') {
     data.date_published = data.date_published.toDateString();
   }

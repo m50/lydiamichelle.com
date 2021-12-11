@@ -3732,14 +3732,13 @@ cwebp-bin@^5.0.0:
     bin-wrapper "^4.0.1"
     logalot "^2.1.0"
 
-cwebp-bin@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/cwebp-bin/-/cwebp-bin-6.1.1.tgz#bbf8bdb9c37403c711682d05b12de8dc9e810e13"
-  integrity sha512-NhtrQzmEuvUDS9gyWVTuBvBvp/rz0QCZpqmf8jYb/x2h29vBcaSaT2uer3lQBfP5nh2gVekgUT5UqRusXgvuaw==
+cwebp-bin@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/cwebp-bin/-/cwebp-bin-7.0.1.tgz#cb1303bf43f645ba5b2ece342773c4a93574d4f4"
+  integrity sha512-Ko5ADY74/dbfd8xG0+f+MUP9UKjCe1TG4ehpW0E5y4YlPdwDJlGrSzSR4/Yonxpm9QmZE1RratkIxFlKeyo3FA==
   dependencies:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.1"
-    logalot "^2.1.0"
 
 damerau-levenshtein@^1.0.6:
   version "1.0.6"

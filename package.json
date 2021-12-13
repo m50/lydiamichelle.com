@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.16",
-    "@babel/preset-typescript": "^7.15.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@babel/runtime": "^7.16",
     "@jest/types": "^27.4.2",
     "@netlify/plugin-nextjs": "^4.0.0-rc.2",

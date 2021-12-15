@@ -1502,10 +1502,10 @@
     ufo "^0.7.9"
     unstorage "^0.2.8"
 
-"@netlify/plugin-nextjs@^4.0.0-rc.2":
-  version "4.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.0.0-rc.2.tgz#28079526bf6444a35040fb05ddddc55b42e4465e"
-  integrity sha512-FvkoscKqnrNLldEftsDncDDmX2TKAR+HBY6OKt0ajq2u3mQVmVzG7KNqMSjoIbmAYScHYQGIa4Lmy9bA6H3avw==
+"@netlify/plugin-nextjs@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.0.0.tgz#16db896171aa6663bded9e95cd1c2ef7fa1e4474"
+  integrity sha512-OL3e8GEMjx1cYQ3aarDzWLi6rUmhd369yBsJUZ1jC8yFebWj7ygN3auG8jXVb+DrgZK1p1YrKmaQQxf9bEgrTw==
   dependencies:
     "@netlify/functions" "^0.10.0"
     "@netlify/ipx" "^0.0.8"
@@ -1980,10 +1980,10 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@*", "@types/node@^16.11.12":
-  version "16.11.12"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.12.tgz#ac7fb693ac587ee182c3780c26eb65546a1a3c10"
-  integrity sha512-+2Iggwg7PxoO5Kyhvsq9VarmPbIelXP070HMImEpbtGCoyWNINQj4wzjbQCXzdHTRXnqufutJb5KAURZANNBAw==
+"@types/node@*", "@types/node@^16.11.13":
+  version "16.11.13"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.13.tgz#6b71641b81a98c6a538d89892440c06f147edddc"
+  integrity sha512-eUXZzHLHoZqj1frtUetNkUetYoJ6X55UmrVnFD4DMhVeAmwLjniZhtBmsRiemQh4uq4G3vUra/Ws/hs9vEvL3Q==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -5184,19 +5184,7 @@ globby@^10.0.1, globby@^10.0.2:
     merge2 "^1.2.3"
     slash "^3.0.0"
 
-globby@^11.0.3:
-  version "11.0.3"
-  resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.3.tgz#9b1f0cb523e171dd1ad8c7b2a9fb4b644b9593cb"
-  integrity sha512-ffdmosjA807y7+lA1NM0jELARVmYul/715xiILEjo3hBLPTcirgQNnXECn5g3mtR8TOLCVbkfua1Hpen25/Xcg==
-  dependencies:
-    array-union "^2.1.0"
-    dir-glob "^3.0.1"
-    fast-glob "^3.1.1"
-    ignore "^5.1.4"
-    merge2 "^1.3.0"
-    slash "^3.0.0"
-
-globby@^11.0.4:
+globby@^11.0.3, globby@^11.0.4:
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.4.tgz#2cbaff77c2f2a62e71e9b2813a67b97a3a3001a5"
   integrity sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==

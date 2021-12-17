@@ -27,13 +27,13 @@
     "react-remark": "^2.0.3",
     "remark": "^14.0.2",
     "remark-gemoji": "^7.0.1",
-    "slugify": "^1.6.3",
+    "slugify": "^1.6.4",
     "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.16",
-    "@babel/preset-typescript": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.5",
     "@babel/runtime": "^7.16",
     "@jest/types": "^27.4.2",
     "@netlify/plugin-nextjs": "^4.1.0",

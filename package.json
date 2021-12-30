@@ -24,7 +24,7 @@
     "next": "^12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-remark": "^2.0.3",
+    "react-remark": "^2.1.0",
     "remark": "^14.0.2",
     "remark-gemoji": "^7.0.1",
     "slugify": "^1.6.4",

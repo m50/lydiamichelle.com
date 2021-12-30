@@ -8673,10 +8673,10 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-remark@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/react-remark/-/react-remark-2.0.3.tgz"
-  integrity sha512-nk1oT+wqSnaXqk3sHAA1HKarABxSP13jbTAUNtUCdFjil/obyH7JRT43ZfFmg/bYxgf/HdGNDAX3VZ4vrvuaeA==
+react-remark@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-remark/-/react-remark-2.1.0.tgz#dd68a32ab2d022e598b27dbfb754400e8f68555c"
+  integrity sha512-7dEPxRGQ23sOdvteuRGaQAs9cEOH/BOeCN4CqsJdk3laUDIDYRCWnM6a3z92PzXHUuxIRLXQNZx7SiO0ijUcbw==
   dependencies:
     rehype-react "^6.0.0"
     remark-parse "^9.0.0"

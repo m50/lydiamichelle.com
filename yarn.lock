@@ -1411,10 +1411,10 @@
     ufo "^0.7.9"
     unstorage "^0.2.8"
 
-"@netlify/plugin-nextjs@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.1.0.tgz#f2246c85a483a2abe800129c3443ce2855194feb"
-  integrity sha512-A/gUIIboPMXoYgN4YTgh9LunV53x9n0vKHSW8TJEks+HmydOnP9AXK4iYHQqttlykerR9Xjauhl3s6PB6m+pug==
+"@netlify/plugin-nextjs@^4.1.3":
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-4.1.3.tgz#49400c81d5684eec7dc769d5b1ebfa3ffcd5d3f3"
+  integrity sha512-jZhu8LtgL8mhrNY/j+j6D76CJ0/8I0P4rSenjhX1i6mayGYaTCtkXpdyg40w0XYdwMpgg55zC1LiPchfz5Ed+A==
   dependencies:
     "@netlify/functions" "^0.10.0"
     "@netlify/ipx" "^0.0.8"

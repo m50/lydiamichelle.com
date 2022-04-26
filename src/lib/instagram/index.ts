@@ -10,6 +10,7 @@ const variables = {
   first: 20,
 };
 const uri = 'https://www.instagram.com/graphql/query/';
+const cookie = 'sessionid=1052275550%3A15UW8X70BXHgXK%3A4;';
 
 const fetchData = async () => {
   const url = `${uri}?query_hash=${queryHash}&variables=${JSON.stringify(variables)}`;
@@ -17,7 +18,7 @@ const fetchData = async () => {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      cookie: 'sessionid=1052275550%3ALOzazaNIZ9aFqm%3A18;',
+      cookie,
     },
   }).then((res) => res.json() as Promise<InstagramResponse>);
   const { edges } = data.user.edge_owner_to_timeline_media;

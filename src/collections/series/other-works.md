@@ -6,6 +6,10 @@ published: true
 images:
   - medium: "Oil "
     wip: false
+    title: Trials of the Opal Heart
+    image: /images/277701973_360141286125700_7737860111322414112_n.jpg
+  - medium: "Oil "
+    wip: false
     title: Epona's Defenders
     blurb: Gaelic and Roman Goddess of horses and donkeys, as well as a symbolic
       character if fertility, Epona was said to help us travel to our final

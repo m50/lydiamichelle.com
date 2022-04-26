@@ -4,6 +4,10 @@ excerpt: A collection of natural curiosities. (Pre-professional)
 date_published: 2020-04-18
 published: true
 images:
+  - medium: Oil
+    wip: false
+    image: /images/277701973_360141286125700_7737860111322414112_n.jpg
+    title: Trial of the Opal Heart
   - wip: true
     title: Hanging Off the Bed
     medium: Pen and Ink

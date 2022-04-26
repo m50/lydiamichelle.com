@@ -45,7 +45,11 @@ const fetchData = async () => {
 
 export const getInstagramData = async (): Promise<Series> => {
   if (Date.now() - lastReload.time > lastReload.liveFor) {
-    await fetchData();
+    try {
+      await fetchData();
+    } catch (e) {
+      console.log(e);
+    }
     lastReload.time = Date.now();
   }
 

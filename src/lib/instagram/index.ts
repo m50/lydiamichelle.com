@@ -4,7 +4,7 @@ import type { InstagramResponse } from './types';
 export const cache = new Map<string, ImageInfo>();
 export const lastReload = { time: 0, liveFor: 30 * 60 * 1000 };
 
-const queryHash = '42d2750e44dbac713ff30130659cd891';
+const queryHash = '69cba40317214236af40e7efa697781d';
 const variables = {
   id: '5975742076',
   first: 20,
